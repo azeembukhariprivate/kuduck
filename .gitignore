@@ -10,3 +10,23 @@ __pycache__/
 *.pyc
 *.onnx
 *.spec
+
+# Local secrets and code-signing keys
+.env
+.env.*
+*.pfx
+*.p12
+*.snk
+*.pem
+*.key
+
+# Python virtual environments (helper)
+.venv/
+venv/
+
+# IDE and OS files
+.idea/
+*.suo
+*.swp
+Thumbs.db
+.DS_Store
