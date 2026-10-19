@@ -41,6 +41,18 @@ A yellow duck sits on your desktop. **Click it** to open the toolbox, **drag it*
 Everything runs **on your PC**. No files are uploaded and no account is needed. The only time KUDUCK
 goes online is to check this page for a newer version (you can turn that off in Settings).
 
+## Updates
+
+KUDUCK checks this project's Releases page shortly after it starts and then once a day while it runs
+(or any time with **Settings → Check now**). When a new version is out:
+
+- the **duck** says so in its speech bubble, with **Update** and **Later** buttons,
+- a **Windows notification** appears once from the tray icon,
+- the **home screen** shows a banner with **Update now** and **What's new**.
+
+**Update** downloads the new installer from this repository's Releases page, checks it against the
+checksum GitHub publishes, installs it quietly (no admin prompt, settings kept) and reopens KUDUCK.
+
 ## Install
 
 1. Open the [latest release](../../releases/latest) and download `KUDUCK-Setup-x.y.z.exe`.

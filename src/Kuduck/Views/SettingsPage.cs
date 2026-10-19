@@ -77,6 +77,24 @@ namespace Kuduck.Views
             CheckBox updates = new CheckBox { Content = "Tell me when a new version is out", IsChecked = s.CheckForUpdates, Margin = new Thickness(0, 0, 0, 8) };
             updates.Click += (o, e) => { s.CheckForUpdates = updates.IsChecked == true; SettingsStore.Save(); };
             body.Children.Add(updates);
+            StackPanel checkRow = new StackPanel { Orientation = Orientation.Horizontal };
+            Button checkNow = new Button { Content = "Check now" };
+            TextBlock checkStatus = Ui.Text($"You have version {AppPaths.Version}.", 12, null, "MutedBrush");
+            checkStatus.VerticalAlignment = VerticalAlignment.Center;
+            checkStatus.Margin = new Thickness(10, 0, 0, 0);
+            checkNow.Click += async (o, e) =>
+            {
+                checkNow.IsEnabled = false;
+                checkStatus.Text = "Checking…";
+                UpdateInfo info = await UpdateService.CheckAsync(true);
+                checkStatus.Text = info != null
+                    ? $"Version {info.Version} is ready — see the duck or the home screen."
+                    : $"You're up to date ({AppPaths.Version}).";
+                checkNow.IsEnabled = true;
+            };
+            checkRow.Children.Add(checkNow);
+            checkRow.Children.Add(checkStatus);
+            body.Children.Add(checkRow);
 
             body.Children.Add(Ui.Section("KUDUCK"));
             StackPanel buttons = new StackPanel { Orientation = Orientation.Horizontal };

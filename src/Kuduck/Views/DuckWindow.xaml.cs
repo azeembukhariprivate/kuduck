@@ -77,8 +77,31 @@ namespace Kuduck.Views
 
         // ------------------------------------------------------------------ bubble
 
+        private bool _updateMode;
+        private bool _updateLater;
+
+        /// <summary>Called when a new version is found: the duck offers the update.</summary>
+        public void ShowUpdate()
+        {
+            _updateLater = false;
+            ShowBubbleFor(TimeSpan.FromSeconds(15));
+        }
+
         private void UpdateBubbleText()
         {
+            UpdateInfo update = UpdateService.Available;
+            _updateMode = update != null && !_updateLater;
+            if (_updateMode)
+            {
+                BubbleLabel.Text = "UPDATE";
+                BubbleText.Text = $"KUDUCK {update.Version} is ready. It takes a few seconds and keeps your settings.";
+                RepeatButton.Content = "Update";
+                RepeatButton.Visibility = Visibility.Visible;
+                AllToolsButton.Content = "Later";
+                return;
+            }
+            RepeatButton.Content = "Repeat";
+            AllToolsButton.Content = "All tools";
             LastAction last = SettingsStore.Current.LastAction;
             if (last != null && ToolRegistry.Find(last.Tool) != null)
             {
@@ -111,7 +134,8 @@ namespace Kuduck.Views
 
         private void Duck_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (!SettingsStore.Current.SuggestionDismissed || SettingsStore.Current.LastAction == null) ShowBubble();
+            bool updatePending = UpdateService.Available != null && !_updateLater;
+            if (updatePending || !SettingsStore.Current.SuggestionDismissed || SettingsStore.Current.LastAction == null) ShowBubble();
         }
 
         private void Bubble_MouseEnter(object sender, MouseEventArgs e) => _hideBubble.Stop();
@@ -127,13 +151,28 @@ namespace Kuduck.Views
 
         private void Dismiss_Click(object sender, RoutedEventArgs e)
         {
-            SettingsStore.Current.SuggestionDismissed = true;
-            SettingsStore.Save();
+            if (_updateMode)
+            {
+                _updateLater = true;
+            }
+            else
+            {
+                SettingsStore.Current.SuggestionDismissed = true;
+                SettingsStore.Save();
+            }
             Bubble.Visibility = Visibility.Collapsed;
         }
 
-        private void Repeat_Click(object sender, RoutedEventArgs e)
+        private async void Repeat_Click(object sender, RoutedEventArgs e)
         {
+            if (_updateMode)
+            {
+                _hideBubble.Stop();
+                AllToolsButton.Visibility = Visibility.Collapsed;
+                await HomePage.RunUpdate(RepeatButton, BubbleText);
+                AllToolsButton.Visibility = Visibility.Visible;
+                return;
+            }
             LastAction last = SettingsStore.Current.LastAction;
             Bubble.Visibility = Visibility.Collapsed;
             if (last == null) { OpenWidget(); return; }
@@ -144,6 +183,12 @@ namespace Kuduck.Views
         private void AllTools_Click(object sender, RoutedEventArgs e)
         {
             Bubble.Visibility = Visibility.Collapsed;
+            if (_updateMode)
+            {
+                // "Later": stop offering the update until the next check or restart.
+                _updateLater = true;
+                return;
+            }
             _widget.ShowHome();
             _widget.ShowNear(DuckBounds);
         }

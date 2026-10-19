@@ -26,6 +26,8 @@ namespace Kuduck.Services
         public LastAction LastAction { get; set; }
         public List<string> RecentFiles { get; set; } = new List<string>();
         public bool SuggestionDismissed { get; set; }
+        /// <summary>Last version the tray notification was shown for (so it pops up only once per version).</summary>
+        public string NotifiedVersion { get; set; }
     }
 
     public static class SettingsStore

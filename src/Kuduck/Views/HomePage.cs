@@ -118,18 +118,54 @@ namespace Kuduck.Views
         public void ShowUpdate(UpdateInfo info)
         {
             if (info == null) return;
+            StackPanel panel = new StackPanel();
             Grid g = new Grid();
             g.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             g.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
-            TextBlock t = Ui.Text($"KUDUCK {info.Version} is available.", 12.5, FontWeights.SemiBold);
-            t.VerticalAlignment = VerticalAlignment.Center;
-            g.Children.Add(t);
-            Button get = new Button { Style = Ui.GetStyle("InkButton"), Content = "Download", Padding = new Thickness(12, 0, 12, 0) };
-            get.Click += (s, e) => AppPaths.OpenUrl(info.Url);
-            Grid.SetColumn(get, 1);
-            g.Children.Add(get);
-            _updateBanner.Child = g;
+            StackPanel texts = new StackPanel { VerticalAlignment = VerticalAlignment.Center };
+            texts.Children.Add(Ui.Text($"KUDUCK {info.Version} is ready", 13, FontWeights.SemiBold));
+            Button notes = new Button { Style = Ui.GetStyle("LinkButton"), Content = "What's new", FontSize = 12, HorizontalAlignment = HorizontalAlignment.Left, Padding = new Thickness(0) };
+            notes.Click += (s, e) => AppPaths.OpenUrl(info.Url);
+            texts.Children.Add(notes);
+            g.Children.Add(texts);
+            Button update = new Button { Style = Ui.GetStyle("InkButton"), Content = "Update now", Padding = new Thickness(14, 0, 14, 0) };
+            Grid.SetColumn(update, 1);
+            g.Children.Add(update);
+            panel.Children.Add(g);
+            TextBlock status = Ui.Text("", 12, null, "MutedBrush");
+            status.Visibility = Visibility.Collapsed;
+            panel.Children.Add(status);
+            update.Click += async (s, e) => await RunUpdate(update, status);
+            _updateBanner.Child = panel;
             _updateBanner.Visibility = Visibility.Visible;
+        }
+
+        /// <summary>Downloads and starts the update; used by the banner and by the duck's Update button.</summary>
+        public static async System.Threading.Tasks.Task RunUpdate(Button button, TextBlock status)
+        {
+            if (button != null) button.IsEnabled = false;
+            if (status != null)
+            {
+                status.Visibility = Visibility.Visible;
+                status.SetResourceReference(TextBlock.ForegroundProperty, "MutedBrush");
+            }
+            Progress<string> progress = new Progress<string>(t => { if (status != null) status.Text = t; });
+            try
+            {
+                await UpdateService.InstallAsync(progress);
+            }
+            catch (Exception ex)
+            {
+                if (status != null)
+                {
+                    status.Text = "Update failed: " + FileHelpers.Friendly(ex) + " You can download it from the release page instead.";
+                    status.SetResourceReference(TextBlock.ForegroundProperty, "ErrorBrush");
+                }
+            }
+            finally
+            {
+                if (button != null) button.IsEnabled = true;
+            }
         }
 
         private void RefreshRecent()

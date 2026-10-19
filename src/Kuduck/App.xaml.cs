@@ -53,7 +53,28 @@ namespace Kuduck
             bool startedByWindows = Array.IndexOf(e.Args, "--startup") >= 0;
             if (!startedByWindows) _duck.Dispatcher.BeginInvoke(new Action(() => _duck.OpenWidget()), DispatcherPriority.ApplicationIdle);
 
-            _ = CheckForUpdatesAsync();
+            UpdateService.AvailableChanged += (s, a) => OnUpdateAvailable();
+            UpdateService.Start();
+        }
+
+        private void OnUpdateAvailable()
+        {
+            UpdateInfo info = UpdateService.Available;
+            if (info == null) return;
+            _widget.Home.ShowUpdate(info);
+            _duck.ShowUpdate();
+            AppSettings s = SettingsStore.Current;
+            if (s.NotifiedVersion != info.Version)
+            {
+                s.NotifiedVersion = info.Version;
+                SettingsStore.Save();
+                try
+                {
+                    _tray.ShowBalloonTip(6000, $"KUDUCK {info.Version} is ready",
+                        "Click here or on the duck to update.", System.Windows.Forms.ToolTipIcon.Info);
+                }
+                catch { }
+            }
         }
 
         private void CreateTray()
@@ -77,6 +98,8 @@ namespace Kuduck
             {
                 if (a.Button == System.Windows.Forms.MouseButtons.Left) ShowWidget();
             };
+            // Clicking the "new version" notification opens the widget, where the Update button is.
+            _tray.BalloonTipClicked += (s, a) => { _widget.ShowHome(); ShowWidget(); };
         }
 
         public void ShowTrayHint()
@@ -111,18 +134,6 @@ namespace Kuduck
             })
             { IsBackground = true, Name = "KUDUCK show listener" };
             t.Start();
-        }
-
-        private async Task CheckForUpdatesAsync()
-        {
-            AppSettings s = SettingsStore.Current;
-            if (!s.CheckForUpdates) return;
-            if ((DateTime.Now - s.LastUpdateCheck).TotalHours < 20) return;
-            await Task.Delay(TimeSpan.FromSeconds(20));
-            UpdateInfo info = await UpdateChecker.CheckAsync();
-            s.LastUpdateCheck = DateTime.Now;
-            SettingsStore.Save();
-            if (info != null) _widget.Home.ShowUpdate(info);
         }
 
         public void Quit()

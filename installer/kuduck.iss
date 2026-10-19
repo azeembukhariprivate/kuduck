@@ -60,6 +60,8 @@ Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; ValueType: 
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "Open KUDUCK now"; Flags: nowait postinstall skipifsilent
+; One-click updates run the installer silently; start KUDUCK again afterwards.
+Filename: "{app}\{#MyAppExeName}"; Flags: nowait; Check: WizardSilent
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{userappdata}\KUDUCK"
