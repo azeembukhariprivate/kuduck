@@ -22,6 +22,8 @@
     <Description>KUDUCK — image and PDF tools</Description>
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <!-- WPF reads DPI awareness from app.manifest; this WinForms-only hint does not apply. -->
+    <NoWarn>$(NoWarn);WFO0003</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
