@@ -1,0 +1,27 @@
+KUDUCK includes or uses the following open-source software.
+Each component remains under its own licence, linked below.
+
+App (C#)
+  .NET runtime and WPF ............ MIT ............ https://github.com/dotnet/runtime
+  Magick.NET ...................... Apache-2.0 ..... https://github.com/dlemstra/Magick.NET
+  ImageMagick ..................... ImageMagick Lic. https://imagemagick.org/script/license.php
+  PDFsharp ........................ MIT ............ https://github.com/empira/PDFsharp
+  ONNX Runtime .................... MIT ............ https://github.com/microsoft/onnxruntime
+
+Background-removal model
+  U²-Net ("silueta" build) ........ Apache-2.0 ..... https://github.com/xuebinqin/U-2-Net
+  distributed via rembg ........... MIT ............ https://github.com/danielgatis/rembg
+
+Document helper (Python)
+  Python .......................... PSF ............ https://docs.python.org/3/license.html
+  pdfplumber ...................... MIT ............ https://github.com/jsvine/pdfplumber
+  pdfminer.six .................... MIT ............ https://github.com/pdfminer/pdfminer.six
+  pypdfium2 / PDFium .............. Apache-2.0 / BSD-3-Clause  https://github.com/pypdfium2-team/pypdfium2
+  Pillow .......................... MIT-CMU ........ https://github.com/python-pillow/Pillow
+  python-docx ..................... MIT ............ https://github.com/python-openxml/python-docx
+  lxml ............................ BSD-3-Clause ... https://github.com/lxml/lxml
+  openpyxl ........................ MIT ............ https://foss.heptapod.net/openpyxl/openpyxl
+  PyInstaller (bootloader) ........ GPL-2.0 with bootloader exception  https://github.com/pyinstaller/pyinstaller
+
+Windows features used (part of Windows, not redistributed)
+  Windows.Media.Ocr, Windows.Media.FaceAnalysis, Windows.Data.Pdf

@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <RootNamespace>Kuduck</RootNamespace>
+    <AssemblyName>KUDUCK</AssemblyName>
+    <ApplicationIcon>Assets\kuduck.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Version>1.0.0</Version>
+    <Product>KUDUCK</Product>
+    <Company>Azeem</Company>
+    <Authors>Azeem</Authors>
+    <Copyright>Copyright © 2026 Azeem</Copyright>
+    <Description>KUDUCK — image and PDF tools</Description>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Magick.NET-Q8-AnyCPU" Version="14.*" />
+    <PackageReference Include="PDFsharp" Version="6.2.*" />
+    <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\kuduck-256.png" />
+    <Content Include="Assets\kuduck.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <!-- Downloaded at build time by the release workflow (not stored in git). -->
+    <Content Include="Assets\models\*.onnx" Condition="Exists('Assets\models')">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

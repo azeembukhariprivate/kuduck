@@ -1,0 +1,12 @@
+bin/
+obj/
+publish/
+dist/
+build/
+*.user
+.vs/
+.vscode/
+__pycache__/
+*.pyc
+*.onnx
+*.spec

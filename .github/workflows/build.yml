@@ -1,0 +1,90 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      MODEL_URL: https://github.com/danielgatis/rembg/releases/download/v0.0.0/silueta.onnx
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Work out the version number
+        shell: pwsh
+        run: |
+          $v = "1.0.0"
+          if ($env:GITHUB_EVENT_NAME -eq 'release') {
+            $v = "${{ github.event.release.tag_name }}".TrimStart('v', 'V')
+          }
+          "VERSION=$v" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+          Write-Host "Building version $v"
+
+      - name: Build and publish the app
+        run: >
+          dotnet publish src/Kuduck/Kuduck.csproj -c Release -r win-x64 --self-contained true
+          -p:Version=${{ env.VERSION }} -p:PublishReadyToRun=true -o publish
+
+      # Everything below makes the installer. It runs for releases and when started by hand
+      # (Actions tab → Build → Run workflow); normal pushes only check that the app compiles.
+
+      - name: Set up Python (document helper)
+        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build the document helper
+        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r helper/requirements.txt pyinstaller
+          pyinstaller helper/kuduck_helper.py --name kuduck_helper --onedir --console --noconfirm --clean `
+            --exclude-module tkinter --distpath build/helper --workpath build/work --specpath build
+          New-Item -ItemType Directory -Force -Path publish/helper | Out-Null
+          Copy-Item -Recurse -Force build/helper/kuduck_helper/* publish/helper/
+
+      - name: Add the background-removal model and licence files
+        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path publish/Assets/models | Out-Null
+          Invoke-WebRequest -Uri $env:MODEL_URL -OutFile publish/Assets/models/silueta.onnx
+          Copy-Item LICENSE publish/LICENSE.txt
+          Copy-Item THIRD-PARTY-NOTICES.txt publish/
+
+      - name: Build the installer
+        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+        shell: pwsh
+        run: |
+          choco install innosetup --no-progress -y
+          & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" "/DMyAppVersion=$env:VERSION" installer\kuduck.iss
+
+      - name: Keep the installer as a download on this run
+        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: KUDUCK-Setup-${{ env.VERSION }}
+          path: dist/*.exe
+
+      - name: Attach the installer to the release
+        if: github.event_name == 'release'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload "${{ github.event.release.tag_name }}" (Get-ChildItem dist/*.exe).FullName --clobber

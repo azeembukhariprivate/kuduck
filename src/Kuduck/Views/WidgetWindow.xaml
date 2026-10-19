@@ -1,0 +1,49 @@
+<Window x:Class="Kuduck.Views.WidgetWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="KUDUCK" Width="390" Height="700"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        ResizeMode="NoResize" ShowInTaskbar="False" ShowActivated="True"
+        FontFamily="{DynamicResource UiFont}" UseLayoutRounding="True"
+        TextOptions.TextFormattingMode="Display">
+    <Border x:Name="Frame" CornerRadius="14" BorderThickness="1"
+            Background="{DynamicResource BgBrush}" BorderBrush="{DynamicResource BorderBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Title bar (drag to move) -->
+            <Border x:Name="Header" Grid.Row="0" CornerRadius="14,14,0,0" BorderThickness="0,0,0,1"
+                    Background="{DynamicResource SurfaceBrush}" BorderBrush="{DynamicResource BorderBrush}"
+                    Padding="8,8,8,8" MouseLeftButtonDown="Header_MouseLeftButtonDown">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="BackButton" Grid.Column="0" Style="{StaticResource IconButton}" ToolTip="Back"
+                            AutomationProperties.Name="Back" Click="Back_Click" Visibility="Collapsed" />
+                    <ContentControl x:Name="LogoHost" Grid.Column="1" Margin="4,0,8,0" VerticalAlignment="Center" Focusable="False" />
+                    <TextBlock x:Name="TitleText" Grid.Column="2" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"
+                               Foreground="{DynamicResource TextBrush}" TextTrimming="CharacterEllipsis" Text="KUDUCK" />
+                    <StackPanel Grid.Column="3" Orientation="Horizontal">
+                        <Button x:Name="ThemeButton" Style="{StaticResource IconButton}" ToolTip="Dark mode"
+                                AutomationProperties.Name="Dark mode" Click="Theme_Click" />
+                        <Button x:Name="PinButton" Style="{StaticResource IconButton}" ToolTip="Keep on top"
+                                AutomationProperties.Name="Keep on top" Click="Pin_Click" />
+                        <Button x:Name="SettingsButton" Style="{StaticResource IconButton}" ToolTip="Settings"
+                                AutomationProperties.Name="Settings" Click="Settings_Click" />
+                        <Button x:Name="HideButton" Style="{StaticResource IconButton}" ToolTip="Back to the duck"
+                                AutomationProperties.Name="Back to the duck" Click="Hide_Click" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <ContentControl x:Name="Host" Grid.Row="1" Focusable="False" />
+        </Grid>
+    </Border>
+</Window>
