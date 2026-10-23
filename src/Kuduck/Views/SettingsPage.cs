@@ -135,7 +135,7 @@ namespace Kuduck.Views
             Border card = new Border { Style = Ui.GetStyle("Card"), Margin = new Thickness(0, 22, 0, 0), Padding = new Thickness(14) };
             StackPanel info = new StackPanel();
             info.Children.Add(Line("Version", AppPaths.Version));
-            info.Children.Add(Line("Created by", "Azeem with Claude"));
+            info.Children.Add(Line("Made by", "Azeem, with Claude and ♥"));
             card.Child = info;
             body.Children.Add(card);
 
