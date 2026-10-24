@@ -7,7 +7,9 @@
 A small desktop duck for Windows that opens a toolbox for your pictures and PDFs.</p>
 
 <p align="center">
-  <a href="../../releases/latest">Download the latest version</a>
+  <a href="https://github.com/azeembukhariprivate/kuduck/releases/latest/download/KUDUCK-Setup.exe"><img src="https://img.shields.io/badge/Download-KUDUCK%20for%20Windows-2ea44f?style=for-the-badge" alt="Download KUDUCK for Windows"></a>
+  <br>
+  <sub>The installer for Windows 10 and 11, always the latest version · <a href="https://github.com/azeembukhariprivate/kuduck/releases/latest">what's new</a></sub>
 </p>
 
 ---
@@ -55,7 +57,7 @@ checksum GitHub publishes, installs it quietly (no admin prompt, settings kept) 
 
 ## Install
 
-1. Open the [latest release](../../releases/latest) and download `KUDUCK-Setup-x.y.z.exe`.
+1. [Download the installer](https://github.com/azeembukhariprivate/kuduck/releases/latest/download/KUDUCK-Setup.exe) (`KUDUCK-Setup.exe`, always the latest version). It's also on the [latest release](https://github.com/azeembukhariprivate/kuduck/releases/latest) as `KUDUCK-Setup-x.y.z.exe`.
 2. Run it. KUDUCK installs **for your user only**, so it doesn't ask for administrator rights.
 3. Windows may show *“Windows protected your PC”* because the installer isn't code-signed.
    Click **More info → Run anyway**.
@@ -71,8 +73,8 @@ Notes:
 ## Publishing a new version
 
 1. Change `<Version>` in `src/Kuduck/Kuduck.csproj` (for example `1.1.0`).
-2. On GitHub: **Releases → Draft a new release**, create a tag like `v1.1.0`, and publish.
-3. GitHub Actions builds the installer and attaches it to the release after a few minutes.
+2. Commit and push to `main`.
+3. GitHub Actions builds the installer. When no release exists yet for that version, it creates the `v` tag and publishes the installer on the Releases page after a few minutes. Pushes that keep the same version only check that the app compiles. (Publishing a release by hand on GitHub still works too: the installer is attached to it.)
 
 To test an installer without publishing, open **Actions → Build → Run workflow** and download the
 installer from the finished run.

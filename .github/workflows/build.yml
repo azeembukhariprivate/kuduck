@@ -27,29 +27,45 @@ jobs:
       - name: Work out the version number
         shell: pwsh
         run: |
-          $v = "1.0.0"
+          $v = ([xml](Get-Content src/Kuduck/Kuduck.csproj)).Project.PropertyGroup.Version | Where-Object { $_ } | Select-Object -First 1
           if ($env:GITHUB_EVENT_NAME -eq 'release') {
             $v = "${{ github.event.release.tag_name }}".TrimStart('v', 'V')
           }
           "VERSION=$v" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
           Write-Host "Building version $v"
 
+      - name: Is this a new version?
+        id: rel
+        shell: pwsh
+        run: |
+          # A push to main whose version has no tag yet gets a release of its own.
+          $new = "false"
+          if ("${{ github.event_name }}" -eq "push" -and "${{ github.ref }}" -eq "refs/heads/main") {
+            git ls-remote --exit-code --tags origin "refs/tags/v$env:VERSION" | Out-Null
+            if ($LASTEXITCODE -eq 2) { $new = "true" }
+            elseif ($LASTEXITCODE -ne 0) { Write-Host "Couldn't check the tags (exit code $LASTEXITCODE); no release this time." }
+          }
+          "new=$new" >> $env:GITHUB_OUTPUT
+          Write-Host "New release: $new"
+          $global:LASTEXITCODE = 0
+
       - name: Build and publish the app
         run: >
           dotnet publish src/Kuduck/Kuduck.csproj -c Release -r win-x64 --self-contained true
           -p:Version=${{ env.VERSION }} -p:PublishReadyToRun=true -o publish
 
-      # Everything below makes the installer. It runs for releases and when started by hand
-      # (Actions tab → Build → Run workflow); normal pushes only check that the app compiles.
+      # Everything below makes the installer. It runs for releases (a published release, or a push to main that
+      # raises the version) and when started by hand (Actions tab → Build → Run workflow); other pushes only check
+      # that the app compiles.
 
       - name: Set up Python (document helper)
-        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch' || steps.rel.outputs.new == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
       - name: Build the document helper
-        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch' || steps.rel.outputs.new == 'true'
         shell: pwsh
         run: |
           python -m pip install --upgrade pip
@@ -60,7 +76,7 @@ jobs:
           Copy-Item -Recurse -Force build/helper/kuduck_helper/* publish/helper/
 
       - name: Add the background-removal model and licence files
-        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch' || steps.rel.outputs.new == 'true'
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path publish/Assets/models | Out-Null
@@ -69,22 +85,40 @@ jobs:
           Copy-Item THIRD-PARTY-NOTICES.txt publish/
 
       - name: Build the installer
-        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch' || steps.rel.outputs.new == 'true'
         shell: pwsh
         run: |
           choco install innosetup --no-progress -y
           & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" "/DMyAppVersion=$env:VERSION" installer\kuduck.iss
 
       - name: Keep the installer as a download on this run
-        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'release' || github.event_name == 'workflow_dispatch' || steps.rel.outputs.new == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: KUDUCK-Setup-${{ env.VERSION }}
           path: dist/*.exe
+
+      - name: Add a copy of the installer without the version in its name
+        if: github.event_name == 'release' || steps.rel.outputs.new == 'true'
+        shell: pwsh
+        run: |
+          # The README's download button links to releases/latest/download/KUDUCK-Setup.exe.
+          New-Item -ItemType Directory -Force release | Out-Null
+          Copy-Item "dist/KUDUCK-Setup-$env:VERSION.exe" release/
+          Copy-Item "dist/KUDUCK-Setup-$env:VERSION.exe" release/KUDUCK-Setup.exe
 
       - name: Attach the installer to the release
         if: github.event_name == 'release'
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload "${{ github.event.release.tag_name }}" (Get-ChildItem dist/*.exe).FullName --clobber
+        run: gh release upload "${{ github.event.release.tag_name }}" (Get-ChildItem release/*.exe).FullName --clobber
+
+      - name: Publish a release for the new version
+        if: steps.rel.outputs.new == 'true'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "v$env:VERSION" (Get-ChildItem release/*.exe).FullName --target "${{ github.sha }}" --title "KUDUCK $env:VERSION" --generate-notes
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
