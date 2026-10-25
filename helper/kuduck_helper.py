@@ -4,8 +4,11 @@ Converts PDF files to Word (.docx) and Excel (.xlsx). The KUDUCK app runs this
 as a small background program and reads one line of JSON from its output.
 
 Usage:
-    kuduck_helper pdf2word <input.pdf> <output.docx> [password]
-    kuduck_helper pdf2excel <input.pdf> <output.xlsx> [password]
+    kuduck_helper pdf2word <input.pdf> <output.docx> [--password-stdin]
+    kuduck_helper pdf2excel <input.pdf> <output.xlsx> [--password-stdin]
+
+With --password-stdin the PDF's password is read from the first line of input,
+so it never appears on the command line where other programs could see it.
 
 Exit codes: 0 ok, 2 bad arguments, 3 scanned PDF (no text), 4 wrong password,
 1 any other error.
@@ -217,9 +220,11 @@ def pdf_to_excel(src, dst, password=None):
 
 def main(argv):
     if len(argv) < 4 or argv[1] not in ("pdf2word", "pdf2excel"):
-        out(False, "usage: kuduck_helper pdf2word|pdf2excel <in.pdf> <out> [password]", 2)
+        out(False, "usage: kuduck_helper pdf2word|pdf2excel <in.pdf> <out> [--password-stdin]", 2)
     cmd, src, dst = argv[1], argv[2], argv[3]
-    password = argv[4] if len(argv) > 4 else None
+    password = None
+    if len(argv) > 4 and argv[4] == "--password-stdin":
+        password = sys.stdin.buffer.readline().decode("utf-8-sig").rstrip("\r\n")
     try:
         if cmd == "pdf2word":
             pages = pdf_to_word(src, dst, password)

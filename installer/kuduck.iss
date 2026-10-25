@@ -4,7 +4,7 @@
 
 #define MyAppName "KUDUCK"
 #ifndef MyAppVersion
-  #define MyAppVersion "1.0.0"
+  #define MyAppVersion "1.0.1"
 #endif
 #define MyAppPublisher "Azeem"
 #define MyAppURL "https://github.com/azeembukhariprivate/kuduck"

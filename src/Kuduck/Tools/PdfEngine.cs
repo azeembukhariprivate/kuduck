@@ -155,6 +155,8 @@ namespace Kuduck.Tools
             {
                 for (int p = 0; p < src.PageCount; p++) result.AddPage(src.Pages[p]);
                 Finish(result);
+                // AES-256 (PDF 2.0 encryption), the strongest PDF encryption, instead of the library's default AES-128.
+                result.SecurityHandler.SetEncryptionToV5();
                 result.SecuritySettings.UserPassword = password;
                 result.SecuritySettings.OwnerPassword = password;
                 result.Save(output);

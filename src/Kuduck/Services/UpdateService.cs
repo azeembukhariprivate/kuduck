@@ -66,13 +66,14 @@ namespace Kuduck.Services
 
         /// <summary>
         /// Downloads the new installer, checks it, starts it and closes KUDUCK so it can be replaced.
-        /// Falls back to opening the release page when the release has no installer attached.
+        /// Falls back to opening the release page when the release has no installer attached, or no checksum to check it with.
         /// </summary>
         public static async Task InstallAsync(IProgress<string> progress)
         {
             UpdateInfo info = Available;
             if (info == null || Installing) return;
-            if (string.IsNullOrEmpty(info.InstallerUrl))
+            // Only an installer that can be checked against the checksum GitHub publishes is installed by itself.
+            if (string.IsNullOrEmpty(info.InstallerUrl) || string.IsNullOrEmpty(info.Sha256))
             {
                 AppPaths.OpenUrl(info.Url);
                 return;
@@ -86,14 +87,11 @@ namespace Kuduck.Services
                 await DownloadAsync(info, file, progress);
 
                 progress?.Report("Checking the download…");
-                if (!string.IsNullOrEmpty(info.Sha256))
+                string actual = await Task.Run(() => HashOf(file));
+                if (!string.Equals(actual, info.Sha256, StringComparison.OrdinalIgnoreCase))
                 {
-                    string actual = await Task.Run(() => HashOf(file));
-                    if (!string.Equals(actual, info.Sha256, StringComparison.OrdinalIgnoreCase))
-                    {
-                        try { File.Delete(file); } catch { }
-                        throw new InvalidOperationException("The download didn't match the release. Please try again later.");
-                    }
+                    try { File.Delete(file); } catch { }
+                    throw new InvalidOperationException("The download didn't match the release. Please try again later.");
                 }
 
                 progress?.Report("Starting the installer…");

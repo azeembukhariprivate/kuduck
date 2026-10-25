@@ -21,6 +21,8 @@ namespace Kuduck.Tools
                 FileName = AppPaths.HelperPath,
                 UseShellExecute = false,
                 CreateNoWindow = true,
+                RedirectStandardInput = true,
+                StandardInputEncoding = new System.Text.UTF8Encoding(false),
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 WorkingDirectory = Path.GetDirectoryName(AppPaths.HelperPath)
@@ -28,11 +30,16 @@ namespace Kuduck.Tools
             psi.ArgumentList.Add(command);
             psi.ArgumentList.Add(input);
             psi.ArgumentList.Add(output);
-            if (!string.IsNullOrEmpty(password)) psi.ArgumentList.Add(password);
+            // The password goes through the helper's input, not its command line, where other programs could read it.
+            if (!string.IsNullOrEmpty(password)) psi.ArgumentList.Add("--password-stdin");
 
             using (Process p = Process.Start(psi))
             {
                 if (p == null) throw new InvalidOperationException("Couldn't start the document converter.");
+                using (StreamWriter stdin = p.StandardInput)
+                {
+                    if (!string.IsNullOrEmpty(password)) await stdin.WriteLineAsync(password);
+                }
                 Task<string> stdout = p.StandardOutput.ReadToEndAsync();
                 Task<string> stderr = p.StandardError.ReadToEndAsync();
                 using (CancellationTokenSource cts = new CancellationTokenSource(TimeSpan.FromMinutes(10)))

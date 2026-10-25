@@ -16,6 +16,8 @@ jobs:
     runs-on: windows-latest
     env:
       MODEL_URL: https://github.com/danielgatis/rembg/releases/download/v0.0.0/silueta.onnx
+      # The model comes from another project, so the build stops if the file ever changes.
+      MODEL_SHA256: 75da6c8d2f8096ec743d071951be73b4a8bc7b3e51d9a6625d63644f90ffeedb
 
     steps:
       - uses: actions/checkout@v4
@@ -81,6 +83,8 @@ jobs:
         run: |
           New-Item -ItemType Directory -Force -Path publish/Assets/models | Out-Null
           Invoke-WebRequest -Uri $env:MODEL_URL -OutFile publish/Assets/models/silueta.onnx
+          $hash = (Get-FileHash publish/Assets/models/silueta.onnx -Algorithm SHA256).Hash
+          if ($hash -ne $env:MODEL_SHA256) { Write-Host "The background-removal model doesn't match (got $hash)."; exit 1 }
           Copy-Item LICENSE publish/LICENSE.txt
           Copy-Item THIRD-PARTY-NOTICES.txt publish/
 

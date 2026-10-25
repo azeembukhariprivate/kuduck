@@ -33,7 +33,7 @@ A yellow duck sits on your desktop. **Click it** to open the toolbox, **drag it*
 - **Merge**, **Split** (every page, ranges or every N pages), **Compress**
 - **PDF → Word**, **PDF → Excel**, **Word → PDF**
 - **Pages** — rotate, reorder and delete pages with thumbnails
-- **Lock / Unlock** — add or remove a password
+- **Lock / Unlock** — add or remove a password (locked PDFs use AES-256 encryption)
 - **Scan → Text** — read text from scanned PDFs and photos (OCR)
 
 **Also:** light and dark mode, keep-on-top, start with Windows, update notices.
