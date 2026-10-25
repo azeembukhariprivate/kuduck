@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Checks KUDUCK's image and PDF engines on real files: resizing and converting images, merging, splitting,
+       rearranging, locking and unlocking PDFs, and that results never overwrite the originals.
+       Runs on any OS with: dotnet run, project tests/Kuduck.Tests -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+    <RollForward>Major</RollForward>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Magick.NET-Q8-AnyCPU" Version="14.17.2" />
+    <PackageReference Include="PDFsharp" Version="6.2.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\src\Kuduck\Tools\ImageEngine.cs;..\..\src\Kuduck\Tools\PdfEngine.cs" LinkBase="Tools" />
+    <Compile Include="..\..\src\Kuduck\Services\FileHelpers.cs;..\..\src\Kuduck\Services\AppSettings.cs;..\..\src\Kuduck\Services\AppPaths.cs" LinkBase="Services" />
+  </ItemGroup>
+
+</Project>

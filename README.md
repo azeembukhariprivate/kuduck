@@ -97,10 +97,15 @@ curl -L -o publish\Assets\models\silueta.onnx https://github.com/danielgatis/rem
 iscc installer\kuduck.iss
 ```
 
+The tests (`dotnet run --project tests/Kuduck.Tests`, any OS) make real images and PDFs and check resizing,
+converting, merging, splitting, rearranging, locking (AES-256) and unlocking, and that results never overwrite
+the originals.
+
 ## Project layout
 
 ```
 src/Kuduck/          the Windows app (C#, WPF)
+tests/Kuduck.Tests/  tests for the image and PDF engines
   Views/             duck, widget and tool pages
   Tools/             image, PDF, passport, OCR and conversion engines
   Services/          settings, history, start-with-Windows, updates, theme
