@@ -28,10 +28,12 @@ jobs:
 
       - name: Work out the version number
         shell: pwsh
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
         run: |
           $v = ([xml](Get-Content src/Kuduck/Kuduck.csproj)).Project.PropertyGroup.Version | Where-Object { $_ } | Select-Object -First 1
           if ($env:GITHUB_EVENT_NAME -eq 'release') {
-            $v = "${{ github.event.release.tag_name }}".TrimStart('v', 'V')
+            $v = $env:RELEASE_TAG.TrimStart('v', 'V')
           }
           "VERSION=$v" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
           Write-Host "Building version $v"
@@ -119,7 +121,8 @@ jobs:
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload "${{ github.event.release.tag_name }}" (Get-ChildItem release/*.exe).FullName --clobber
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: gh release upload "$env:RELEASE_TAG" (Get-ChildItem release/*.exe).FullName --clobber
 
       - name: Publish a release for the new version
         if: steps.rel.outputs.new == 'true'
