@@ -40,6 +40,17 @@ namespace Kuduck
 
             base.OnStartup(e);
             DispatcherUnhandledException += OnUnhandled;
+            // An error behind the window can't be recovered from: say so, instead of just vanishing.
+            AppDomain.CurrentDomain.UnhandledException += (s, x) =>
+            {
+                if (!x.IsTerminating) return;
+                try
+                {
+                    MessageBox.Show("KUDUCK ran into a problem it couldn't get past, and has to close.\n\n" + (x.ExceptionObject as Exception)?.Message,
+                        "KUDUCK", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (Exception) { /* nothing more can be done */ }
+            };
             SettingsStore.Load();
             Theme.Apply(SettingsStore.Current.DarkMode);
 
