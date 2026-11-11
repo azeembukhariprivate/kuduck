@@ -14,7 +14,7 @@
     <AssemblyName>KUDUCK</AssemblyName>
     <ApplicationIcon>Assets\kuduck.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
     <Product>KUDUCK</Product>
     <Company>Azeem</Company>
     <Authors>Azeem</Authors>

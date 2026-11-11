@@ -19,6 +19,12 @@ namespace Kuduck.Services
         public bool PinOnTop { get; set; } = true;
         public bool CheckForUpdates { get; set; } = true;
         public DateTime LastUpdateCheck { get; set; }
+        /// <summary>The duck on the desktop is something to switch on; KUDUCK itself lives in the icon by the clock.</summary>
+        public bool ShowDuck { get; set; }
+        /// <summary>How big the duck is: 1 is its usual size.</summary>
+        public double DuckSize { get; set; } = 1;
+        /// <summary>Whether the one-time note saying where KUDUCK lives (the icon by the clock) has been shown.</summary>
+        public bool WelcomeShown { get; set; }
         public double DuckLeft { get; set; } = double.NaN;
         public double DuckTop { get; set; } = double.NaN;
         public bool SaveNextToOriginal { get; set; } = true;
@@ -28,6 +34,38 @@ namespace Kuduck.Services
         public bool SuggestionDismissed { get; set; }
         /// <summary>Last version the tray notification was shown for (so it pops up only once per version).</summary>
         public string NotifiedVersion { get; set; }
+    }
+
+    /// <summary>The sizes the duck comes in.</summary>
+    public static class DuckSizes
+    {
+        public static readonly (string Key, string Name, double Size)[] All =
+        {
+            ("small", "Small", 0.7), ("medium", "Medium", 1.0), ("large", "Large", 1.4), ("huge", "Extra large", 1.9)
+        };
+
+        /// <summary>The size on offer nearest to a number (a settings file may hold anything).</summary>
+        public static double Nearest(double size)
+        {
+            if (double.IsNaN(size) || double.IsInfinity(size)) return 1;
+            double best = 1;
+            foreach ((string _, string _, double s) in All)
+                if (Math.Abs(s - size) < Math.Abs(best - size)) best = s;
+            return best;
+        }
+
+        public static string KeyOf(double size)
+        {
+            double nearest = Nearest(size);
+            foreach ((string key, string _, double s) in All) if (s == nearest) return key;
+            return "medium";
+        }
+
+        public static double SizeOf(string key)
+        {
+            foreach ((string k, string _, double s) in All) if (k == key) return s;
+            return 1;
+        }
     }
 
     public static class SettingsStore
@@ -57,6 +95,7 @@ namespace Kuduck.Services
                 Current = new AppSettings();
             }
             if (Current.RecentFiles == null) Current.RecentFiles = new List<string>();
+            Current.DuckSize = DuckSizes.Nearest(Current.DuckSize);
         }
 
         public static void Save()

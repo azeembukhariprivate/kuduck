@@ -24,6 +24,27 @@ namespace Kuduck.Views
             pin.Click += (o, e) => { s.PinOnTop = pin.IsChecked == true; SettingsStore.Save(); onPinChanged(); };
             body.Children.Add(pin);
 
+            body.Children.Add(Ui.Section("The duck"));
+            CheckBox duck = new CheckBox { Content = "Show the duck on the desktop", IsChecked = s.ShowDuck, Margin = new Thickness(0, 0, 0, 8) };
+            ChipGroup size = new ChipGroup(4);
+            foreach ((string key, string name, double _) in DuckSizes.All) size.Add(key, name);
+            size.Value = DuckSizes.KeyOf(s.DuckSize);
+            size.IsEnabled = s.ShowDuck;
+            duck.Click += (o, e) =>
+            {
+                App.Current.SetDuckShown(duck.IsChecked == true);
+                size.IsEnabled = duck.IsChecked == true;
+            };
+            size.Changed += (o, e) =>
+            {
+                s.DuckSize = DuckSizes.SizeOf(size.Value);
+                SettingsStore.Save();
+                App.Current.ApplyDuckSize();
+            };
+            body.Children.Add(duck);
+            body.Children.Add(size);
+            body.Children.Add(Ui.Hint("KUDUCK always stays in the icon by the clock. The duck is a shortcut on the desktop: click it to open the tools, drag it anywhere, or drop files on it."));
+
             body.Children.Add(Ui.Section("Windows"));
             CheckBox startup = new CheckBox { Content = "Start KUDUCK when Windows starts", IsChecked = StartupManager.IsEnabled, Margin = new Thickness(0, 0, 0, 8) };
             TextBlock startupError = Ui.Text("", 12, null, "ErrorBrush");
@@ -88,7 +109,7 @@ namespace Kuduck.Views
                 checkStatus.Text = "Checking…";
                 UpdateInfo info = await UpdateService.CheckAsync(true);
                 checkStatus.Text = info != null
-                    ? $"Version {info.Version} is ready — see the duck or the home screen."
+                    ? $"Version {info.Version} is ready: see the home screen."
                     : $"You're up to date ({AppPaths.Version}).";
                 checkNow.IsEnabled = true;
             };

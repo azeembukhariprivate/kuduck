@@ -49,6 +49,25 @@ namespace Kuduck.Tests
             return _failed == 0 ? 0 : 1;
         }
 
+        private static void TestDuckIsOffUnlessSwitchedOnAndComesInFourSizes()
+        {
+            AppSettings fresh = new AppSettings();
+            Check(!fresh.ShowDuck, "a new install has no duck on the desktop");
+            Check(fresh.DuckSize == 1, "the duck starts at its usual size");
+            // Settings saved by an earlier version have no word about the duck: it's off there too.
+            AppSettings old = System.Text.Json.JsonSerializer.Deserialize<AppSettings>("{\"DarkMode\":true,\"PinOnTop\":false}");
+            Check(!old.ShowDuck && old.DuckSize == 1 && !old.WelcomeShown && old.DarkMode, "earlier settings: duck off, the rest kept");
+            Check(DuckSizes.All.Length == 4, "four sizes");
+            foreach ((string key, string name, double size) in DuckSizes.All)
+            {
+                Check(DuckSizes.SizeOf(key) == size && DuckSizes.KeyOf(size) == key, "size " + name);
+                Check(size >= 0.5 && size <= 2.5, name + " is a sensible size");
+            }
+            Check(DuckSizes.Nearest(double.NaN) == 1 && DuckSizes.Nearest(-5) == 0.7 && DuckSizes.Nearest(99) == 1.9 && DuckSizes.Nearest(1.3) == 1.4,
+                "a strange number in the settings file becomes the nearest size");
+            Check(DuckSizes.SizeOf("nonsense") == 1, "an unknown size name is the usual size");
+        }
+
         // ================================================================== helpers
 
         private static void Check(bool condition, string what)

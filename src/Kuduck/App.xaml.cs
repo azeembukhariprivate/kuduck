@@ -16,6 +16,7 @@ namespace Kuduck
         private Mutex _mutex;
         private EventWaitHandle _showEvent;
         private System.Windows.Forms.NotifyIcon _tray;
+        private System.Windows.Forms.ToolStripMenuItem _duckItem;
         private WidgetWindow _widget;
         private DuckWindow _duck;
 
@@ -57,12 +58,14 @@ namespace Kuduck
             _widget = new WidgetWindow();
             _widget.QuitRequested += (s, a) => Quit();
             _duck = new DuckWindow(_widget);
-            _duck.Show();
+            // KUDUCK lives in the icon by the clock. The duck on the desktop is for those who switch it on.
+            if (SettingsStore.Current.ShowDuck) _duck.Show();
             CreateTray();
             ListenForSecondInstance();
 
             bool startedByWindows = Array.IndexOf(e.Args, "--startup") >= 0;
-            if (!startedByWindows) _duck.Dispatcher.BeginInvoke(new Action(() => _duck.OpenWidget()), DispatcherPriority.ApplicationIdle);
+            if (!startedByWindows) Dispatcher.BeginInvoke(new Action(ShowWidget), DispatcherPriority.ApplicationIdle);
+            Dispatcher.BeginInvoke(new Action(ShowWelcome), DispatcherPriority.ApplicationIdle);
 
             UpdateService.AvailableChanged += (s, a) => OnUpdateAvailable();
             UpdateService.Start();
@@ -73,7 +76,7 @@ namespace Kuduck
             UpdateInfo info = UpdateService.Available;
             if (info == null) return;
             _widget.Home.ShowUpdate(info);
-            _duck.ShowUpdate();
+            if (_duck.IsVisible) _duck.ShowUpdate();
             AppSettings s = SettingsStore.Current;
             if (s.NotifiedVersion != info.Version)
             {
@@ -82,7 +85,7 @@ namespace Kuduck
                 try
                 {
                     _tray.ShowBalloonTip(6000, $"KUDUCK {info.Version} is ready",
-                        "Click here or on the duck to update.", System.Windows.Forms.ToolTipIcon.Info);
+                        "Click here to update.", System.Windows.Forms.ToolTipIcon.Info);
                 }
                 catch { }
             }
@@ -100,7 +103,10 @@ namespace Kuduck
 
             System.Windows.Forms.ContextMenuStrip menu = new System.Windows.Forms.ContextMenuStrip();
             menu.Items.Add("Open KUDUCK", null, (s, a) => ShowWidget());
-            menu.Items.Add("Show the duck", null, (s, a) => _duck.Show());
+            _duckItem = new System.Windows.Forms.ToolStripMenuItem("Show the duck on the desktop") { CheckOnClick = false };
+            _duckItem.Click += (s, a) => SetDuckShown(!SettingsStore.Current.ShowDuck);
+            menu.Items.Add(_duckItem);
+            menu.Opening += (s, a) => _duckItem.Checked = SettingsStore.Current.ShowDuck;
             menu.Items.Add("Settings", null, (s, a) => { _widget.ShowSettings(); ShowWidget(); });
             menu.Items.Add(new System.Windows.Forms.ToolStripSeparator());
             menu.Items.Add("Quit KUDUCK", null, (s, a) => Quit());
@@ -118,16 +124,50 @@ namespace Kuduck
             try
             {
                 _tray.ShowBalloonTip(4000, "KUDUCK is still here",
-                    "Click the duck icon in the taskbar corner to open KUDUCK or bring the duck back.",
+                    "Click the duck icon by the clock to open KUDUCK. The duck can be switched back on in Settings.",
                     System.Windows.Forms.ToolTipIcon.None);
             }
             catch { }
         }
 
+        /// <summary>Once, the first time this version runs: says where KUDUCK lives now.</summary>
+        private void ShowWelcome()
+        {
+            AppSettings s = SettingsStore.Current;
+            if (s.WelcomeShown) return;
+            s.WelcomeShown = true;
+            SettingsStore.Save();
+            // Someone who has used KUDUCK before had the duck on the desktop until now.
+            bool usedBefore = s.LastAction != null || !double.IsNaN(s.DuckLeft);
+            try
+            {
+                _tray.ShowBalloonTip(8000, usedBefore ? "The duck is now optional" : "KUDUCK is here, by the clock",
+                    usedBefore
+                        ? "KUDUCK now lives in this icon by the clock: click it to open. To have the duck on the desktop again, switch it on in Settings."
+                        : "Click this icon to open the tools. If you'd like a duck on your desktop, switch it on in Settings.",
+                    System.Windows.Forms.ToolTipIcon.None);
+            }
+            catch { }
+        }
+
+        /// <summary>Shows or hides the duck on the desktop, and remembers the choice.</summary>
+        public void SetDuckShown(bool shown)
+        {
+            SettingsStore.Current.ShowDuck = shown;
+            SettingsStore.Save();
+            if (shown) _duck.Show();
+            else _duck.Hide();
+        }
+
+        /// <summary>The duck's size was changed in Settings.</summary>
+        public void ApplyDuckSize() => _duck.ApplySize();
+
+        /// <summary>Opens the tools: beside the duck when it's on the desktop, otherwise in the corner by the clock.</summary>
         private void ShowWidget()
         {
-            if (!_duck.IsVisible) _duck.Show();
-            _duck.OpenWidget();
+            if (_duck.IsVisible) { _duck.OpenWidget(); return; }
+            Rect work = SystemParameters.WorkArea;
+            _widget.ShowNear(new Rect(work.Right - 8, work.Bottom - 8, 0, 0));
         }
 
         private void ListenForSecondInstance()

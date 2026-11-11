@@ -46,7 +46,7 @@
             <Grid.RenderTransform>
                 <ScaleTransform x:Name="DuckScale" ScaleX="1" ScaleY="1" />
             </Grid.RenderTransform>
-            <Ellipse Width="80" Height="8" Fill="#33000000" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,0" />
+            <Ellipse x:Name="Shadow" Width="80" Height="8" Fill="#33000000" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,0" />
             <Viewbox Margin="0,0,0,4">
                 <Canvas Width="56" Height="44">
                     <Canvas.RenderTransform>

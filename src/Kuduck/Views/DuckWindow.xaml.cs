@@ -32,6 +32,7 @@ namespace Kuduck.Views
             ContextMenu = BuildMenu();
 
             History.Changed += (s, e) => Dispatcher.BeginInvoke(new Action(() => ShowBubbleFor(TimeSpan.FromSeconds(8))));
+            ApplySize();
             Loaded += (s, e) =>
             {
                 PlaceOnScreen();
@@ -43,6 +44,23 @@ namespace Kuduck.Views
                 SettingsStore.Current.DuckLeft = Left;
                 SettingsStore.Current.DuckTop = Top;
             };
+        }
+
+        /// <summary>
+        /// Makes the duck the size chosen in Settings. The window grows or shrinks with it, upwards, so the duck's
+        /// feet stay where they are.
+        /// </summary>
+        public void ApplySize()
+        {
+            double k = DuckSizes.Nearest(SettingsStore.Current.DuckSize);
+            double oldHeight = Height;
+            DuckArea.Width = 104 * k;
+            DuckArea.Height = 92 * k;
+            Shadow.Width = 80 * k;
+            Shadow.Height = 8 * k;
+            Width = Math.Max(300, 104 * k + 24);
+            Height = 158 + 92 * k;
+            if (IsLoaded && !double.IsNaN(Top)) Top -= Height - oldHeight;
         }
 
         private void PlaceOnScreen()
@@ -264,7 +282,7 @@ namespace Kuduck.Views
             ContextMenu menu = new ContextMenu();
             menu.Items.Add(Item("Open KUDUCK", () => OpenWidget()));
             menu.Items.Add(Item("Settings", () => { _widget.ShowSettings(); _widget.ShowNear(DuckBounds); }));
-            menu.Items.Add(Item("Hide the duck (open from the tray icon)", () => { Hide(); App.Current.ShowTrayHint(); }));
+            menu.Items.Add(Item("Hide the duck (KUDUCK stays by the clock)", () => { App.Current.SetDuckShown(false); App.Current.ShowTrayHint(); }));
             menu.Items.Add(new Separator());
             menu.Items.Add(Item("Quit KUDUCK", () => App.Current.Quit()));
             return menu;

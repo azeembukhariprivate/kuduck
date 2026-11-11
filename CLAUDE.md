@@ -1,6 +1,7 @@
 # KUDUCK
 
-Image & PDF tools, one duck away: a small desktop duck for Windows that opens a toolbox for pictures and PDFs.
+Image & PDF tools, one duck away: a toolbox for pictures and PDFs on Windows, kept in an icon by the clock, with a
+desktop duck for those who switch it on (Settings › The duck; off by default since 1.1, in four sizes).
 Part of the KUDU family of free, open-source Windows apps by Azeem Bukhari.
 
 ## Working with Azeem (the owner)

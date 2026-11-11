@@ -4,7 +4,7 @@
 
 <h1 align="center">KUDUCK</h1>
 <p align="center"><b>Image &amp; PDF tools, one duck away.</b><br>
-A small desktop duck for Windows that opens a toolbox for your pictures and PDFs.</p>
+A toolbox for your pictures and PDFs on Windows, kept in a small icon by the clock, with a desktop duck if you'd like one.</p>
 
 <p align="center">
   <a href="https://github.com/azeembukhariprivate/kuduck/releases/latest/download/KUDUCK-Setup.exe"><img src="https://img.shields.io/badge/Download-KUDUCK%20for%20Windows-2ea44f?style=for-the-badge" alt="Download KUDUCK for Windows"></a>
@@ -16,9 +16,12 @@ A small desktop duck for Windows that opens a toolbox for your pictures and PDFs
 
 ## What it does
 
-A yellow duck sits on your desktop. **Click it** to open the toolbox, **drag it** anywhere, or
-**drop files on it** and KUDUCK opens the right tool. The duck also suggests your last action
-(“You resized 3 photos to 1080 px — do it again?”) so repeat jobs take one click.
+KUDUCK sits in a small icon by the clock. **Click it** to open the toolbox.
+
+If you'd like company, switch on **the duck** in Settings (or from the icon's menu): a yellow duck on your
+desktop, in four sizes. **Click it** to open the toolbox, **drag it** anywhere, or **drop files on it** and KUDUCK
+opens the right tool. The duck also suggests your last action (“You resized 3 photos to 1080 px — do it
+again?”) so repeat jobs take one click.
 
 **Image tools**
 - **Resize** — by pixels, percent or presets (Full HD, square post, story, email…)
@@ -48,8 +51,8 @@ goes online is to check this page for a newer version (you can turn that off in 
 KUDUCK checks this project's Releases page shortly after it starts and then once a day while it runs
 (or any time with **Settings → Check now**). When a new version is out:
 
-- the **duck** says so in its speech bubble, with **Update** and **Later** buttons,
-- a **Windows notification** appears once from the tray icon,
+- a **Windows notification** appears once from the icon by the clock,
+- the **duck**, if it's switched on, says so in its speech bubble, with **Update** and **Later** buttons,
 - the **home screen** shows a banner with **Update now** and **What's new**.
 
 **Update** downloads the new installer from this repository's Releases page, checks it against the
