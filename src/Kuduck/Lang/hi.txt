@@ -1,0 +1,363 @@
+{0} ran into a problem it couldn't get past, and has to close.	{0} को ऐसी समस्या आई जिससे वह आगे नहीं बढ़ सका, और उसे बंद होना होगा।
+KUDUCK {0} is ready	KUDUCK {0} तैयार है
+Click here to update.	अपडेट करने के लिए यहाँ क्लिक करें।
+KUDUCK	KUDUCK
+Open KUDUCK	KUDUCK खोलें
+Show the duck on the desktop	डेस्कटॉप पर बत्तख दिखाएँ
+Settings	सेटिंग्स
+Quit KUDUCK	KUDUCK बंद करें
+KUDUCK is still here	KUDUCK अभी भी यहाँ है
+Click the duck icon by the clock to open KUDUCK. The duck can be switched back on in Settings.	KUDUCK खोलने के लिए घड़ी के पास बत्तख वाले आइकन पर क्लिक करें। बत्तख को सेटिंग्स में फिर से चालू किया जा सकता है।
+The duck is now optional	बत्तख अब वैकल्पिक है
+KUDUCK is here, by the clock	KUDUCK यहाँ है, घड़ी के पास
+KUDUCK now lives in this icon by the clock: click it to open. To have the duck on the desktop again, switch it on in Settings.	KUDUCK अब घड़ी के पास इस आइकन में रहता है: खोलने के लिए क्लिक करें। डेस्कटॉप पर फिर से बत्तख चाहिए तो सेटिंग्स में चालू करें।
+Click this icon to open the tools. If you'd like a duck on your desktop, switch it on in Settings.	टूल खोलने के लिए इस आइकन पर क्लिक करें। डेस्कटॉप पर बत्तख चाहिए तो सेटिंग्स में चालू करें।
+KUDUCK show listener	KUDUCK show listener
+Something went wrong:\n\n{0}	कुछ गड़बड़ हो गई:\n\n{0}
+chips{0}	chips{0}
++ Add more	+ और जोड़ें
+Choose a different file	दूसरी फ़ाइल चुनें
+Drop {0} here	{0} यहाँ छोड़ें
+or click to browse	या ब्राउज़ करने के लिए क्लिक करें
+Move up	ऊपर ले जाएँ
+Move down	नीचे ले जाएँ
+Remove {0}	{0} हटाएँ
+Small	छोटी
+Medium	मध्यम
+Large	बड़ी
+Extra large	बहुत बड़ी
+Images	चित्र
+All files	सभी फ़ाइलें
+PDF files	PDF फ़ाइलें
+Word documents	Word दस्तावेज़
+KUDUCK doesn't have permission to save there. Choose another folder in Settings, or close KUDUCK and run it as administrator (right-click → Run as administrator).	KUDUCK को वहाँ सहेजने की अनुमति नहीं है। सेटिंग्स में दूसरा फ़ोल्डर चुनें, या KUDUCK बंद करके व्यवस्थापक के रूप में चलाएँ (राइट-क्लिक → Run as administrator)।
+being used by another process	दूसरी प्रक्रिया उपयोग कर रही है
+That file is open in another program. Close it and try again.	वह फ़ाइल दूसरे प्रोग्राम में खुली है। उसे बंद करके फिर कोशिश करें।
+"{0}" --startup	"{0}" --startup
+Checking the download…	डाउनलोड जाँचा जा रहा है…
+The download didn't match the release. Please try again later.	डाउनलोड रिलीज़ से मेल नहीं खाया। कृपया बाद में फिर कोशिश करें।
+Starting the installer…	इंस्टॉलर शुरू हो रहा है…
+Downloading update… {0}%	अपडेट डाउनलोड हो रहा है… {0}%
+The background-removal model is missing. Please reinstall KUDUCK.	बैकग्राउंड हटाने वाला मॉडल ग़ायब है। कृपया KUDUCK फिर से इंस्टॉल करें।
+The document converter is missing. Please reinstall KUDUCK.	दस्तावेज़ बदलने वाला टूल ग़ायब है। कृपया KUDUCK फिर से इंस्टॉल करें।
+Couldn't start the document converter.	दस्तावेज़ बदलने वाला टूल शुरू नहीं हो सका।
+The conversion took too long and was stopped.	बदलने में बहुत समय लगा, इसलिए रोक दिया गया।
+The document converter stopped unexpectedly.	दस्तावेज़ बदलने वाला टूल अचानक रुक गया।
+Word → PDF needs Microsoft Word or the free LibreOffice installed on this PC.	Word → PDF के लिए इस पीसी पर Microsoft Word या मुफ़्त LibreOffice इंस्टॉल होना चाहिए।
+LibreOffice took too long to convert the file.	LibreOffice को फ़ाइल बदलने में बहुत समय लगा।
+{0}.pdf	{0}.pdf
+LibreOffice couldn't convert this file.	LibreOffice यह फ़ाइल नहीं बदल सका।
+India passport	भारत का पासपोर्ट
+35 × 45 mm	35 × 45 mm
+US passport / visa	US पासपोर्ट / वीज़ा
+2 × 2 in	2 × 2 in
+UK passport	UK पासपोर्ट
+UAE visa	UAE वीज़ा
+43 × 55 mm	43 × 55 mm
+India visa / OCI	भारत का वीज़ा / OCI
+Schengen visa	शेंगेन वीज़ा
+Canada passport	कनाडा पासपोर्ट
+50 × 70 mm	50 × 70 mm
+Pakistan passport	पाकिस्तान पासपोर्ट
+"{0}" is password protected. Unlock it first with Lock / Unlock.	"{0}" पासवर्ड से सुरक्षित है। पहले Lock / Unlock से इसे खोलें।
+That password isn't right.	वह पासवर्ड सही नहीं है।
+merged	merged
+Adding file {0} of {1}…	फ़ाइल जोड़ी जा रही है, {1} में से {0}…
+Saving part {0} of {1}…	भाग सहेजा जा रहा है, {1} में से {0}…
+"{0}" is password protected. Unlock it first.	"{0}" पासवर्ड से सुरक्षित है। पहले इसे खोलें।
+Shrinking images… {0}	चित्र छोटे किए जा रहे हैं… {0}
+images	चित्र
+Adding image {0} of {1}…	चित्र जोड़ा जा रहा है, {1} में से {0}…
+.png	.png
+.jpg	.jpg
+{0}.png	{0}.png
+Text recognition needs a Windows language pack with OCR. Add English (or your language) in Windows Settings → Time & language → Language & region.	टेक्स्ट पहचानने के लिए OCR वाला Windows भाषा पैक चाहिए। Windows सेटिंग्स → Time & language → Language & region में अंग्रेज़ी (या अपनी भाषा) जोड़ें।
+Reading page {0} of {1}…	पेज पढ़ा जा रहा है, {1} में से {0}…
+----- Page {0} -----	----- Page {0} -----
+UPDATE	अपडेट
+KUDUCK {0} is ready. It takes a few seconds and keeps your settings.	KUDUCK {0} तैयार है। इसमें कुछ सेकंड लगते हैं और आपकी सेटिंग्स बनी रहती हैं।
+Update	अपडेट करें
+Later	बाद में
+Repeat	दोहराएँ
+All tools	सभी टूल
+LAST TIME	पिछली बार
+You used KUDUCK.	आपने KUDUCK उपयोग किया।
+{0} Do it again?	{0} फिर से करें?
+Hi! Click me for image and PDF tools, or drop files on me.	नमस्ते! चित्र और PDF टूल के लिए मुझ पर क्लिक करें, या फ़ाइलें मुझ पर छोड़ें।
+Hide the duck (KUDUCK stays by the clock)	बत्तख छिपाएँ (KUDUCK घड़ी के पास रहता है)
+Drop files here	फ़ाइलें यहाँ छोड़ें
+Images, PDFs or Word files — KUDUCK picks the tool	चित्र, PDF या Word फ़ाइलें — KUDUCK टूल चुन लेता है
+Image tools	चित्र टूल
+PDF tools	PDF टूल
+Images, PDFs and Word files	चित्र, PDF और Word फ़ाइलें
+KUDUCK can't open that type of file.	KUDUCK उस तरह की फ़ाइल नहीं खोल सकता।
+What's new	नया क्या है
+Update now	अभी अपडेट करें
+Update failed: {0} You can download it from the release page instead.	अपडेट विफल: {0} इसके बजाय आप रिलीज़ पेज से डाउनलोड कर सकते हैं।
+Recent	हाल के
+Show	दिखाएँ
+Remove background	बैकग्राउंड हटाएँ
+New background	नया बैकग्राउंड
+Transparent	पारदर्शी
+saved as PNG	PNG के रूप में सहेजा जाता है
+White	सफ़ेद
+saved as JPG	JPG के रूप में सहेजा जाता है
+Light blue	हल्का नीला
+Light grey	हल्का स्लेटी
+Works best on people, products and pets with a clear outline. Runs on your PC — nothing is uploaded.	साफ़ किनारे वाले लोगों, सामान और पालतू जानवरों पर सबसे अच्छा काम करता है। आपके पीसी पर चलता है — कुछ अपलोड नहीं होता।
+none	कोई नहीं
+Cutting out {0} of {1}…	काटा जा रहा है, {1} में से {0}…
+Saved {0}.	{0} सहेजा गया।
+You removed the background from {0}.	आपने {0} से बैकग्राउंड हटाया।
+Images → PDF	चित्र → PDF
+Create PDF	PDF बनाएँ
+Page size	पेज का आकार
+Letter	Letter
+Fit image	चित्र फ़िट करें
+Margin	हाशिया
+None	कोई नहीं
+Normal	सामान्य
+PDF file name	PDF फ़ाइल का नाम
+One picture per page, in the order above. Use the arrows to reorder.	हर पेज पर एक चित्र, ऊपर के क्रम में। क्रम बदलने के लिए तीरों का उपयोग करें।
+Create PDF from {0}	{0} से PDF बनाएँ
+You made a PDF from {0}.	आपने {0} से एक PDF बनाया।
+Size	आकार
+Keep size	आकार न बदलें
+Pixels	पिक्सेल
+Percent	प्रतिशत
+Presets	तैयार आकार
+Keep proportions (fit inside this size)	अनुपात बनाए रखें (इस आकार के अंदर फ़िट करें)
+Width (px)	चौड़ाई (px)
+Height (px)	ऊँचाई (px)
+Percent of original size	मूल आकार का प्रतिशत
+Full HD	Full HD
+Square post	चौकोर पोस्ट
+Story / reel	स्टोरी / रील
+Email friendly	ईमेल के लिए ठीक
+max 1024 px	अधिकतम 1024 px
+Thumbnail	छोटा चित्र
+max 400 px	अधिकतम 400 px
+Save as	इस रूप में सहेजें
+Same	वैसा ही
+Quality	गुणवत्ता
+Lower quality = smaller file. Applies to JPG and WEBP.	कम गुणवत्ता = छोटी फ़ाइल। JPG और WEBP पर लागू।
+Remove hidden info (location, camera details)	छिपी जानकारी हटाएँ (जगह, कैमरा विवरण)
+Convert images	चित्र बदलें
+Compress images	चित्र छोटे करें
+Resize images	चित्रों का आकार बदलें
+Convert & save	बदलें और सहेजें
+Compress & save	छोटा करें और सहेजें
+Resize & save	आकार बदलें और सहेजें
+keep	keep
+You resized {0} to {1} × {2} px{3}.	आपने {0} का आकार {1} × {2} px किया{3}।
+You resized {0} to {1}%{2}.	आपने {0} का आकार {1}% किया{2}।
+You converted {0} to {1}.	आपने {0} को {1} में बदला।
+You compressed {0} at {1}% quality.	आपने {0} को {1}% गुणवत्ता पर छोटा किया।
+Saving {0} of {1}…	सहेजा जा रहा है, {1} में से {0}…
+Nothing was saved.	कुछ नहीं सहेजा गया।
+Saved {0}, {1} failed: {2}	{0} सहेजे, {1} विफल: {2}
+Organise pages	पेज व्यवस्थित करें
+a PDF	एक PDF
+This PDF has a password — enter it to open	इस PDF में पासवर्ड है — खोलने के लिए उसे लिखें
+Open	खोलें
+Rotate selected right	चुने हुए दाईं ओर घुमाएँ
+Move selected earlier	चुने हुए पहले ले जाएँ
+Move selected later	चुने हुए बाद में ले जाएँ
+Delete selected	चुने हुए हटाएँ
+Select all	सभी चुनें
+Click pages to select them, then rotate, move or delete.	पेज चुनने के लिए उन पर क्लिक करें, फिर घुमाएँ, ले जाएँ या हटाएँ।
+Save as new PDF	नए PDF के रूप में सहेजें
+Show in folder	फ़ोल्डर में दिखाएँ
+Loading pages…	पेज लोड हो रहे हैं…
+Loading pages… {0} of {1}	पेज लोड हो रहे हैं… {1} में से {0}
+{0} pages.	{0} पेज।
+Enter the PDF's password.	PDF का पासवर्ड लिखें।
+Couldn't open this PDF: {0}	यह PDF नहीं खुल सका: {0}
+Page {0}	पेज {0}
+Bd	Bd
+A PDF needs at least one page.	PDF में कम से कम एक पेज होना चाहिए।
+{0} pages left. Nothing is changed until you save.	{0} पेज बचे। सहेजने तक कुछ नहीं बदलता।
+Saving…	सहेजा जा रहा है…
+You reorganised the pages of a PDF.	आपने एक PDF के पेज फिर से व्यवस्थित किए।
+Passport photo	पासपोर्ट फ़ोटो
+a photo	एक फ़ोटो
+Save passport photo	पासपोर्ट फ़ोटो सहेजें
+Country / document	देश / दस्तावेज़
+Custom size	अपना आकार
+enter mm	mm लिखें
+Width (mm)	चौड़ाई (mm)
+Height (mm)	ऊँचाई (mm)
+Preview	पूर्वावलोकन
+Add a photo to see the preview.	पूर्वावलोकन देखने के लिए एक फ़ोटो जोड़ें।
+Up / down	ऊपर / नीचे
+Left / right	बाएँ / दाएँ
+Reset	रीसेट करें
+Background	बैकग्राउंड
+Keep	वैसा ही रखें
+Output	परिणाम
+Digital file	डिजिटल फ़ाइल
+4×6 in sheet	4×6 इंच शीट
+A4 sheet	A4 शीट
+Print sheets fit as many copies as possible, at 300 dpi, with thin cutting lines. Always check the official requirements before you submit — they can change.	प्रिंट शीट पर 300 dpi में जितनी हो सकें उतनी कॉपी, पतली काटने वाली रेखाओं के साथ। जमा करने से पहले हमेशा आधिकारिक नियम जाँचें — वे बदल सकते हैं।
+{0} × {1} mm	{0} × {1} mm
+Opening photo…	फ़ोटो खुल रही है…
+Finding the face…	चेहरा ढूँढा जा रहा है…
+Removing the background…	बैकग्राउंड हटाया जा रहा है…
+Face found and centred.	चेहरा मिला और बीच में किया गया।
+No face found — use the sliders to position it.	कोई चेहरा नहीं मिला — जगह ठीक करने के लिए स्लाइडर उपयोग करें।
+(Background tool not installed.)	(बैकग्राउंड टूल इंस्टॉल नहीं है।)
+The background tool isn't installed. Choose 'Keep' background, or reinstall KUDUCK.	बैकग्राउंड टूल इंस्टॉल नहीं है। 'वैसा ही रखें' बैकग्राउंड चुनें, या KUDUCK फिर से इंस्टॉल करें।
+digital	digital
+custom	custom
+Saved {0} ({1}, 300 dpi).	{0} सहेजा गया ({1}, 300 dpi)।
+You made a {0} photo ({1}).	आपने एक {0} फ़ोटो बनाई ({1})।
+Merge PDFs	PDF जोड़ें
+Merge	जोड़ें
+Output file name	परिणाम फ़ाइल का नाम
+Files are joined top to bottom. Use the arrows to change the order.	फ़ाइलें ऊपर से नीचे जोड़ी जाती हैं। क्रम बदलने के लिए तीरों का उपयोग करें।
+Merge {0} files	{0} फ़ाइलें जोड़ें
+Add at least 2 PDFs	कम से कम 2 PDF जोड़ें
+You merged {0} PDFs into one.	आपने {0} PDF को एक में जोड़ा।
+Split PDF	PDF बाँटें
+Split	बाँटें
+How to split	कैसे बाँटें
+Every page	हर पेज
+Page ranges	पेज सीमाएँ
+Every N pages	हर N पेज
+1-3, 4-end	1-3, 4-end
+Ranges (one file per range)	सीमाएँ (हर सीमा की एक फ़ाइल)
+Example: 1-3, 5, 8-end	उदाहरण: 1-3, 5, 8-end
+Pages per file	हर फ़ाइल में पेज
+This PDF has {0}.	इस PDF में {0} हैं।
+Couldn't read this PDF.	यह PDF पढ़ा नहीं जा सका।
+Check the ranges — pages go from 1 to {0}.	सीमाएँ जाँचें — पेज 1 से {0} तक हैं।
+You split a PDF into ranges {0}.	आपने एक PDF को सीमाओं {0} में बाँटा।
+You split a PDF every {0}.	आपने एक PDF को हर {0} पर बाँटा।
+You split a PDF into single pages.	आपने एक PDF को अलग-अलग पेजों में बाँटा।
+Compress PDF	PDF छोटा करें
+Compress	छोटा करें
+Compression	संपीड़न
+Light	हल्का
+best quality	सबसे अच्छी गुणवत्ता
+Strong	ज़्यादा
+smallest file	सबसे छोटी फ़ाइल
+Shrinks the photos inside the PDF. Text stays sharp. PDFs that are mostly text may not get much smaller.	PDF के अंदर की फ़ोटो छोटी करता है। टेक्स्ट साफ़ रहता है। जिन PDF में ज़्यादातर टेक्स्ट है वे शायद ज़्यादा छोटे न हों।
+medium	मध्यम
+Compressing {0} of {1}…	छोटा किया जा रहा है, {1} में से {0}…
+Done: {0} → {1} ({2}% smaller).	हो गया: {0} → {1} ({2}% छोटा)।
+Done, but this PDF couldn't be made much smaller.	हो गया, पर यह PDF ज़्यादा छोटा नहीं हो सका।
+You compressed {0} ({1}).	आपने {0} छोटे किए ({1})।
+light	हल्का
+strong	ज़्यादा
+Lock / Unlock PDF	PDF लॉक / अनलॉक करें
+Lock	लॉक करें
+Action	काम
+Add a password	पासवर्ड जोड़ें
+Remove a password	पासवर्ड हटाएँ
+Password	पासवर्ड
+Type it again	फिर से लिखें
+To remove a password you need to know it. KUDUCK doesn't store passwords.	पासवर्ड हटाने के लिए आपको उसे जानना होगा। KUDUCK पासवर्ड नहीं रखता।
+Unlock	अनलॉक करें
+{0} {1} files	{0}: {1} फ़ाइलें
+Enter a password.	पासवर्ड लिखें।
+The two passwords don't match.	दोनों पासवर्ड मेल नहीं खाते।
+Unlocked {0}.	{0} अनलॉक किए।
+Locked {0}.	{0} लॉक किए।
+You removed the password from {0}.	आपने {0} से पासवर्ड हटाया।
+You password-protected {0}.	आपने {0} को पासवर्ड से सुरक्षित किया।
+unlock	unlock
+lock	lock
+PDF → Excel	PDF → Excel
+PDF → Word	PDF → Word
+Convert	बदलें
+Password (only if the PDF has one)	पासवर्ड (केवल अगर PDF में हो)
+Tables become spreadsheet rows, one sheet per page. Works with PDFs that contain real text.	तालिकाएँ स्प्रेडशीट की पंक्तियाँ बनती हैं, हर पेज की एक शीट। असली टेक्स्ट वाले PDF के साथ काम करता है।
+Keeps text, headings, tables and pictures. Works with PDFs that contain real text — for scans use Scan → Text.	टेक्स्ट, शीर्षक, तालिकाएँ और चित्र बने रहते हैं। असली टेक्स्ट वाले PDF के साथ काम करता है — स्कैन के लिए Scan → Text उपयोग करें।
+Converting {0} of {1}… (large files take a while)	बदला जा रहा है, {1} में से {0}… (बड़ी फ़ाइलों में समय लगता है)
+.xlsx	.xlsx
+.docx	.docx
+Converted {0} files.	{0} फ़ाइलें बदली गईं।
+Excel	Excel
+Word	Word
+Word → PDF	Word → PDF
+Word files	Word फ़ाइलें
+Convert to PDF	PDF में बदलें
+Uses Microsoft Word on this PC, so the PDF looks exactly like your document.	इस पीसी पर Microsoft Word उपयोग करता है, इसलिए PDF बिल्कुल आपके दस्तावेज़ जैसा दिखता है।
+Uses LibreOffice on this PC.	इस पीसी पर LibreOffice उपयोग करता है।
+Needs Microsoft Word or the free LibreOffice installed on this PC.	इस पीसी पर Microsoft Word या मुफ़्त LibreOffice इंस्टॉल होना चाहिए।
+Converting {0} of {1}…	बदला जा रहा है, {1} में से {0}…
+You turned {0} into PDF.	आपने {0} को PDF में बदला।
+Word file	Word फ़ाइल
+Scan → Text	Scan → Text
+scans (images or PDFs)	स्कैन (चित्र या PDF)
+Scans	स्कैन
+Read text	टेक्स्ट पढ़ें
+PDF password (only if it has one)	PDF पासवर्ड (केवल अगर हो)
+Reads the text from scanned pages and photos of documents and saves it as a .txt file. Uses the text recognition built into Windows, in your Windows display languages.	स्कैन किए पेजों और दस्तावेज़ों की फ़ोटो से टेक्स्ट पढ़ता है और उसे .txt फ़ाइल में सहेजता है। Windows में बनी टेक्स्ट पहचान उपयोग करता है, इसलिए कुछ अपलोड नहीं होता।
+Reading {0} of {1}…	पढ़ा जा रहा है, {1} में से {0}…
+text file	टेक्स्ट फ़ाइल
+You read the text from {0}.	आपने {0} से टेक्स्ट पढ़ा।
+Look	रूप
+Dark mode	डार्क मोड
+Keep KUDUCK on top of other windows	KUDUCK को दूसरी खिड़कियों के ऊपर रखें
+Language	भाषा
+The duck	बत्तख
+KUDUCK always stays in the icon by the clock. The duck is a shortcut on the desktop: click it to open the tools, drag it anywhere, or drop files on it.	KUDUCK हमेशा घड़ी के पास आइकन में रहता है। बत्तख डेस्कटॉप पर एक शॉर्टकट है: टूल खोलने के लिए क्लिक करें, कहीं भी खींचें, या फ़ाइलें उस पर छोड़ें।
+Windows	Windows
+Start KUDUCK when Windows starts	Windows शुरू होने पर KUDUCK शुरू करें
+Couldn't change this setting.	यह सेटिंग बदली नहीं जा सकी।
+Where to save results	परिणाम कहाँ सहेजें
+Next to the original	मूल फ़ाइल के पास
+A folder I choose	मेरा चुना फ़ोल्डर
+next	next
+folder	folder
+No folder chosen	कोई फ़ोल्डर नहीं चुना
+Choose…	चुनें…
+Save KUDUCK results to	KUDUCK के परिणाम यहाँ सहेजें
+If KUDUCK can't save in a folder (for example Program Files), choose another folder or run KUDUCK as administrator.	अगर KUDUCK किसी फ़ोल्डर (जैसे Program Files) में सहेज नहीं पाता, तो दूसरा फ़ोल्डर चुनें या KUDUCK को व्यवस्थापक के रूप में चलाएँ।
+Updates	अपडेट
+Tell me when a new version is out	नया संस्करण आने पर मुझे बताएँ
+Check now	अभी देखें
+You have version {0}.	आपके पास संस्करण {0} है।
+Checking…	जाँच हो रही है…
+Version {0} is ready: see the home screen.	संस्करण {0} तैयार है: होम स्क्रीन देखें।
+You're up to date ({0}).	आप नवीनतम पर हैं ({0})।
+About	परिचय
+Image & PDF tools, one duck away.	चित्र और PDF टूल, बस एक बत्तख दूर।
+Version	संस्करण
+Made by	Made by
+Azeem, with Claude and ♥	Azeem, with Claude and ♥
+Releases & source code	रिलीज़ और सोर्स कोड
+Built with open-source parts: Magick.NET, PDFsharp, ONNX Runtime, the U²-Net model, pdfplumber, python-docx and openpyxl. Details are in the licence files installed with KUDUCK.	ओपन सोर्स हिस्सों से बना: Magick.NET, PDFsharp, ONNX Runtime, U²-Net मॉडल, pdfplumber, python-docx और openpyxl। विवरण KUDUCK के साथ इंस्टॉल हुई लाइसेंस फ़ाइलों में हैं।
+{0} ({1} files)	{0} ({1} फ़ाइलें)
+Working…	काम हो रहा है…
+Done.	हो गया।
+Resize	आकार बदलें
+Passport	पासपोर्ट
+Remove BG	बैकग्राउंड हटाएँ
+Pages	पेज
+Lock / Unlock	लॉक / अनलॉक
+merge	merge
+pages	pages
+Kept on top (click to release)	ऊपर रखा गया (छोड़ने के लिए क्लिक करें)
+Keep on top	ऊपर रखें
+{0} image	{0} चित्र
+{0} images	{0} चित्र
+{0} page	{0} पेज
+{0} pages	{0} पेज
+{0} file	{0} फ़ाइल
+{0} files	{0} फ़ाइलें
+{0} PDF	{0} PDF
+{0} PDFs	{0} PDF
+{0} Word file	{0} Word फ़ाइल
+{0} Word files	{0} Word फ़ाइलें
+{0} text file	{0} टेक्स्ट फ़ाइल
+{0} text files	{0} टेक्स्ट फ़ाइलें
+{0} scan	{0} स्कैन
+{0} scans	{0} स्कैन
+recommended	सुझाया गया
+Hi! Click me for image and PDF tools.	नमस्ते! चित्र और PDF टूल के लिए मुझ पर क्लिक करें।
+Hide this suggestion	यह सुझाव छिपाएँ
+KUDUCK — click to open, drag to move	KUDUCK — खोलने के लिए क्लिक करें, हिलाने के लिए खींचें
+Back	वापस
+Back to the duck	बत्तख पर वापस

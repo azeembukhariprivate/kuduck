@@ -137,7 +137,7 @@ namespace Kuduck.Services
                                 if (percent != lastPercent)
                                 {
                                     lastPercent = percent;
-                                    progress?.Report($"Downloading update… {percent}%");
+                                    progress?.Report(Lang.T("Downloading update… {0}%", percent));
                                 }
                             }
                         }

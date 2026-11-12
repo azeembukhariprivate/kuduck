@@ -98,7 +98,7 @@ namespace Kuduck.Views
         public virtual void ApplyPreset(Dictionary<string, string> settings) { }
 
         protected virtual string ButtonText(int fileCount) =>
-            fileCount > 1 ? $"{_verb} ({fileCount} files)" : _verb;
+            fileCount > 1 ? Lang.T("{0} ({1} files)", Lang.T(_verb), fileCount) : _verb;
 
         protected void UpdateButton()
         {
@@ -151,7 +151,8 @@ namespace Kuduck.Views
             }
         }
 
-        protected static string Plural(int n, string word) => n == 1 ? $"1 {word}" : $"{n} {word}s";
+        /// <summary>"1 image", "3 images", in the language in use (the language files have "{0} image" and "{0} images").</summary>
+        protected static string Count(int n, string word) => Lang.T("{0} " + (n == 1 ? word : word + "s"), n);
 
         protected static string Get(Dictionary<string, string> s, string key, string fallback) => History.Get(s, key, fallback);
     }

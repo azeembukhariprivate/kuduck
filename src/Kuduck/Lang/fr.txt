@@ -1,0 +1,363 @@
+{0} ran into a problem it couldn't get past, and has to close.	{0} a rencontré un problème qu'il n'a pas pu surmonter et doit se fermer.
+KUDUCK {0} is ready	KUDUCK {0} est prêt
+Click here to update.	Cliquez ici pour mettre à jour.
+KUDUCK	KUDUCK
+Open KUDUCK	Ouvrir KUDUCK
+Show the duck on the desktop	Afficher le canard sur le bureau
+Settings	Paramètres
+Quit KUDUCK	Quitter KUDUCK
+KUDUCK is still here	KUDUCK est toujours là
+Click the duck icon by the clock to open KUDUCK. The duck can be switched back on in Settings.	Cliquez sur l'icône du canard près de l'horloge pour ouvrir KUDUCK. Le canard peut être réactivé dans les paramètres.
+The duck is now optional	Le canard est maintenant facultatif
+KUDUCK is here, by the clock	KUDUCK est ici, près de l'horloge
+KUDUCK now lives in this icon by the clock: click it to open. To have the duck on the desktop again, switch it on in Settings.	KUDUCK vit maintenant dans cette icône près de l'horloge : cliquez pour l'ouvrir. Pour retrouver le canard sur le bureau, activez-le dans les paramètres.
+Click this icon to open the tools. If you'd like a duck on your desktop, switch it on in Settings.	Cliquez sur cette icône pour ouvrir les outils. Si vous voulez un canard sur votre bureau, activez-le dans les paramètres.
+KUDUCK show listener	KUDUCK show listener
+Something went wrong:\n\n{0}	Un problème est survenu :\n\n{0}
+chips{0}	chips{0}
++ Add more	+ En ajouter
+Choose a different file	Choisir un autre fichier
+Drop {0} here	Déposez {0} ici
+or click to browse	ou cliquez pour parcourir
+Move up	Monter
+Move down	Descendre
+Remove {0}	Retirer {0}
+Small	Petit
+Medium	Moyen
+Large	Grand
+Extra large	Très grand
+Images	Images
+All files	Tous les fichiers
+PDF files	Fichiers PDF
+Word documents	Documents Word
+KUDUCK doesn't have permission to save there. Choose another folder in Settings, or close KUDUCK and run it as administrator (right-click → Run as administrator).	KUDUCK n'a pas le droit d'enregistrer ici. Choisissez un autre dossier dans les paramètres, ou fermez KUDUCK et lancez-le en administrateur (clic droit → Exécuter en tant qu'administrateur).
+being used by another process	utilisé par un autre processus
+That file is open in another program. Close it and try again.	Ce fichier est ouvert dans un autre programme. Fermez-le et réessayez.
+"{0}" --startup	"{0}" --startup
+Checking the download…	Vérification du téléchargement…
+The download didn't match the release. Please try again later.	Le téléchargement ne correspondait pas à la version publiée. Réessayez plus tard.
+Starting the installer…	Lancement de l'installateur…
+Downloading update… {0}%	Téléchargement de la mise à jour… {0} %
+The background-removal model is missing. Please reinstall KUDUCK.	Le modèle pour retirer l'arrière-plan est manquant. Réinstallez KUDUCK.
+The document converter is missing. Please reinstall KUDUCK.	Le convertisseur de documents est manquant. Réinstallez KUDUCK.
+Couldn't start the document converter.	Impossible de lancer le convertisseur de documents.
+The conversion took too long and was stopped.	La conversion a pris trop de temps et a été arrêtée.
+The document converter stopped unexpectedly.	Le convertisseur de documents s'est arrêté de façon inattendue.
+Word → PDF needs Microsoft Word or the free LibreOffice installed on this PC.	Word → PDF nécessite Microsoft Word ou le logiciel gratuit LibreOffice installé sur ce PC.
+LibreOffice took too long to convert the file.	LibreOffice a mis trop de temps à convertir le fichier.
+{0}.pdf	{0}.pdf
+LibreOffice couldn't convert this file.	LibreOffice n'a pas pu convertir ce fichier.
+India passport	Passeport indien
+35 × 45 mm	35 × 45 mm
+US passport / visa	Passeport / visa des États-Unis
+2 × 2 in	2 × 2 in
+UK passport	Passeport britannique
+UAE visa	Visa des EAU
+43 × 55 mm	43 × 55 mm
+India visa / OCI	Visa indien / OCI
+Schengen visa	Visa Schengen
+Canada passport	Passeport canadien
+50 × 70 mm	50 × 70 mm
+Pakistan passport	Passeport pakistanais
+"{0}" is password protected. Unlock it first with Lock / Unlock.	« {0} » est protégé par un mot de passe. Déverrouillez-le d'abord avec Verrouiller / Déverrouiller.
+That password isn't right.	Ce mot de passe n'est pas le bon.
+merged	merged
+Adding file {0} of {1}…	Ajout du fichier {0} sur {1}…
+Saving part {0} of {1}…	Enregistrement de la partie {0} sur {1}…
+"{0}" is password protected. Unlock it first.	« {0} » est protégé par un mot de passe. Déverrouillez-le d'abord.
+Shrinking images… {0}	Réduction des images… {0}
+images	images
+Adding image {0} of {1}…	Ajout de l'image {0} sur {1}…
+.png	.png
+.jpg	.jpg
+{0}.png	{0}.png
+Text recognition needs a Windows language pack with OCR. Add English (or your language) in Windows Settings → Time & language → Language & region.	La reconnaissance de texte nécessite un module linguistique Windows avec OCR. Ajoutez l'anglais (ou votre langue) dans Paramètres Windows → Heure et langue → Langue et région.
+Reading page {0} of {1}…	Lecture de la page {0} sur {1}…
+----- Page {0} -----	----- Page {0} -----
+UPDATE	MISE À JOUR
+KUDUCK {0} is ready. It takes a few seconds and keeps your settings.	KUDUCK {0} est prêt. Cela prend quelques secondes et garde vos paramètres.
+Update	Mettre à jour
+Later	Plus tard
+Repeat	Refaire
+All tools	Tous les outils
+LAST TIME	LA DERNIÈRE FOIS
+You used KUDUCK.	Vous avez utilisé KUDUCK.
+{0} Do it again?	{0} Recommencer ?
+Hi! Click me for image and PDF tools, or drop files on me.	Salut ! Cliquez sur moi pour les outils d'images et de PDF, ou déposez des fichiers sur moi.
+Hide the duck (KUDUCK stays by the clock)	Masquer le canard (KUDUCK reste près de l'horloge)
+Drop files here	Déposez des fichiers ici
+Images, PDFs or Word files — KUDUCK picks the tool	Images, PDF ou fichiers Word — KUDUCK choisit l'outil
+Image tools	Outils d'images
+PDF tools	Outils PDF
+Images, PDFs and Word files	Images, PDF et fichiers Word
+KUDUCK can't open that type of file.	KUDUCK ne sait pas ouvrir ce type de fichier.
+What's new	Nouveautés
+Update now	Mettre à jour maintenant
+Update failed: {0} You can download it from the release page instead.	La mise à jour a échoué : {0} Vous pouvez la télécharger depuis la page des versions.
+Recent	Récents
+Show	Afficher
+Remove background	Retirer l'arrière-plan
+New background	Nouvel arrière-plan
+Transparent	Transparent
+saved as PNG	enregistré en PNG
+White	Blanc
+saved as JPG	enregistré en JPG
+Light blue	Bleu clair
+Light grey	Gris clair
+Works best on people, products and pets with a clear outline. Runs on your PC — nothing is uploaded.	Marche le mieux sur les personnes, les objets et les animaux aux contours nets. Fonctionne sur votre PC — rien n'est envoyé.
+none	aucun
+Cutting out {0} of {1}…	Détourage de {0} sur {1}…
+Saved {0}.	{0} enregistré.
+You removed the background from {0}.	Vous avez retiré l'arrière-plan de {0}.
+Images → PDF	Images → PDF
+Create PDF	Créer le PDF
+Page size	Taille de page
+Letter	Lettre
+Fit image	Ajuster l'image
+Margin	Marge
+None	Aucune
+Normal	Normale
+PDF file name	Nom du fichier PDF
+One picture per page, in the order above. Use the arrows to reorder.	Une image par page, dans l'ordre ci-dessus. Utilisez les flèches pour changer l'ordre.
+Create PDF from {0}	Créer un PDF à partir de {0}
+You made a PDF from {0}.	Vous avez fait un PDF à partir de {0}.
+Size	Taille
+Keep size	Garder la taille
+Pixels	Pixels
+Percent	Pourcentage
+Presets	Tailles prêtes
+Keep proportions (fit inside this size)	Garder les proportions (tenir dans cette taille)
+Width (px)	Largeur (px)
+Height (px)	Hauteur (px)
+Percent of original size	Pourcentage de la taille d'origine
+Full HD	Full HD
+Square post	Publication carrée
+Story / reel	Story / reel
+Email friendly	Pour courriel
+max 1024 px	1024 px max
+Thumbnail	Miniature
+max 400 px	400 px max
+Save as	Enregistrer en
+Same	Identique
+Quality	Qualité
+Lower quality = smaller file. Applies to JPG and WEBP.	Qualité plus faible = fichier plus petit. S'applique au JPG et au WEBP.
+Remove hidden info (location, camera details)	Retirer les informations cachées (lieu, détails de l'appareil photo)
+Convert images	Convertir des images
+Compress images	Compresser des images
+Resize images	Redimensionner des images
+Convert & save	Convertir et enregistrer
+Compress & save	Compresser et enregistrer
+Resize & save	Redimensionner et enregistrer
+keep	keep
+You resized {0} to {1} × {2} px{3}.	Vous avez redimensionné {0} en {1} × {2} px{3}.
+You resized {0} to {1}%{2}.	Vous avez redimensionné {0} à {1} %{2}.
+You converted {0} to {1}.	Vous avez converti {0} en {1}.
+You compressed {0} at {1}% quality.	Vous avez compressé {0} à {1} % de qualité.
+Saving {0} of {1}…	Enregistrement de {0} sur {1}…
+Nothing was saved.	Rien n'a été enregistré.
+Saved {0}, {1} failed: {2}	{0} enregistrés, {1} en échec : {2}
+Organise pages	Organiser les pages
+a PDF	un PDF
+This PDF has a password — enter it to open	Ce PDF a un mot de passe — saisissez-le pour l'ouvrir
+Open	Ouvrir
+Rotate selected right	Faire pivoter la sélection à droite
+Move selected earlier	Avancer la sélection
+Move selected later	Reculer la sélection
+Delete selected	Supprimer la sélection
+Select all	Tout sélectionner
+Click pages to select them, then rotate, move or delete.	Cliquez sur les pages pour les sélectionner, puis faites-les pivoter, déplacez-les ou supprimez-les.
+Save as new PDF	Enregistrer comme nouveau PDF
+Show in folder	Afficher dans le dossier
+Loading pages…	Chargement des pages…
+Loading pages… {0} of {1}	Chargement des pages… {0} sur {1}
+{0} pages.	{0} pages.
+Enter the PDF's password.	Saisissez le mot de passe du PDF.
+Couldn't open this PDF: {0}	Impossible d'ouvrir ce PDF : {0}
+Page {0}	Page {0}
+Bd	Bd
+A PDF needs at least one page.	Un PDF doit avoir au moins une page.
+{0} pages left. Nothing is changed until you save.	Il reste {0} pages. Rien ne change tant que vous n'enregistrez pas.
+Saving…	Enregistrement…
+You reorganised the pages of a PDF.	Vous avez réorganisé les pages d'un PDF.
+Passport photo	Photo d'identité
+a photo	une photo
+Save passport photo	Enregistrer la photo d'identité
+Country / document	Pays / document
+Custom size	Taille personnalisée
+enter mm	saisir en mm
+Width (mm)	Largeur (mm)
+Height (mm)	Hauteur (mm)
+Preview	Aperçu
+Add a photo to see the preview.	Ajoutez une photo pour voir l'aperçu.
+Up / down	Haut / bas
+Left / right	Gauche / droite
+Reset	Réinitialiser
+Background	Arrière-plan
+Keep	Garder
+Output	Résultat
+Digital file	Fichier numérique
+4×6 in sheet	Feuille 4×6 po
+A4 sheet	Feuille A4
+Print sheets fit as many copies as possible, at 300 dpi, with thin cutting lines. Always check the official requirements before you submit — they can change.	Les feuilles à imprimer contiennent le plus de copies possible, à 300 ppp, avec de fines lignes de découpe. Vérifiez toujours les exigences officielles avant de l'envoyer — elles peuvent changer.
+{0} × {1} mm	{0} × {1} mm
+Opening photo…	Ouverture de la photo…
+Finding the face…	Recherche du visage…
+Removing the background…	Retrait de l'arrière-plan…
+Face found and centred.	Visage trouvé et centré.
+No face found — use the sliders to position it.	Aucun visage trouvé — utilisez les curseurs pour le placer.
+(Background tool not installed.)	(L'outil d'arrière-plan n'est pas installé.)
+The background tool isn't installed. Choose 'Keep' background, or reinstall KUDUCK.	L'outil d'arrière-plan n'est pas installé. Choisissez l'arrière-plan « Garder », ou réinstallez KUDUCK.
+digital	digital
+custom	custom
+Saved {0} ({1}, 300 dpi).	{0} enregistré ({1}, 300 ppp).
+You made a {0} photo ({1}).	Vous avez fait une photo {0} ({1}).
+Merge PDFs	Fusionner des PDF
+Merge	Fusionner
+Output file name	Nom du fichier final
+Files are joined top to bottom. Use the arrows to change the order.	Les fichiers sont assemblés de haut en bas. Utilisez les flèches pour changer l'ordre.
+Merge {0} files	Fusionner {0} fichiers
+Add at least 2 PDFs	Ajoutez au moins 2 PDF
+You merged {0} PDFs into one.	Vous avez fusionné {0} PDF en un seul.
+Split PDF	Diviser un PDF
+Split	Diviser
+How to split	Comment diviser
+Every page	Chaque page
+Page ranges	Plages de pages
+Every N pages	Toutes les N pages
+1-3, 4-end	1-3, 4-end
+Ranges (one file per range)	Plages (un fichier par plage)
+Example: 1-3, 5, 8-end	Exemple : 1-3, 5, 8-end
+Pages per file	Pages par fichier
+This PDF has {0}.	Ce PDF a {0}.
+Couldn't read this PDF.	Impossible de lire ce PDF.
+Check the ranges — pages go from 1 to {0}.	Vérifiez les plages — les pages vont de 1 à {0}.
+You split a PDF into ranges {0}.	Vous avez divisé un PDF selon les plages {0}.
+You split a PDF every {0}.	Vous avez divisé un PDF toutes les {0}.
+You split a PDF into single pages.	Vous avez divisé un PDF en pages séparées.
+Compress PDF	Compresser un PDF
+Compress	Compresser
+Compression	Compression
+Light	Légère
+best quality	meilleure qualité
+Strong	Forte
+smallest file	fichier le plus petit
+Shrinks the photos inside the PDF. Text stays sharp. PDFs that are mostly text may not get much smaller.	Réduit les photos à l'intérieur du PDF. Le texte reste net. Les PDF surtout composés de texte ne rétréciront peut-être pas beaucoup.
+medium	moyenne
+Compressing {0} of {1}…	Compression de {0} sur {1}…
+Done: {0} → {1} ({2}% smaller).	Terminé : {0} → {1} ({2} % plus petit).
+Done, but this PDF couldn't be made much smaller.	Terminé, mais ce PDF n'a pas pu être beaucoup réduit.
+You compressed {0} ({1}).	Vous avez compressé {0} ({1}).
+light	légère
+strong	forte
+Lock / Unlock PDF	Verrouiller / Déverrouiller un PDF
+Lock	Verrouiller
+Action	Action
+Add a password	Ajouter un mot de passe
+Remove a password	Retirer un mot de passe
+Password	Mot de passe
+Type it again	Saisissez-le à nouveau
+To remove a password you need to know it. KUDUCK doesn't store passwords.	Pour retirer un mot de passe, il faut le connaître. KUDUCK ne garde aucun mot de passe.
+Unlock	Déverrouiller
+{0} {1} files	{0} {1} fichiers
+Enter a password.	Saisissez un mot de passe.
+The two passwords don't match.	Les deux mots de passe ne correspondent pas.
+Unlocked {0}.	{0} déverrouillés.
+Locked {0}.	{0} verrouillés.
+You removed the password from {0}.	Vous avez retiré le mot de passe de {0}.
+You password-protected {0}.	Vous avez protégé {0} par un mot de passe.
+unlock	unlock
+lock	lock
+PDF → Excel	PDF → Excel
+PDF → Word	PDF → Word
+Convert	Convertir
+Password (only if the PDF has one)	Mot de passe (seulement si le PDF en a un)
+Tables become spreadsheet rows, one sheet per page. Works with PDFs that contain real text.	Les tableaux deviennent des lignes de tableur, une feuille par page. Fonctionne avec les PDF qui contiennent du vrai texte.
+Keeps text, headings, tables and pictures. Works with PDFs that contain real text — for scans use Scan → Text.	Garde le texte, les titres, les tableaux et les images. Fonctionne avec les PDF qui contiennent du vrai texte — pour les numérisations, utilisez Numérisation → Texte.
+Converting {0} of {1}… (large files take a while)	Conversion de {0} sur {1}… (les gros fichiers prennent du temps)
+.xlsx	.xlsx
+.docx	.docx
+Converted {0} files.	{0} fichiers convertis.
+Excel	Excel
+Word	Word
+Word → PDF	Word → PDF
+Word files	Fichiers Word
+Convert to PDF	Convertir en PDF
+Uses Microsoft Word on this PC, so the PDF looks exactly like your document.	Utilise Microsoft Word sur ce PC, le PDF ressemble donc exactement à votre document.
+Uses LibreOffice on this PC.	Utilise LibreOffice sur ce PC.
+Needs Microsoft Word or the free LibreOffice installed on this PC.	Nécessite Microsoft Word ou le logiciel gratuit LibreOffice installé sur ce PC.
+Converting {0} of {1}…	Conversion de {0} sur {1}…
+You turned {0} into PDF.	Vous avez converti {0} en PDF.
+Word file	fichier Word
+Scan → Text	Numérisation → Texte
+scans (images or PDFs)	numérisations (images ou PDF)
+Scans	Numérisations
+Read text	Lire le texte
+PDF password (only if it has one)	Mot de passe du PDF (seulement s'il en a un)
+Reads the text from scanned pages and photos of documents and saves it as a .txt file. Uses the text recognition built into Windows, in your Windows display languages.	Lit le texte des pages numérisées et des photos de documents et l'enregistre dans un fichier .txt. Utilise la reconnaissance de texte intégrée à Windows, donc rien n'est envoyé.
+Reading {0} of {1}…	Lecture de {0} sur {1}…
+text file	fichier texte
+You read the text from {0}.	Vous avez lu le texte de {0}.
+Look	Apparence
+Dark mode	Mode sombre
+Keep KUDUCK on top of other windows	Garder KUDUCK au-dessus des autres fenêtres
+Language	Langue
+The duck	Le canard
+KUDUCK always stays in the icon by the clock. The duck is a shortcut on the desktop: click it to open the tools, drag it anywhere, or drop files on it.	KUDUCK reste toujours dans l'icône près de l'horloge. Le canard est un raccourci sur le bureau : cliquez dessus pour ouvrir les outils, faites-le glisser n'importe où, ou déposez-y des fichiers.
+Windows	Windows
+Start KUDUCK when Windows starts	Lancer KUDUCK au démarrage de Windows
+Couldn't change this setting.	Impossible de changer ce paramètre.
+Where to save results	Où enregistrer les résultats
+Next to the original	À côté de l'original
+A folder I choose	Un dossier de mon choix
+next	next
+folder	folder
+No folder chosen	Aucun dossier choisi
+Choose…	Choisir…
+Save KUDUCK results to	Enregistrer les résultats de KUDUCK dans
+If KUDUCK can't save in a folder (for example Program Files), choose another folder or run KUDUCK as administrator.	Si KUDUCK ne peut pas enregistrer dans un dossier (par exemple Program Files), choisissez un autre dossier ou lancez KUDUCK en administrateur.
+Updates	Mises à jour
+Tell me when a new version is out	Me prévenir quand une nouvelle version sort
+Check now	Vérifier maintenant
+You have version {0}.	Vous avez la version {0}.
+Checking…	Vérification…
+Version {0} is ready: see the home screen.	La version {0} est prête : voyez l'écran d'accueil.
+You're up to date ({0}).	Vous êtes à jour ({0}).
+About	À propos
+Image & PDF tools, one duck away.	Outils d'images et de PDF, à un canard près.
+Version	Version
+Made by	Made by
+Azeem, with Claude and ♥	Azeem, with Claude and ♥
+Releases & source code	Versions et code source
+Built with open-source parts: Magick.NET, PDFsharp, ONNX Runtime, the U²-Net model, pdfplumber, python-docx and openpyxl. Details are in the licence files installed with KUDUCK.	Fait avec des briques open source : Magick.NET, PDFsharp, ONNX Runtime, le modèle U²-Net, pdfplumber, python-docx et openpyxl. Les détails sont dans les fichiers de licence installés avec KUDUCK.
+{0} ({1} files)	{0} ({1} fichiers)
+Working…	En cours…
+Done.	Terminé.
+Resize	Redimensionner
+Passport	Passeport
+Remove BG	Retirer l'arrière-plan
+Pages	Pages
+Lock / Unlock	Verrouiller / Déverrouiller
+merge	merge
+pages	pages
+Kept on top (click to release)	Gardé au-dessus (cliquez pour libérer)
+Keep on top	Garder au-dessus
+{0} image	{0} image
+{0} images	{0} images
+{0} page	{0} page
+{0} pages	{0} pages
+{0} file	{0} fichier
+{0} files	{0} fichiers
+{0} PDF	{0} PDF
+{0} PDFs	{0} PDF
+{0} Word file	{0} fichier Word
+{0} Word files	{0} fichiers Word
+{0} text file	{0} fichier texte
+{0} text files	{0} fichiers texte
+{0} scan	{0} numérisation
+{0} scans	{0} numérisations
+recommended	recommandée
+Hi! Click me for image and PDF tools.	Salut ! Cliquez sur moi pour les outils d'images et de PDF.
+Hide this suggestion	Masquer cette suggestion
+KUDUCK — click to open, drag to move	KUDUCK — cliquez pour ouvrir, faites glisser pour déplacer
+Back	Retour
+Back to the duck	Revenir au canard

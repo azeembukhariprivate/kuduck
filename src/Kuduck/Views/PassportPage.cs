@@ -298,8 +298,8 @@ namespace Kuduck.Views
                 }
             });
             ToolResult result = new ToolResult { Outputs = { output } };
-            result.Message = $"Saved {Path.GetFileName(output)} ({spec.SizeText}, 300 dpi).";
-            result.Summary = $"You made a {spec.Name} photo ({spec.SizeText}).";
+            result.Message = Lang.T("Saved {0} ({1}, 300 dpi).", Path.GetFileName(output), spec.SizeText);
+            result.Summary = Lang.T("You made a {0} photo ({1}).", spec.Name, spec.SizeText);
             result.Settings["country"] = _country.Value;
             result.Settings["bg"] = _background.Value;
             result.Settings["output"] = outputKind;

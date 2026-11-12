@@ -139,12 +139,12 @@ namespace Kuduck.Views
                 {
                     byte[] png = await WinRt.RenderPagePngAsync(doc, i, 180);
                     _pages.Add(new PageItem { Index = (int)i, Thumb = ToBitmap(png) });
-                    if (i % 6 == 5) { RenderGrid(); SetStatus($"Loading pages… {i + 1} of {count}"); }
+                    if (i % 6 == 5) { RenderGrid(); SetStatus(Lang.T("Loading pages… {0} of {1}", i + 1, count)); }
                 }
                 RenderGrid();
                 _toolbar.Visibility = Visibility.Visible;
                 _save.IsEnabled = _pages.Count > 0;
-                SetStatus($"{_pages.Count} pages.");
+                SetStatus(Lang.T("{0} pages.", _pages.Count));
             }
             catch (Exception ex)
             {
@@ -198,7 +198,7 @@ namespace Kuduck.Views
                     Cursor = System.Windows.Input.Cursors.Hand,
                     Template = TileTemplate()
                 };
-                System.Windows.Automation.AutomationProperties.SetName(tile, $"Page {pos + 1}");
+                System.Windows.Automation.AutomationProperties.SetName(tile, Lang.T("Page {0}", pos + 1));
                 tile.Checked += (s, e) => item.Selected = true;
                 tile.Unchecked += (s, e) => item.Selected = false;
                 _grid.Children.Add(tile);
@@ -261,7 +261,7 @@ namespace Kuduck.Views
             if (selected == _pages.Count) { SetStatus("A PDF needs at least one page.", "ErrorBrush"); return; }
             _pages = _pages.Where(p => !p.Selected).ToList();
             RenderGrid();
-            SetStatus($"{_pages.Count} pages left. Nothing is changed until you save.");
+            SetStatus(Lang.T("{0} pages left. Nothing is changed until you save.", _pages.Count));
         }
 
         private async Task SaveAsync()
@@ -275,7 +275,7 @@ namespace Kuduck.Views
                 List<PageEdit> edits = _pages.Select(p => new PageEdit { Index = p.Index, Rotate = p.Rotate }).ToList();
                 string output = await Task.Run(() => PdfEngine.Rearrange(path, pw, edits));
                 _lastOutput = output;
-                SetStatus($"Saved {Path.GetFileName(output)}.", "SuccessBrush");
+                SetStatus(Lang.T("Saved {0}.", Path.GetFileName(output)), "SuccessBrush");
                 _show.Visibility = Visibility.Visible;
                 History.Record("pages", "You reorganised the pages of a PDF.", null, new[] { output });
             }

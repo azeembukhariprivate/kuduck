@@ -24,6 +24,12 @@ Part of the KUDU family of free, open-source Windows apps by Azeem Bukhari.
   PyInstaller in CI) using the `silueta.onnx` model downloaded during the build.
 - Results never overwrite the original files. PDF locking uses AES-256; passwords are never put on a command line.
 - Updates are checked by version and checksum only.
+- Other languages (1.2): `Services/Lang.cs` and `LangCommon.cs` are copies of kudu-common's (change both when one
+  changes); `Views/LangUi.cs` is KUDUCK's own version of kudu-common's LangUi (the choice is kept in settings.json as
+  `Language`). Each window is put into the chosen language as it's shown; the tray menu and messages built in code call
+  `Lang.T`, and tool results are whole sentences (`ToolPage.Count` for "3 images"). Texts are in
+  `src/Kuduck/Lang/<code>.txt`, listed and checked with kudu-common's `tools/lang.py list|check ../kuduck` (texts only
+  in XAML are added by hand); when adding or changing a text, add it to every language file.
 - `tests/Kuduck.Tests` makes real images and PDFs and checks every tool; see "Build it yourself" in the README for the
   full installer steps.
 

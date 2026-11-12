@@ -41,6 +41,8 @@ again?”) so repeat jobs take one click.
 
 **Also:** light and dark mode, keep-on-top, start with Windows, update notices.
 
+**In your language:** English, Malayalam (മലയാളം), Hindi (हिन्दी), Spanish, French and Arabic (with the windows mirrored for right-to-left). KUDUCK starts in the same language as Windows when it has it; choose another in Settings.
+
 ## Private by design
 
 Everything runs **on your PC**. No files are uploaded and no account is needed. The only time KUDUCK
@@ -111,7 +113,8 @@ src/Kuduck/          the Windows app (C#, WPF)
 tests/Kuduck.Tests/  tests for the image and PDF engines
   Views/             duck, widget and tool pages
   Tools/             image, PDF, passport, OCR and conversion engines
-  Services/          settings, history, start-with-Windows, updates, theme
+  Services/          settings, history, start-with-Windows, updates, theme, languages
+  Lang/              the texts in each language (English, a tab, the translation)
 helper/              PDF → Word / Excel converter (Python), bundled into the installer
 installer/           Inno Setup script
 tools/make_icon.py   regenerates the icon and logo

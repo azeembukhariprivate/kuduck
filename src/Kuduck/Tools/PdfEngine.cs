@@ -33,7 +33,7 @@ namespace Kuduck.Tools
             {
                 throw new InvalidOperationException(
                     string.IsNullOrEmpty(password)
-                        ? $"\"{Path.GetFileName(path)}\" is password protected. Unlock it first with Lock / Unlock."
+                        ? Lang.T("\"{0}\" is password protected. Unlock it first with Lock / Unlock.", Path.GetFileName(path))
                         : "That password isn't right.");
             }
         }
@@ -61,7 +61,7 @@ namespace Kuduck.Tools
             {
                 for (int i = 0; i < files.Count; i++)
                 {
-                    progress?.Report($"Adding file {i + 1} of {files.Count}…");
+                    progress?.Report(Lang.T("Adding file {0} of {1}…", i + 1, files.Count));
                     using (PdfDocument src = OpenForImport(files[i]))
                         for (int p = 0; p < src.PageCount; p++) result.AddPage(src.Pages[p]);
                 }
@@ -109,7 +109,7 @@ namespace Kuduck.Tools
             {
                 for (int g = 0; g < groups.Count; g++)
                 {
-                    progress?.Report($"Saving part {g + 1} of {groups.Count}…");
+                    progress?.Report(Lang.T("Saving part {0} of {1}…", g + 1, groups.Count));
                     List<int> pages = groups[g];
                     string label = pages.Count == 1 ? $"_page{pages[0] + 1}" : $"_pages{pages[0] + 1}-{pages[pages.Count - 1] + 1}";
                     string output = FileHelpers.OutputPath(file, label, ".pdf");
@@ -193,7 +193,7 @@ namespace Kuduck.Tools
             }
             catch (Exception ex) when (ex.Message.IndexOf("password", StringComparison.OrdinalIgnoreCase) >= 0)
             {
-                throw new InvalidOperationException($"\"{Path.GetFileName(file)}\" is password protected. Unlock it first.");
+                throw new InvalidOperationException(Lang.T("\"{0}\" is password protected. Unlock it first.", Path.GetFileName(file)));
             }
             using (doc)
             {
@@ -208,7 +208,7 @@ namespace Kuduck.Tools
                     bool isJpeg = filter is PdfName name && name.Value == "/DCTDecode";
                     if (!isJpeg) continue;
                     done++;
-                    if (done % 5 == 0) progress?.Report($"Shrinking images… {done}");
+                    if (done % 5 == 0) progress?.Report(Lang.T("Shrinking images… {0}", done));
                     try
                     {
                         byte[] original = dict.Stream.Value;
@@ -260,7 +260,7 @@ namespace Kuduck.Tools
                 {
                     for (int i = 0; i < images.Count; i++)
                     {
-                        progress?.Report($"Adding image {i + 1} of {images.Count}…");
+                        progress?.Report(Lang.T("Adding image {0} of {1}…", i + 1, images.Count));
                         // Normalise every picture to JPG/PNG so PDF can embed it (and fix rotation).
                         string tmp;
                         double pxW, pxH;

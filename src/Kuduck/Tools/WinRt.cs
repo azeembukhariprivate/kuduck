@@ -162,7 +162,7 @@ namespace Kuduck.Tools
             uint max = Math.Min(2400u, OcrEngine.MaxImageDimension);
             for (uint i = 0; i < doc.PageCount; i++)
             {
-                progress?.Report($"Reading page {i + 1} of {doc.PageCount}…");
+                progress?.Report(Lang.T("Reading page {0} of {1}…", i + 1, doc.PageCount));
                 using (PdfPage page = doc.GetPage(i))
                 using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
                 {

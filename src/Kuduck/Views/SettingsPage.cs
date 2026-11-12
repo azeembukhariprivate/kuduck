@@ -24,6 +24,9 @@ namespace Kuduck.Views
             pin.Click += (o, e) => { s.PinOnTop = pin.IsChecked == true; SettingsStore.Save(); onPinChanged(); };
             body.Children.Add(pin);
 
+            body.Children.Add(Ui.Section("Language"));
+            body.Children.Add(LangUi.Picker());
+
             body.Children.Add(Ui.Section("The duck"));
             CheckBox duck = new CheckBox { Content = "Show the duck on the desktop", IsChecked = s.ShowDuck, Margin = new Thickness(0, 0, 0, 8) };
             ChipGroup size = new ChipGroup(4);
@@ -100,7 +103,7 @@ namespace Kuduck.Views
             body.Children.Add(updates);
             StackPanel checkRow = new StackPanel { Orientation = Orientation.Horizontal };
             Button checkNow = new Button { Content = "Check now" };
-            TextBlock checkStatus = Ui.Text($"You have version {AppPaths.Version}.", 12, null, "MutedBrush");
+            TextBlock checkStatus = Ui.Text(Lang.T("You have version {0}.", AppPaths.Version), 12, null, "MutedBrush");
             checkStatus.VerticalAlignment = VerticalAlignment.Center;
             checkStatus.Margin = new Thickness(10, 0, 0, 0);
             checkNow.Click += async (o, e) =>
@@ -109,8 +112,8 @@ namespace Kuduck.Views
                 checkStatus.Text = "Checking…";
                 UpdateInfo info = await UpdateService.CheckAsync(true);
                 checkStatus.Text = info != null
-                    ? $"Version {info.Version} is ready: see the home screen."
-                    : $"You're up to date ({AppPaths.Version}).";
+                    ? Lang.T("Version {0} is ready: see the home screen.", info.Version)
+                    : Lang.T("You're up to date ({0}).", AppPaths.Version);
                 checkNow.IsEnabled = true;
             };
             checkRow.Children.Add(checkNow);

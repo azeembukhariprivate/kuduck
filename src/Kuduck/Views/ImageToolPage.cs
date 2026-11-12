@@ -161,18 +161,18 @@ namespace Kuduck.Views
 
         private string Describe(ImageJob job, int count)
         {
-            string what = Plural(count, "image");
-            string fmt = job.Format == "keep" ? "" : $" ({job.Format.ToUpperInvariant()})";
+            string what = Count(count, "image");
+            string fmt = job.Format == "keep" ? "" : " (" + job.Format.ToUpperInvariant() + ")";
             switch (job.Resize)
             {
                 case ImageResize.Pixels:
-                    return $"You resized {what} to {job.Width} × {job.Height} px{fmt}.";
+                    return Lang.T("You resized {0} to {1} × {2} px{3}.", what, job.Width, job.Height, fmt);
                 case ImageResize.Percent:
-                    return $"You resized {what} to {job.Percent}%{fmt}.";
+                    return Lang.T("You resized {0} to {1}%{2}.", what, job.Percent, fmt);
                 default:
                     return job.Format != "keep"
-                        ? $"You converted {what} to {job.Format.ToUpperInvariant()}."
-                        : $"You compressed {what} at {job.Quality}% quality.";
+                        ? Lang.T("You converted {0} to {1}.", what, job.Format.ToUpperInvariant())
+                        : Lang.T("You compressed {0} at {1}% quality.", what, job.Quality);
             }
         }
 
@@ -187,7 +187,7 @@ namespace Kuduck.Views
             {
                 for (int i = 0; i < files.Count; i++)
                 {
-                    progress.Report($"Saving {i + 1} of {files.Count}…");
+                    progress.Report(Lang.T("Saving {0} of {1}…", i + 1, files.Count));
                     try
                     {
                         result.Outputs.Add(ImageEngine.Process(files[i], job));
@@ -202,8 +202,8 @@ namespace Kuduck.Views
             });
             if (result.Outputs.Count == 0) throw new InvalidOperationException(firstError ?? "Nothing was saved.");
             result.Message = failed == 0
-                ? $"Saved {Plural(result.Outputs.Count, "image")}."
-                : $"Saved {result.Outputs.Count}, {failed} failed: {firstError}";
+                ? Lang.T("Saved {0}.", Count(result.Outputs.Count, "image"))
+                : Lang.T("Saved {0}, {1} failed: {2}", result.Outputs.Count, failed, firstError);
             result.Summary = Describe(job, result.Outputs.Count);
             result.Settings = new Dictionary<string, string>
             {

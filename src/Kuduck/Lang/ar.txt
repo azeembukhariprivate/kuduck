@@ -1,0 +1,363 @@
+{0} ran into a problem it couldn't get past, and has to close.	واجه {0} مشكلة لم يستطع تجاوزها، ويجب أن يُغلق.
+KUDUCK {0} is ready	KUDUCK {0} جاهز
+Click here to update.	انقر هنا للتحديث.
+KUDUCK	KUDUCK
+Open KUDUCK	فتح KUDUCK
+Show the duck on the desktop	إظهار البطة على سطح المكتب
+Settings	الإعدادات
+Quit KUDUCK	إنهاء KUDUCK
+KUDUCK is still here	KUDUCK لا يزال هنا
+Click the duck icon by the clock to open KUDUCK. The duck can be switched back on in Settings.	انقر على أيقونة البطة بجانب الساعة لفتح KUDUCK. يمكن إعادة تشغيل البطة من الإعدادات.
+The duck is now optional	البطة أصبحت اختيارية
+KUDUCK is here, by the clock	KUDUCK هنا، بجانب الساعة
+KUDUCK now lives in this icon by the clock: click it to open. To have the duck on the desktop again, switch it on in Settings.	يعيش KUDUCK الآن في هذه الأيقونة بجانب الساعة: انقر لفتحه. لعودة البطة إلى سطح المكتب، شغّلها من الإعدادات.
+Click this icon to open the tools. If you'd like a duck on your desktop, switch it on in Settings.	انقر على هذه الأيقونة لفتح الأدوات. إذا أردت بطة على سطح المكتب، شغّلها من الإعدادات.
+KUDUCK show listener	KUDUCK show listener
+Something went wrong:\n\n{0}	حدث خطأ ما:\n\n{0}
+chips{0}	chips{0}
++ Add more	+ إضافة المزيد
+Choose a different file	اختيار ملف آخر
+Drop {0} here	أفلت {0} هنا
+or click to browse	أو انقر للاستعراض
+Move up	نقل لأعلى
+Move down	نقل لأسفل
+Remove {0}	إزالة {0}
+Small	صغير
+Medium	متوسط
+Large	كبير
+Extra large	كبير جدًا
+Images	الصور
+All files	كل الملفات
+PDF files	ملفات PDF
+Word documents	مستندات Word
+KUDUCK doesn't have permission to save there. Choose another folder in Settings, or close KUDUCK and run it as administrator (right-click → Run as administrator).	ليس لدى KUDUCK إذن بالحفظ هناك. اختر مجلدًا آخر في الإعدادات، أو أغلق KUDUCK وشغّله كمسؤول (انقر بزر الماوس الأيمن ← تشغيل كمسؤول).
+being used by another process	تستخدمه عملية أخرى
+That file is open in another program. Close it and try again.	ذلك الملف مفتوح في برنامج آخر. أغلقه وحاول مرة أخرى.
+"{0}" --startup	"{0}" --startup
+Checking the download…	جارٍ التحقق من التنزيل…
+The download didn't match the release. Please try again later.	التنزيل لم يطابق الإصدار. يُرجى المحاولة لاحقًا.
+Starting the installer…	جارٍ تشغيل المثبّت…
+Downloading update… {0}%	جارٍ تنزيل التحديث… {0}%
+The background-removal model is missing. Please reinstall KUDUCK.	نموذج إزالة الخلفية مفقود. يُرجى إعادة تثبيت KUDUCK.
+The document converter is missing. Please reinstall KUDUCK.	محوّل المستندات مفقود. يُرجى إعادة تثبيت KUDUCK.
+Couldn't start the document converter.	تعذّر تشغيل محوّل المستندات.
+The conversion took too long and was stopped.	استغرق التحويل وقتًا طويلًا فأُوقف.
+The document converter stopped unexpectedly.	توقف محوّل المستندات بشكل غير متوقع.
+Word → PDF needs Microsoft Word or the free LibreOffice installed on this PC.	يحتاج Word → PDF إلى Microsoft Word أو LibreOffice المجاني مثبّتًا على هذا الكمبيوتر.
+LibreOffice took too long to convert the file.	استغرق LibreOffice وقتًا طويلًا لتحويل الملف.
+{0}.pdf	{0}.pdf
+LibreOffice couldn't convert this file.	تعذّر على LibreOffice تحويل هذا الملف.
+India passport	جواز سفر هندي
+35 × 45 mm	35 × 45 mm
+US passport / visa	جواز سفر / تأشيرة أمريكية
+2 × 2 in	2 × 2 in
+UK passport	جواز سفر بريطاني
+UAE visa	تأشيرة الإمارات
+43 × 55 mm	43 × 55 mm
+India visa / OCI	تأشيرة هندية / OCI
+Schengen visa	تأشيرة شنغن
+Canada passport	جواز سفر كندي
+50 × 70 mm	50 × 70 mm
+Pakistan passport	جواز سفر باكستاني
+"{0}" is password protected. Unlock it first with Lock / Unlock.	"{0}" محمي بكلمة مرور. افتحه أولًا باستخدام قفل / فتح.
+That password isn't right.	كلمة المرور هذه غير صحيحة.
+merged	merged
+Adding file {0} of {1}…	جارٍ إضافة الملف {0} من {1}…
+Saving part {0} of {1}…	جارٍ حفظ الجزء {0} من {1}…
+"{0}" is password protected. Unlock it first.	"{0}" محمي بكلمة مرور. افتحه أولًا.
+Shrinking images… {0}	جارٍ تصغير الصور… {0}
+images	صور
+Adding image {0} of {1}…	جارٍ إضافة الصورة {0} من {1}…
+.png	.png
+.jpg	.jpg
+{0}.png	{0}.png
+Text recognition needs a Windows language pack with OCR. Add English (or your language) in Windows Settings → Time & language → Language & region.	يحتاج التعرّف على النص إلى حزمة لغة Windows بها OCR. أضف الإنجليزية (أو لغتك) من إعدادات Windows ← الوقت واللغة ← اللغة والمنطقة.
+Reading page {0} of {1}…	جارٍ قراءة الصفحة {0} من {1}…
+----- Page {0} -----	----- Page {0} -----
+UPDATE	تحديث
+KUDUCK {0} is ready. It takes a few seconds and keeps your settings.	KUDUCK {0} جاهز. يستغرق بضع ثوانٍ ويحتفظ بإعداداتك.
+Update	تحديث
+Later	لاحقًا
+Repeat	تكرار
+All tools	كل الأدوات
+LAST TIME	المرة الماضية
+You used KUDUCK.	استخدمت KUDUCK.
+{0} Do it again?	{0} هل تريد فعلها مرة أخرى؟
+Hi! Click me for image and PDF tools, or drop files on me.	مرحبًا! انقر عليّ لأدوات الصور وPDF، أو أفلت الملفات عليّ.
+Hide the duck (KUDUCK stays by the clock)	إخفاء البطة (يبقى KUDUCK بجانب الساعة)
+Drop files here	أفلت الملفات هنا
+Images, PDFs or Word files — KUDUCK picks the tool	صور أو ملفات PDF أو Word — يختار KUDUCK الأداة
+Image tools	أدوات الصور
+PDF tools	أدوات PDF
+Images, PDFs and Word files	الصور وملفات PDF وWord
+KUDUCK can't open that type of file.	لا يستطيع KUDUCK فتح هذا النوع من الملفات.
+What's new	ما الجديد
+Update now	التحديث الآن
+Update failed: {0} You can download it from the release page instead.	فشل التحديث: {0} يمكنك تنزيله من صفحة الإصدارات بدلًا من ذلك.
+Recent	الأخيرة
+Show	إظهار
+Remove background	إزالة الخلفية
+New background	خلفية جديدة
+Transparent	شفافة
+saved as PNG	تُحفظ بصيغة PNG
+White	بيضاء
+saved as JPG	تُحفظ بصيغة JPG
+Light blue	أزرق فاتح
+Light grey	رمادي فاتح
+Works best on people, products and pets with a clear outline. Runs on your PC — nothing is uploaded.	تعمل بأفضل شكل مع الأشخاص والمنتجات والحيوانات الأليفة ذات الحواف الواضحة. تعمل على جهازك — لا يُرفع شيء.
+none	لا شيء
+Cutting out {0} of {1}…	جارٍ القص {0} من {1}…
+Saved {0}.	حُفظ {0}.
+You removed the background from {0}.	أزلت الخلفية من {0}.
+Images → PDF	صور ← PDF
+Create PDF	إنشاء PDF
+Page size	حجم الصفحة
+Letter	Letter
+Fit image	ملاءمة الصورة
+Margin	الهامش
+None	بلا
+Normal	عادي
+PDF file name	اسم ملف PDF
+One picture per page, in the order above. Use the arrows to reorder.	صورة واحدة في كل صفحة، بالترتيب أعلاه. استخدم الأسهم لتغيير الترتيب.
+Create PDF from {0}	إنشاء PDF من {0}
+You made a PDF from {0}.	أنشأت ملف PDF من {0}.
+Size	الحجم
+Keep size	الإبقاء على الحجم
+Pixels	بكسل
+Percent	نسبة مئوية
+Presets	أحجام جاهزة
+Keep proportions (fit inside this size)	الإبقاء على النسب (الملاءمة داخل هذا الحجم)
+Width (px)	العرض (px)
+Height (px)	الارتفاع (px)
+Percent of original size	نسبة من الحجم الأصلي
+Full HD	Full HD
+Square post	منشور مربع
+Story / reel	قصة / ريل
+Email friendly	مناسب للبريد
+max 1024 px	1024 px كحد أقصى
+Thumbnail	صورة مصغّرة
+max 400 px	400 px كحد أقصى
+Save as	الحفظ كـ
+Same	كما هي
+Quality	الجودة
+Lower quality = smaller file. Applies to JPG and WEBP.	جودة أقل = ملف أصغر. ينطبق على JPG وWEBP.
+Remove hidden info (location, camera details)	إزالة المعلومات المخفية (الموقع، تفاصيل الكاميرا)
+Convert images	تحويل الصور
+Compress images	ضغط الصور
+Resize images	تغيير حجم الصور
+Convert & save	تحويل وحفظ
+Compress & save	ضغط وحفظ
+Resize & save	تغيير الحجم وحفظ
+keep	keep
+You resized {0} to {1} × {2} px{3}.	غيّرت حجم {0} إلى {1} × {2} px{3}.
+You resized {0} to {1}%{2}.	غيّرت حجم {0} إلى {1}%{2}.
+You converted {0} to {1}.	حوّلت {0} إلى {1}.
+You compressed {0} at {1}% quality.	ضغطت {0} بجودة {1}%.
+Saving {0} of {1}…	جارٍ الحفظ {0} من {1}…
+Nothing was saved.	لم يُحفظ شيء.
+Saved {0}, {1} failed: {2}	حُفظ {0}، وفشل {1}: {2}
+Organise pages	تنظيم الصفحات
+a PDF	ملف PDF
+This PDF has a password — enter it to open	لهذا الملف كلمة مرور — أدخلها لفتحه
+Open	فتح
+Rotate selected right	تدوير المحدد لليمين
+Move selected earlier	تقديم المحدد
+Move selected later	تأخير المحدد
+Delete selected	حذف المحدد
+Select all	تحديد الكل
+Click pages to select them, then rotate, move or delete.	انقر على الصفحات لتحديدها، ثم دوّرها أو انقلها أو احذفها.
+Save as new PDF	الحفظ كملف PDF جديد
+Show in folder	إظهار في المجلد
+Loading pages…	جارٍ تحميل الصفحات…
+Loading pages… {0} of {1}	جارٍ تحميل الصفحات… {0} من {1}
+{0} pages.	{0} صفحات.
+Enter the PDF's password.	أدخل كلمة مرور ملف PDF.
+Couldn't open this PDF: {0}	تعذّر فتح ملف PDF هذا: {0}
+Page {0}	الصفحة {0}
+Bd	Bd
+A PDF needs at least one page.	يحتاج ملف PDF إلى صفحة واحدة على الأقل.
+{0} pages left. Nothing is changed until you save.	بقيت {0} صفحات. لا يتغيّر شيء حتى تحفظ.
+Saving…	جارٍ الحفظ…
+You reorganised the pages of a PDF.	أعدت تنظيم صفحات ملف PDF.
+Passport photo	صورة جواز السفر
+a photo	صورة
+Save passport photo	حفظ صورة جواز السفر
+Country / document	البلد / المستند
+Custom size	حجم مخصص
+enter mm	أدخل بالمليمتر
+Width (mm)	العرض (mm)
+Height (mm)	الارتفاع (mm)
+Preview	معاينة
+Add a photo to see the preview.	أضف صورة لرؤية المعاينة.
+Up / down	أعلى / أسفل
+Left / right	يسار / يمين
+Reset	إعادة الضبط
+Background	الخلفية
+Keep	الإبقاء عليها
+Output	الناتج
+Digital file	ملف رقمي
+4×6 in sheet	ورقة 4×6 بوصة
+A4 sheet	ورقة A4
+Print sheets fit as many copies as possible, at 300 dpi, with thin cutting lines. Always check the official requirements before you submit — they can change.	تتسع أوراق الطباعة لأكبر عدد ممكن من النسخ، بدقة 300 نقطة في البوصة، مع خطوط قص رفيعة. تحقق دائمًا من المتطلبات الرسمية قبل التقديم — فقد تتغير.
+{0} × {1} mm	{0} × {1} mm
+Opening photo…	جارٍ فتح الصورة…
+Finding the face…	جارٍ البحث عن الوجه…
+Removing the background…	جارٍ إزالة الخلفية…
+Face found and centred.	وُجد الوجه وتم توسيطه.
+No face found — use the sliders to position it.	لم يُعثر على وجه — استخدم المنزلقات لضبط موضعه.
+(Background tool not installed.)	(أداة الخلفية غير مثبّتة.)
+The background tool isn't installed. Choose 'Keep' background, or reinstall KUDUCK.	أداة الخلفية غير مثبّتة. اختر خلفية "الإبقاء عليها"، أو أعد تثبيت KUDUCK.
+digital	digital
+custom	custom
+Saved {0} ({1}, 300 dpi).	حُفظ {0} ({1}، 300 نقطة في البوصة).
+You made a {0} photo ({1}).	أنشأت صورة {0} ({1}).
+Merge PDFs	دمج ملفات PDF
+Merge	دمج
+Output file name	اسم ملف الناتج
+Files are joined top to bottom. Use the arrows to change the order.	تُضم الملفات من الأعلى إلى الأسفل. استخدم الأسهم لتغيير الترتيب.
+Merge {0} files	دمج {0} ملفات
+Add at least 2 PDFs	أضف ملفي PDF على الأقل
+You merged {0} PDFs into one.	دمجت {0} ملفات PDF في ملف واحد.
+Split PDF	تقسيم PDF
+Split	تقسيم
+How to split	طريقة التقسيم
+Every page	كل صفحة
+Page ranges	نطاقات الصفحات
+Every N pages	كل N صفحات
+1-3, 4-end	1-3, 4-end
+Ranges (one file per range)	النطاقات (ملف لكل نطاق)
+Example: 1-3, 5, 8-end	مثال: 1-3, 5, 8-end
+Pages per file	صفحات لكل ملف
+This PDF has {0}.	في ملف PDF هذا {0}.
+Couldn't read this PDF.	تعذّرت قراءة ملف PDF هذا.
+Check the ranges — pages go from 1 to {0}.	تحقق من النطاقات — الصفحات من 1 إلى {0}.
+You split a PDF into ranges {0}.	قسّمت ملف PDF إلى النطاقات {0}.
+You split a PDF every {0}.	قسّمت ملف PDF كل {0}.
+You split a PDF into single pages.	قسّمت ملف PDF إلى صفحات منفردة.
+Compress PDF	ضغط PDF
+Compress	ضغط
+Compression	الضغط
+Light	خفيف
+best quality	أفضل جودة
+Strong	قوي
+smallest file	أصغر ملف
+Shrinks the photos inside the PDF. Text stays sharp. PDFs that are mostly text may not get much smaller.	يصغّر الصور داخل ملف PDF. يبقى النص واضحًا. ملفات PDF التي معظمها نص قد لا تصغر كثيرًا.
+medium	متوسط
+Compressing {0} of {1}…	جارٍ الضغط {0} من {1}…
+Done: {0} → {1} ({2}% smaller).	تم: {0} ← {1} (أصغر بنسبة {2}%).
+Done, but this PDF couldn't be made much smaller.	تم، لكن تعذّر تصغير ملف PDF هذا كثيرًا.
+You compressed {0} ({1}).	ضغطت {0} ({1}).
+light	خفيف
+strong	قوي
+Lock / Unlock PDF	قفل / فتح PDF
+Lock	قفل
+Action	الإجراء
+Add a password	إضافة كلمة مرور
+Remove a password	إزالة كلمة مرور
+Password	كلمة المرور
+Type it again	اكتبها مرة أخرى
+To remove a password you need to know it. KUDUCK doesn't store passwords.	لإزالة كلمة المرور يجب أن تعرفها. لا يحتفظ KUDUCK بكلمات المرور.
+Unlock	فتح القفل
+{0} {1} files	{0} {1} ملفات
+Enter a password.	أدخل كلمة مرور.
+The two passwords don't match.	كلمتا المرور غير متطابقتين.
+Unlocked {0}.	فُتح قفل {0}.
+Locked {0}.	قُفل {0}.
+You removed the password from {0}.	أزلت كلمة المرور من {0}.
+You password-protected {0}.	حميت {0} بكلمة مرور.
+unlock	unlock
+lock	lock
+PDF → Excel	PDF ← Excel
+PDF → Word	PDF ← Word
+Convert	تحويل
+Password (only if the PDF has one)	كلمة المرور (فقط إن كان لملف PDF واحدة)
+Tables become spreadsheet rows, one sheet per page. Works with PDFs that contain real text.	تصبح الجداول صفوفًا في جدول بيانات، ورقة لكل صفحة. يعمل مع ملفات PDF التي تحتوي على نص حقيقي.
+Keeps text, headings, tables and pictures. Works with PDFs that contain real text — for scans use Scan → Text.	يحتفظ بالنص والعناوين والجداول والصور. يعمل مع ملفات PDF التي تحتوي على نص حقيقي — للمستندات الممسوحة استخدم مسح ← نص.
+Converting {0} of {1}… (large files take a while)	جارٍ التحويل {0} من {1}… (تستغرق الملفات الكبيرة وقتًا)
+.xlsx	.xlsx
+.docx	.docx
+Converted {0} files.	حُوّلت {0} ملفات.
+Excel	Excel
+Word	Word
+Word → PDF	Word ← PDF
+Word files	ملفات Word
+Convert to PDF	التحويل إلى PDF
+Uses Microsoft Word on this PC, so the PDF looks exactly like your document.	يستخدم Microsoft Word على هذا الكمبيوتر، فيبدو ملف PDF تمامًا مثل مستندك.
+Uses LibreOffice on this PC.	يستخدم LibreOffice على هذا الكمبيوتر.
+Needs Microsoft Word or the free LibreOffice installed on this PC.	يحتاج إلى Microsoft Word أو LibreOffice المجاني مثبّتًا على هذا الكمبيوتر.
+Converting {0} of {1}…	جارٍ التحويل {0} من {1}…
+You turned {0} into PDF.	حوّلت {0} إلى PDF.
+Word file	ملف Word
+Scan → Text	مسح ← نص
+scans (images or PDFs)	مستندات ممسوحة (صور أو PDF)
+Scans	المستندات الممسوحة
+Read text	قراءة النص
+PDF password (only if it has one)	كلمة مرور PDF (فقط إن وُجدت)
+Reads the text from scanned pages and photos of documents and saves it as a .txt file. Uses the text recognition built into Windows, in your Windows display languages.	يقرأ النص من الصفحات الممسوحة وصور المستندات ويحفظه في ملف .txt. يستخدم التعرّف على النص المدمج في Windows، فلا يُرفع شيء.
+Reading {0} of {1}…	جارٍ القراءة {0} من {1}…
+text file	ملف نصي
+You read the text from {0}.	قرأت النص من {0}.
+Look	المظهر
+Dark mode	الوضع الداكن
+Keep KUDUCK on top of other windows	إبقاء KUDUCK فوق النوافذ الأخرى
+Language	اللغة
+The duck	البطة
+KUDUCK always stays in the icon by the clock. The duck is a shortcut on the desktop: click it to open the tools, drag it anywhere, or drop files on it.	يبقى KUDUCK دائمًا في الأيقونة بجانب الساعة. البطة اختصار على سطح المكتب: انقر عليها لفتح الأدوات، واسحبها إلى أي مكان، أو أفلت الملفات عليها.
+Windows	Windows
+Start KUDUCK when Windows starts	تشغيل KUDUCK عند بدء Windows
+Couldn't change this setting.	تعذّر تغيير هذا الإعداد.
+Where to save results	أين تُحفظ النتائج
+Next to the original	بجانب الأصل
+A folder I choose	مجلد أختاره
+next	next
+folder	folder
+No folder chosen	لم يُختر مجلد
+Choose…	اختيار…
+Save KUDUCK results to	حفظ نتائج KUDUCK في
+If KUDUCK can't save in a folder (for example Program Files), choose another folder or run KUDUCK as administrator.	إذا لم يستطع KUDUCK الحفظ في مجلد (مثل Program Files)، فاختر مجلدًا آخر أو شغّل KUDUCK كمسؤول.
+Updates	التحديثات
+Tell me when a new version is out	أخبرني عند صدور إصدار جديد
+Check now	التحقق الآن
+You have version {0}.	لديك الإصدار {0}.
+Checking…	جارٍ التحقق…
+Version {0} is ready: see the home screen.	الإصدار {0} جاهز: راجع الشاشة الرئيسية.
+You're up to date ({0}).	لديك أحدث إصدار ({0}).
+About	حول
+Image & PDF tools, one duck away.	أدوات الصور وPDF، على بُعد بطة.
+Version	الإصدار
+Made by	Made by
+Azeem, with Claude and ♥	Azeem, with Claude and ♥
+Releases & source code	الإصدارات والشيفرة المصدرية
+Built with open-source parts: Magick.NET, PDFsharp, ONNX Runtime, the U²-Net model, pdfplumber, python-docx and openpyxl. Details are in the licence files installed with KUDUCK.	مبني بأجزاء مفتوحة المصدر: Magick.NET وPDFsharp وONNX Runtime ونموذج U²-Net وpdfplumber وpython-docx وopenpyxl. التفاصيل في ملفات الترخيص المثبّتة مع KUDUCK.
+{0} ({1} files)	{0} ({1} ملفات)
+Working…	جارٍ العمل…
+Done.	تم.
+Resize	تغيير الحجم
+Passport	جواز السفر
+Remove BG	إزالة الخلفية
+Pages	الصفحات
+Lock / Unlock	قفل / فتح
+merge	merge
+pages	pages
+Kept on top (click to release)	مثبّت في الأعلى (انقر للإفلات)
+Keep on top	الإبقاء في الأعلى
+{0} image	{0} صورة
+{0} images	{0} صور
+{0} page	{0} صفحة
+{0} pages	{0} صفحات
+{0} file	{0} ملف
+{0} files	{0} ملفات
+{0} PDF	{0} PDF
+{0} PDFs	{0} ملفات PDF
+{0} Word file	{0} ملف Word
+{0} Word files	{0} ملفات Word
+{0} text file	{0} ملف نصي
+{0} text files	{0} ملفات نصية
+{0} scan	{0} مستند ممسوح
+{0} scans	{0} مستندات ممسوحة
+recommended	موصى به
+Hi! Click me for image and PDF tools.	مرحبًا! انقر عليّ لأدوات الصور وPDF.
+Hide this suggestion	إخفاء هذا الاقتراح
+KUDUCK — click to open, drag to move	KUDUCK — انقر للفتح، واسحب للنقل
+Back	رجوع
+Back to the duck	العودة إلى البطة

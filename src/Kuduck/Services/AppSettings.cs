@@ -18,6 +18,8 @@ namespace Kuduck.Services
         public bool DarkMode { get; set; }
         public bool PinOnTop { get; set; } = true;
         public bool CheckForUpdates { get; set; } = true;
+        /// <summary>The language chosen in Settings: a code ("ml"), or empty for the same as Windows.</summary>
+        public string Language { get; set; } = string.Empty;
         public DateTime LastUpdateCheck { get; set; }
         /// <summary>The duck on the desktop is something to switch on; KUDUCK itself lives in the icon by the clock.</summary>
         public bool ShowDuck { get; set; }

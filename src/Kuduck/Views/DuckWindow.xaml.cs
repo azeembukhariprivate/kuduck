@@ -112,7 +112,7 @@ namespace Kuduck.Views
             if (_updateMode)
             {
                 BubbleLabel.Text = "UPDATE";
-                BubbleText.Text = $"KUDUCK {update.Version} is ready. It takes a few seconds and keeps your settings.";
+                BubbleText.Text = Lang.T("KUDUCK {0} is ready. It takes a few seconds and keeps your settings.", update.Version);
                 RepeatButton.Content = "Update";
                 RepeatButton.Visibility = Visibility.Visible;
                 AllToolsButton.Content = "Later";

@@ -47,12 +47,13 @@ namespace Kuduck
                 if (!x.IsTerminating) return;
                 try
                 {
-                    MessageBox.Show("KUDUCK ran into a problem it couldn't get past, and has to close.\n\n" + (x.ExceptionObject as Exception)?.Message,
+                    MessageBox.Show(Lang.T("{0} ran into a problem it couldn't get past, and has to close.", "KUDUCK") + "\n\n" + (x.ExceptionObject as Exception)?.Message,
                         "KUDUCK", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 catch (Exception) { /* nothing more can be done */ }
             };
             SettingsStore.Load();
+            LangUi.Start(); // KUDUCK in the chosen language
             Theme.Apply(SettingsStore.Current.DarkMode);
 
             _widget = new WidgetWindow();
@@ -84,8 +85,8 @@ namespace Kuduck
                 SettingsStore.Save();
                 try
                 {
-                    _tray.ShowBalloonTip(6000, $"KUDUCK {info.Version} is ready",
-                        "Click here to update.", System.Windows.Forms.ToolTipIcon.Info);
+                    _tray.ShowBalloonTip(6000, Lang.T("KUDUCK {0} is ready", info.Version),
+                        Lang.T("Click here to update."), System.Windows.Forms.ToolTipIcon.Info);
                 }
                 catch { }
             }
@@ -102,14 +103,15 @@ namespace Kuduck
             catch { _tray.Icon = System.Drawing.SystemIcons.Application; }
 
             System.Windows.Forms.ContextMenuStrip menu = new System.Windows.Forms.ContextMenuStrip();
-            menu.Items.Add("Open KUDUCK", null, (s, a) => ShowWidget());
-            _duckItem = new System.Windows.Forms.ToolStripMenuItem("Show the duck on the desktop") { CheckOnClick = false };
+            // The menu by the clock is a Windows Forms one, so its words are put into the language here.
+            menu.Items.Add(Lang.T("Open KUDUCK"), null, (s, a) => ShowWidget());
+            _duckItem = new System.Windows.Forms.ToolStripMenuItem(Lang.T("Show the duck on the desktop")) { CheckOnClick = false };
             _duckItem.Click += (s, a) => SetDuckShown(!SettingsStore.Current.ShowDuck);
             menu.Items.Add(_duckItem);
             menu.Opening += (s, a) => _duckItem.Checked = SettingsStore.Current.ShowDuck;
-            menu.Items.Add("Settings", null, (s, a) => { _widget.ShowSettings(); ShowWidget(); });
+            menu.Items.Add(Lang.T("Settings"), null, (s, a) => { _widget.ShowSettings(); ShowWidget(); });
             menu.Items.Add(new System.Windows.Forms.ToolStripSeparator());
-            menu.Items.Add("Quit KUDUCK", null, (s, a) => Quit());
+            menu.Items.Add(Lang.T("Quit KUDUCK"), null, (s, a) => Quit());
             _tray.ContextMenuStrip = menu;
             _tray.MouseClick += (s, a) =>
             {
@@ -123,8 +125,8 @@ namespace Kuduck
         {
             try
             {
-                _tray.ShowBalloonTip(4000, "KUDUCK is still here",
-                    "Click the duck icon by the clock to open KUDUCK. The duck can be switched back on in Settings.",
+                _tray.ShowBalloonTip(4000, Lang.T("KUDUCK is still here"),
+                    Lang.T("Click the duck icon by the clock to open KUDUCK. The duck can be switched back on in Settings."),
                     System.Windows.Forms.ToolTipIcon.None);
             }
             catch { }

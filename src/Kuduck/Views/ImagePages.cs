@@ -40,7 +40,7 @@ namespace Kuduck.Views
             {
                 for (int i = 0; i < files.Count; i++)
                 {
-                    progress.Report($"Cutting out {i + 1} of {files.Count}…");
+                    progress.Report(Lang.T("Cutting out {0} of {1}…", i + 1, files.Count));
                     using (MagickImage img = ImageEngine.Load(files[i]))
                     {
                         BackgroundRemover.Apply(img);
@@ -59,8 +59,8 @@ namespace Kuduck.Views
                     }
                 }
             });
-            result.Message = $"Saved {Plural(result.Outputs.Count, "image")}.";
-            result.Summary = $"You removed the background from {Plural(result.Outputs.Count, "image")}.";
+            result.Message = Lang.T("Saved {0}.", Count(result.Outputs.Count, "image"));
+            result.Summary = Lang.T("You removed the background from {0}.", Count(result.Outputs.Count, "image"));
             result.Settings["bg"] = bg;
             return result;
         }
@@ -107,7 +107,7 @@ namespace Kuduck.Views
         }
 
         protected override string ButtonText(int fileCount) =>
-            fileCount > 0 ? $"Create PDF from {Plural(fileCount, "image")}" : "Create PDF";
+            fileCount > 0 ? Lang.T("Create PDF from {0}", Count(fileCount, "image")) : "Create PDF";
 
         protected override async Task<ToolResult> RunAsync(IProgress<string> progress)
         {
@@ -117,8 +117,8 @@ namespace Kuduck.Views
             List<string> files = new List<string>(Files);
             string output = await Task.Run(() => PdfEngine.ImagesToPdf(files, name, size, margin, progress));
             ToolResult result = new ToolResult { Outputs = { output } };
-            result.Message = $"Saved {System.IO.Path.GetFileName(output)}.";
-            result.Summary = $"You made a PDF from {Plural(files.Count, "image")}.";
+            result.Message = Lang.T("Saved {0}.", System.IO.Path.GetFileName(output));
+            result.Summary = Lang.T("You made a PDF from {0}.", Count(files.Count, "image"));
             result.Settings["size"] = size;
             result.Settings["margin"] = _margin.Value;
             return result;

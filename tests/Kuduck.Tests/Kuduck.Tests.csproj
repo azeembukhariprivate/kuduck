@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <Compile Include="..\..\src\Kuduck\Tools\ImageEngine.cs;..\..\src\Kuduck\Tools\PdfEngine.cs" LinkBase="Tools" />
-    <Compile Include="..\..\src\Kuduck\Services\FileHelpers.cs;..\..\src\Kuduck\Services\AppSettings.cs;..\..\src\Kuduck\Services\AppPaths.cs" LinkBase="Services" />
+    <Compile Include="..\..\src\Kuduck\Services\FileHelpers.cs;..\..\src\Kuduck\Services\AppSettings.cs;..\..\src\Kuduck\Services\AppPaths.cs;..\..\src\Kuduck\Services\Lang.cs;..\..\src\Kuduck\Services\LangCommon.cs" LinkBase="Services" />
   </ItemGroup>
 
 </Project>

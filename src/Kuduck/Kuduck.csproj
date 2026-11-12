@@ -14,7 +14,7 @@
     <AssemblyName>KUDUCK</AssemblyName>
     <ApplicationIcon>Assets\kuduck.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <Product>KUDUCK</Product>
     <Company>Azeem</Company>
     <Authors>Azeem</Authors>
@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <Resource Include="Assets\kuduck-256.png" />
+    <EmbeddedResource Include="Lang\*.txt" LogicalName="Kuduck.Lang.%(Filename).txt" />
     <Content Include="Assets\kuduck.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

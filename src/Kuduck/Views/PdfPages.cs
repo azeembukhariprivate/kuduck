@@ -23,7 +23,7 @@ namespace Kuduck.Views
             Options.Children.Add(Ui.Hint("Files are joined top to bottom. Use the arrows to change the order."));
         }
 
-        protected override string ButtonText(int n) => n >= 2 ? $"Merge {n} files" : "Add at least 2 PDFs";
+        protected override string ButtonText(int n) => n >= 2 ? Lang.T("Merge {0} files", n) : "Add at least 2 PDFs";
 
         protected override async Task<ToolResult> RunAsync(IProgress<string> progress)
         {
@@ -33,8 +33,8 @@ namespace Kuduck.Views
             return new ToolResult
             {
                 Outputs = { output },
-                Message = $"Saved {Path.GetFileName(output)}.",
-                Summary = $"You merged {files.Count} PDFs into one."
+                Message = Lang.T("Saved {0}.", Path.GetFileName(output)),
+                Summary = Lang.T("You merged {0} PDFs into one.", files.Count)
             };
         }
     }
@@ -86,7 +86,7 @@ namespace Kuduck.Views
             try
             {
                 _pageCount = await Task.Run(() => PdfEngine.PageCount(file));
-                _info.Text = $"This PDF has {Plural(_pageCount, "page")}.";
+                _info.Text = Lang.T("This PDF has {0}.", Count(_pageCount, "page"));
             }
             catch (Exception ex)
             {
@@ -106,7 +106,7 @@ namespace Kuduck.Views
         {
             if (_pageCount == 0) return "Couldn't read this PDF.";
             if (_mode.Value == "ranges" && PdfEngine.ParseRanges(_ranges.Text, _pageCount) == null)
-                return $"Check the ranges — pages go from 1 to {_pageCount}.";
+                return Lang.T("Check the ranges — pages go from 1 to {0}.", _pageCount);
             return null;
         }
 
@@ -119,13 +119,13 @@ namespace Kuduck.Views
             {
                 case "ranges":
                     groups = PdfEngine.ParseRanges(_ranges.Text, _pageCount);
-                    summary = $"You split a PDF into ranges {_ranges.Text.Trim()}.";
+                    summary = Lang.T("You split a PDF into ranges {0}.", _ranges.Text.Trim());
                     break;
                 case "every":
                     int n = Ui.ReadInt(_every, 2, 1, 10000);
                     groups = Enumerable.Range(0, (_pageCount + n - 1) / n)
                         .Select(g => Enumerable.Range(g * n, Math.Min(n, _pageCount - g * n)).ToList()).ToList();
-                    summary = $"You split a PDF every {Plural(n, "page")}.";
+                    summary = Lang.T("You split a PDF every {0}.", Count(n, "page"));
                     break;
                 default:
                     groups = Enumerable.Range(0, _pageCount).Select(p => new List<int> { p }).ToList();
@@ -133,7 +133,7 @@ namespace Kuduck.Views
                     break;
             }
             List<string> outputs = await Task.Run(() => PdfEngine.Split(file, groups, progress));
-            ToolResult result = new ToolResult { Outputs = outputs, Message = $"Saved {Plural(outputs.Count, "file")}.", Summary = summary };
+            ToolResult result = new ToolResult { Outputs = outputs, Message = Lang.T("Saved {0}.", Count(outputs.Count, "file")), Summary = summary };
             result.Settings["mode"] = _mode.Value;
             result.Settings["ranges"] = _ranges.Text;
             result.Settings["every"] = _every.Text;
@@ -172,7 +172,7 @@ namespace Kuduck.Views
             {
                 for (int i = 0; i < files.Count; i++)
                 {
-                    progress.Report($"Compressing {i + 1} of {files.Count}…");
+                    progress.Report(Lang.T("Compressing {0} of {1}…", i + 1, files.Count));
                     string output = PdfEngine.Compress(files[i], quality, maxSide, progress);
                     before += new FileInfo(files[i]).Length;
                     after += new FileInfo(output).Length;
@@ -181,9 +181,9 @@ namespace Kuduck.Views
             });
             double saved = before > 0 ? 100.0 * (before - after) / before : 0;
             result.Message = saved >= 1
-                ? $"Done: {FileHelpers.SizeText(before)} → {FileHelpers.SizeText(after)} ({saved:0}% smaller)."
+                ? Lang.T("Done: {0} → {1} ({2}% smaller).", FileHelpers.SizeText(before), FileHelpers.SizeText(after), (saved).ToString("0"))
                 : "Done, but this PDF couldn't be made much smaller.";
-            result.Summary = $"You compressed {Plural(files.Count, "PDF")} ({level}).";
+            result.Summary = Lang.T("You compressed {0} ({1}).", Count(files.Count, "PDF"), level == "light" ? Lang.T("light") : level == "strong" ? Lang.T("strong") : Lang.T("medium"));
             result.Settings["level"] = level;
             return result;
         }
@@ -218,7 +218,7 @@ namespace Kuduck.Views
         protected override string ButtonText(int n)
         {
             string verb = _mode?.Value == "unlock" ? "Unlock" : "Lock";
-            return n > 1 ? $"{verb} {n} files" : verb;
+            return n > 1 ? Lang.T("{0} {1} files", Lang.T(verb), n) : verb;
         }
 
         protected override string Validate()
@@ -241,8 +241,8 @@ namespace Kuduck.Views
             });
             _password.Clear();
             _confirm.Clear();
-            result.Message = unlock ? $"Unlocked {Plural(files.Count, "file")}." : $"Locked {Plural(files.Count, "file")}.";
-            result.Summary = unlock ? $"You removed the password from {Plural(files.Count, "PDF")}." : $"You password-protected {Plural(files.Count, "PDF")}.";
+            result.Message = unlock ? Lang.T("Unlocked {0}.", Count(files.Count, "file")) : Lang.T("Locked {0}.", Count(files.Count, "file"));
+            result.Summary = unlock ? Lang.T("You removed the password from {0}.", Count(files.Count, "PDF")) : Lang.T("You password-protected {0}.", Count(files.Count, "PDF"));
             result.Settings["mode"] = unlock ? "unlock" : "lock";
             return result;
         }
@@ -276,13 +276,13 @@ namespace Kuduck.Views
             string lastMessage = null;
             for (int i = 0; i < files.Count; i++)
             {
-                progress.Report($"Converting {i + 1} of {files.Count}… (large files take a while)");
+                progress.Report(Lang.T("Converting {0} of {1}… (large files take a while)", i + 1, files.Count));
                 string output = FileHelpers.OutputPath(files[i], "", _excel ? ".xlsx" : ".docx");
                 lastMessage = await HelperRunner.ConvertAsync(_excel ? "pdf2excel" : "pdf2word", files[i], output, pw);
                 result.Outputs.Add(output);
             }
-            result.Message = files.Count == 1 ? lastMessage : $"Converted {files.Count} files.";
-            result.Summary = $"You converted {Plural(files.Count, "PDF")} to {(_excel ? "Excel" : "Word")}.";
+            result.Message = files.Count == 1 ? lastMessage : Lang.T("Converted {0} files.", files.Count);
+            result.Summary = Lang.T("You converted {0} to {1}.", Count(files.Count, "PDF"), (_excel ? "Excel" : "Word"));
             return result;
         }
     }
@@ -305,11 +305,11 @@ namespace Kuduck.Views
             ToolResult result = new ToolResult();
             for (int i = 0; i < files.Count; i++)
             {
-                progress.Report($"Converting {i + 1} of {files.Count}…");
+                progress.Report(Lang.T("Converting {0} of {1}…", i + 1, files.Count));
                 result.Outputs.Add(await WordConverter.ConvertAsync(files[i]));
             }
-            result.Message = $"Saved {Plural(result.Outputs.Count, "PDF")}.";
-            result.Summary = $"You turned {Plural(files.Count, "Word file")} into PDF.";
+            result.Message = Lang.T("Saved {0}.", Count(result.Outputs.Count, "PDF"));
+            result.Summary = Lang.T("You turned {0} into PDF.", Count(files.Count, "Word file"));
             return result;
         }
     }
@@ -336,7 +336,7 @@ namespace Kuduck.Views
             ToolResult result = new ToolResult();
             for (int i = 0; i < files.Count; i++)
             {
-                progress.Report($"Reading {i + 1} of {files.Count}…");
+                progress.Report(Lang.T("Reading {0} of {1}…", i + 1, files.Count));
                 string f = files[i];
                 string text = FileHelpers.IsPdf(f)
                     ? await Task.Run(() => WinRt.RecognizePdfAsync(f, pw, progress))
@@ -345,8 +345,8 @@ namespace Kuduck.Views
                 File.WriteAllText(output, text, new System.Text.UTF8Encoding(true));
                 result.Outputs.Add(output);
             }
-            result.Message = $"Saved {Plural(result.Outputs.Count, "text file")}.";
-            result.Summary = $"You read the text from {Plural(files.Count, "scan")}.";
+            result.Message = Lang.T("Saved {0}.", Count(result.Outputs.Count, "text file"));
+            result.Summary = Lang.T("You read the text from {0}.", Count(files.Count, "scan"));
             return result;
         }
     }

@@ -123,7 +123,7 @@ namespace Kuduck.Views
             g.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             g.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
             StackPanel texts = new StackPanel { VerticalAlignment = VerticalAlignment.Center };
-            texts.Children.Add(Ui.Text($"KUDUCK {info.Version} is ready", 13, FontWeights.SemiBold));
+            texts.Children.Add(Ui.Text(Lang.T("KUDUCK {0} is ready", info.Version), 13, FontWeights.SemiBold));
             Button notes = new Button { Style = Ui.GetStyle("LinkButton"), Content = "What's new", FontSize = 12, HorizontalAlignment = HorizontalAlignment.Left, Padding = new Thickness(0) };
             notes.Click += (s, e) => AppPaths.OpenUrl(info.Url);
             texts.Children.Add(notes);
