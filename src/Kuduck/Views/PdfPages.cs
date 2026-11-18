@@ -317,6 +317,9 @@ namespace Kuduck.Views
     public class OcrPage : ToolPage
     {
         private readonly PasswordBox _password;
+        private readonly CheckBox _searchable;
+        private readonly TextBox _text;
+        private readonly StackPanel _textPanel;
 
         public OcrPage()
             : base("ocr", "Scan → Text", true, "scans (images or PDFs)",
@@ -325,27 +328,89 @@ namespace Kuduck.Views
         {
             _password = new PasswordBox();
             Options.Children.Add(Ui.Field("PDF password (only if it has one)", _password));
-            Options.Children.Add(Ui.Hint("Reads the text from scanned pages and photos of documents and saves it as a .txt file. " +
+            _searchable = new CheckBox { Content = "Also make a PDF you can search and copy text from", IsChecked = true, Margin = new Thickness(0, 10, 0, 0) };
+            Options.Children.Add(_searchable);
+            Options.Children.Add(Ui.Hint("Reads the text from scanned pages and photos of documents, shows it here to copy, and saves it as a .txt file. " +
+                                         "The searchable PDF looks the same as the scan, but you can select and copy its words in any PDF viewer. " +
                                          "Uses the text recognition built into Windows, in your Windows display languages."));
+
+            // The text read, to copy straight away.
+            _text = new TextBox
+            {
+                IsReadOnly = true, AcceptsReturn = true, TextWrapping = TextWrapping.Wrap, Height = 220,
+                VerticalScrollBarVisibility = ScrollBarVisibility.Auto, FontSize = 12.5, Margin = new Thickness(0, 4, 0, 0)
+            };
+            Button copy = new Button { Content = "Copy all", Margin = new Thickness(0, 6, 0, 0), HorizontalAlignment = HorizontalAlignment.Left };
+            copy.Click += (s, e) =>
+            {
+                try
+                {
+                    Clipboard.SetText(_text.Text ?? string.Empty);
+                    SetStatus(Lang.T("The text is copied. Paste it anywhere with Ctrl+V."), "SuccessBrush");
+                }
+                catch (System.Runtime.InteropServices.COMException) { SetStatus("The clipboard is busy. Try again.", "ErrorBrush"); }
+            };
+            _textPanel = Ui.Field("The text read", _text);
+            _textPanel.Margin = new Thickness(0, 12, 0, 0);
+            _textPanel.Children.Add(copy);
+            _textPanel.Visibility = Visibility.Collapsed;
+            Options.Children.Add(_textPanel);
         }
 
         protected override async Task<ToolResult> RunAsync(IProgress<string> progress)
         {
             string pw = _password.Password;
+            bool searchable = _searchable.IsChecked == true;
             List<string> files = new List<string>(Files);
             ToolResult result = new ToolResult();
+            System.Text.StringBuilder all = new System.Text.StringBuilder();
+            int pdfs = 0;
             for (int i = 0; i < files.Count; i++)
             {
                 progress.Report(Lang.T("Reading {0} of {1}…", i + 1, files.Count));
                 string f = files[i];
-                string text = FileHelpers.IsPdf(f)
-                    ? await Task.Run(() => WinRt.RecognizePdfAsync(f, pw, progress))
-                    : await Task.Run(() => WinRt.RecognizeImageAsync(f));
+                string text;
+                if (FileHelpers.IsPdf(f))
+                {
+                    List<WinRt.ReadPage> pages = await Task.Run(() => WinRt.ReadPdfAsync(f, pw, progress));
+                    text = string.Join(Environment.NewLine + Environment.NewLine,
+                        pages.Select((p, n) => (n > 0 ? Lang.T("----- Page {0} -----", n + 1) + Environment.NewLine + Environment.NewLine : string.Empty) + p.Text));
+                    if (searchable)
+                    {
+                        result.Outputs.Add(await Task.Run(() => TextLayer.AddToPdf(f, pw, pages.Select(p => p.Words).ToList())));
+                        pdfs++;
+                    }
+                }
+                else
+                {
+                    WinRt.ReadPage page = await Task.Run(() => WinRt.ReadImageAsync(f));
+                    text = page.Text;
+                    if (searchable)
+                    {
+                        result.Outputs.Add(await Task.Run(() =>
+                        {
+                            using (ImageMagick.MagickImage img = ImageEngine.Load(f))
+                            {
+                                byte[] png = img.ToByteArray(ImageMagick.MagickFormat.Png32);
+                                var picture = new List<(byte[], int, int, List<WordBox>)> { (png, (int)img.Width, (int)img.Height, page.Words) };
+                                return TextLayer.FromPictures(picture, FileHelpers.OutputPath(f, "_searchable", ".pdf"));
+                            }
+                        }));
+                        pdfs++;
+                    }
+                }
                 string output = FileHelpers.OutputPath(f, "_text", ".txt");
                 File.WriteAllText(output, text, new System.Text.UTF8Encoding(true));
-                result.Outputs.Add(output);
+                result.Outputs.Insert(0, output);
+                if (files.Count > 1) all.AppendLine(Lang.T("===== {0} =====", Path.GetFileName(f))).AppendLine();
+                all.AppendLine(text);
             }
-            result.Message = Lang.T("Saved {0}.", Count(result.Outputs.Count, "text file"));
+            _text.Text = all.ToString().Trim();
+            _textPanel.Visibility = Visibility.Visible;
+            int texts = result.Outputs.Count - pdfs;
+            result.Message = pdfs > 0
+                ? Lang.T("Saved {0} and {1}. The text is below to copy.", Count(texts, "text file"), Count(pdfs, "searchable PDF"))
+                : Lang.T("Saved {0}. The text is below to copy.", Count(texts, "text file"));
             result.Summary = Lang.T("You read the text from {0}.", Count(files.Count, "scan"));
             return result;
         }

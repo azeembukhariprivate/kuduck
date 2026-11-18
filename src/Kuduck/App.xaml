@@ -50,6 +50,8 @@
         <Geometry x:Key="IcoPages">M20,12 A8,8 0 1 1 17.7,6.3 M20,4 V9 H15</Geometry>
         <Geometry x:Key="IcoLock">M7,11 H17 A2,2 0 0 1 19,13 V19 A2,2 0 0 1 17,21 H7 A2,2 0 0 1 5,19 V13 A2,2 0 0 1 7,11 Z M8,11 V7 A4,4 0 0 1 16,7 V11</Geometry>
         <Geometry x:Key="IcoOcr">M4,6 H20 M4,12 H14 M4,18 H11 M17,15 L19,17 L22,13</Geometry>
+        <Geometry x:Key="IcoForm">M6,3 H18 A2,2 0 0 1 20,5 V19 A2,2 0 0 1 18,21 H6 A2,2 0 0 1 4,19 V5 A2,2 0 0 1 6,3 Z M8,8 H16 M8,12 H16 M8,16 H12</Geometry>
+        <Geometry x:Key="IcoSign">M3,18 C6,12 8,9 10,10 C12,11 8,17 11,17 C13,17 14,13 16,13 C17.5,13 17,16 19,16 C20,16 21,15 21,15 M3,21 H21</Geometry>
         <Geometry x:Key="IcoBack">M15,6 L9,12 L15,18</Geometry>
         <Geometry x:Key="IcoClose">M6,6 L18,18 M18,6 L6,18</Geometry>
         <Geometry x:Key="IcoMinus">M5,12 H19</Geometry>

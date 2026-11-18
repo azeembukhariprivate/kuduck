@@ -70,10 +70,17 @@ images	ചിത്രങ്ങൾ
 Adding image {0} of {1}…	ചിത്രം ചേർക്കുന്നു, {1}-ൽ {0}…
 .png	.png
 .jpg	.jpg
+"{0}" has a password. Type it in the password box.	"{0}"-ന് പാസ്‌വേഡുണ്ട്. പാസ്‌വേഡ് ബോക്സിൽ അത് ടൈപ്പ് ചെയ്യുക.
+This PDF has no form to fill in.	ഈ PDF-ൽ പൂരിപ്പിക്കാൻ ഫോമില്ല.
+Yes	Yes
+Off	Off
+There's no page {0} in this PDF.	ഈ PDF-ൽ {0}-ാം പേജില്ല.
+Nirmala UI	Nirmala UI
+Arial	Arial
 {0}.png	{0}.png
 Text recognition needs a Windows language pack with OCR. Add English (or your language) in Windows Settings → Time & language → Language & region.	വാചകം തിരിച്ചറിയാൻ OCR ഉള്ള ഒരു Windows ഭാഷാ പാക്ക് വേണം. Windows ക്രമീകരണങ്ങൾ → Time & language → Language-ൽ ഇംഗ്ലീഷ് (അല്ലെങ്കിൽ നിങ്ങളുടെ ഭാഷ) ചേർക്കുക.
-Reading page {0} of {1}…	പേജ് വായിക്കുന്നു, {1}-ൽ {0}…
 ----- Page {0} -----	----- Page {0} -----
+Reading page {0} of {1}…	പേജ് വായിക്കുന്നു, {1}-ൽ {0}…
 UPDATE	അപ്ഡേറ്റ്
 KUDUCK {0} is ready. It takes a few seconds and keeps your settings.	KUDUCK {0} തയ്യാർ. കുറച്ച് സെക്കൻഡ് മതി, ക്രമീകരണങ്ങൾ നിലനിർത്തും.
 Update	പുതുക്കുക
@@ -85,6 +92,52 @@ You used KUDUCK.	നിങ്ങൾ KUDUCK ഉപയോഗിച്ചു.
 {0} Do it again?	{0} വീണ്ടും ചെയ്യണോ?
 Hi! Click me for image and PDF tools, or drop files on me.	ഹായ്! ചിത്ര, PDF ടൂളുകൾക്കായി എന്നെ ക്ലിക്ക് ചെയ്യൂ, അല്ലെങ്കിൽ ഫയലുകൾ എന്റെ മേൽ ഇടൂ.
 Hide the duck (KUDUCK stays by the clock)	താറാവിനെ മറയ്ക്കുക (KUDUCK ക്ലോക്കിനരികിൽ തുടരും)
+Fill in a form	ഒരു ഫോം പൂരിപ്പിക്കുക
+a PDF form	ഒരു PDF ഫോം
+Save the filled-in form	പൂരിപ്പിച്ച ഫോം സേവ് ചെയ്യുക
+PDF password (only if it has one)	PDF പാസ്‌വേഡ് (ഉണ്ടെങ്കിൽ മാത്രം)
+Open	തുറക്കുക
+Add a PDF form to see its boxes here.	ഫോമിലെ കള്ളികൾ ഇവിടെ കാണാൻ ഒരു PDF ഫോം ചേർക്കുക.
+The filled-in form is saved next to it as a new file; the original isn't changed. It stays a form, so it can still be changed later.	പൂരിപ്പിച്ച ഫോം അതിനരികിൽ പുതിയ ഫയലായി സേവ് ചെയ്യുന്നു; യഥാർത്ഥ ഫയൽ മാറില്ല. ഇത് ഫോമായി തന്നെ തുടരും, പിന്നീടും മാറ്റാം.
+This PDF has no boxes to fill in. To put your signature on it, use Sign.	ഈ PDF-ൽ പൂരിപ്പിക്കാൻ കള്ളികളില്ല. ഇതിൽ ഒപ്പിടാൻ ഒപ്പിടുക ഉപയോഗിക്കുക.
+{0} to fill in:	പൂരിപ്പിക്കാനുള്ളത് {0}:
+{0} box	{0} കള്ളി
+{0} boxes	{0} കള്ളികൾ
+This PDF has no boxes to fill in.	ഈ PDF-ൽ പൂരിപ്പിക്കാൻ കള്ളികളില്ല.
+Saving…	സേവ് ചെയ്യുന്നു…
+Saved {0}.	{0} സേവ് ചെയ്തു.
+You filled in {0}.	നിങ്ങൾ {0} പൂരിപ്പിച്ചു.
+Sign a PDF	ഒരു PDF-ൽ ഒപ്പിടുക
+a PDF	ഒരു PDF
+Sign	ഒപ്പിടുക
+Your signature	നിങ്ങളുടെ ഒപ്പ്
+Saved	സേവ് ചെയ്തത്
+Draw	വരയ്ക്കുക
+Type	ടൈപ്പ് ചെയ്യുക
+Picture	ചിത്രം
+Clear	മായ്ക്കുക
+Sign in the box with the mouse, a pen or your finger.	മൗസ്, പേന അല്ലെങ്കിൽ വിരൽ കൊണ്ട് കള്ളിയിൽ ഒപ്പിടുക.
+Segoe Script, Ink Free, Segoe Print	Segoe Script, Ink Free, Segoe Print
+Your name	നിങ്ങളുടെ പേര്
+A photo or scan of your signature, best on white paper.	നിങ്ങളുടെ ഒപ്പിന്റെ ഒരു ഫോട്ടോ അല്ലെങ്കിൽ സ്കാൻ, വെള്ളക്കടലാസിൽ ആണെങ്കിൽ നല്ലത്.
+Choose a picture…	ഒരു ചിത്രം തിരഞ്ഞെടുക്കുക…
+Remember my signature on this PC	ഈ പിസിയിൽ എന്റെ ഒപ്പ് ഓർത്തുവെക്കുക
+This puts a picture of your signature on the page, like signing a printout. It isn't a digital signature with a certificate.	പ്രിന്റൗട്ടിൽ ഒപ്പിടുന്നതുപോലെ, ഇത് നിങ്ങളുടെ ഒപ്പിന്റെ ഒരു ചിത്രം പേജിൽ ചേർക്കുന്നു. ഇത് സർട്ടിഫിക്കറ്റുള്ള ഡിജിറ്റൽ ഒപ്പല്ല.
+Where it goes	എവിടെ വേണം
+Page	പേജ്
+Size	വലിപ്പം
+Add a PDF, then click on the page where your signature goes.	ഒരു PDF ചേർക്കുക, എന്നിട്ട് ഒപ്പ് വരേണ്ട സ്ഥലത്ത് പേജിൽ ക്ലിക്ക് ചെയ്യുക.
+saved	saved
+draw	draw
+Pictures	ചിത്രങ്ങൾ
+Page {0} of {1}. Click where your signature goes.	{1}-ൽ {0}-ാം പേജ്. ഒപ്പ് വരേണ്ട സ്ഥലത്ത് ക്ലിക്ക് ചെയ്യുക.
+This PDF has a password. Type it in the password box.	ഈ PDF-ന് പാസ്‌വേഡുണ്ട്. പാസ്‌വേഡ് ബോക്സിൽ അത് ടൈപ്പ് ചെയ്യുക.
+Sign in the box first.	ആദ്യം കള്ളിയിൽ ഒപ്പിടുക.
+Type your name first.	ആദ്യം നിങ്ങളുടെ പേര് ടൈപ്പ് ചെയ്യുക.
+Choose a picture of your signature first.	ആദ്യം നിങ്ങളുടെ ഒപ്പിന്റെ ഒരു ചിത്രം തിരഞ്ഞെടുക്കുക.
+The PDF couldn't be opened.	PDF തുറക്കാനായില്ല.
+Signing…	ഒപ്പിടുന്നു…
+You signed {0}.	നിങ്ങൾ {0}-ൽ ഒപ്പിട്ടു.
 Drop files here	ഫയലുകൾ ഇവിടെ ഇടുക
 Images, PDFs or Word files — KUDUCK picks the tool	ചിത്രങ്ങളോ PDF-കളോ Word ഫയലുകളോ — KUDUCK ടൂൾ തിരഞ്ഞെടുക്കും
 Image tools	ചിത്ര ടൂളുകൾ
@@ -107,7 +160,6 @@ Light grey	ഇളം ചാരം
 Works best on people, products and pets with a clear outline. Runs on your PC — nothing is uploaded.	വ്യക്തമായ അതിരുള്ള ആളുകൾ, സാധനങ്ങൾ, വളർത്തുമൃഗങ്ങൾ എന്നിവയിൽ ഏറ്റവും നന്നായി പ്രവർത്തിക്കും. നിങ്ങളുടെ പിസിയിൽ പ്രവർത്തിക്കുന്നു — ഒന്നും അപ്‌ലോഡ് ചെയ്യുന്നില്ല.
 none	ഒന്നുമില്ല
 Cutting out {0} of {1}…	മുറിച്ചെടുക്കുന്നു, {1}-ൽ {0}…
-Saved {0}.	{0} സേവ് ചെയ്തു.
 You removed the background from {0}.	{0}-ൽ നിന്ന് നിങ്ങൾ പശ്ചാത്തലം നീക്കി.
 Images → PDF	ചിത്രങ്ങൾ → PDF
 Create PDF	PDF ഉണ്ടാക്കുക
@@ -121,7 +173,6 @@ PDF file name	PDF ഫയലിന്റെ പേര്
 One picture per page, in the order above. Use the arrows to reorder.	ഓരോ പേജിലും ഒരു ചിത്രം, മുകളിലെ ക്രമത്തിൽ. ക്രമം മാറ്റാൻ അമ്പടയാളങ്ങൾ ഉപയോഗിക്കുക.
 Create PDF from {0}	{0}-ൽ നിന്ന് PDF ഉണ്ടാക്കുക
 You made a PDF from {0}.	{0}-ൽ നിന്ന് നിങ്ങൾ ഒരു PDF ഉണ്ടാക്കി.
-Size	വലിപ്പം
 Keep size	വലിപ്പം മാറ്റേണ്ട
 Pixels	പിക്സലുകൾ
 Percent	ശതമാനം
@@ -157,9 +208,7 @@ Saving {0} of {1}…	സേവ് ചെയ്യുന്നു, {1}-ൽ {0}…
 Nothing was saved.	ഒന്നും സേവ് ചെയ്തില്ല.
 Saved {0}, {1} failed: {2}	{0} സേവ് ചെയ്തു, {1} പരാജയപ്പെട്ടു: {2}
 Organise pages	പേജുകൾ ക്രമീകരിക്കുക
-a PDF	ഒരു PDF
 This PDF has a password — enter it to open	ഈ PDF-ന് പാസ്‌വേഡുണ്ട് — തുറക്കാൻ അത് നൽകുക
-Open	തുറക്കുക
 Rotate selected right	തിരഞ്ഞെടുത്തവ വലത്തേക്ക് തിരിക്കുക
 Move selected earlier	തിരഞ്ഞെടുത്തവ മുന്നോട്ട് നീക്കുക
 Move selected later	തിരഞ്ഞെടുത്തവ പിന്നോട്ട് നീക്കുക
@@ -177,7 +226,6 @@ Page {0}	പേജ് {0}
 Bd	Bd
 A PDF needs at least one page.	ഒരു PDF-ന് കുറഞ്ഞത് ഒരു പേജ് വേണം.
 {0} pages left. Nothing is changed until you save.	{0} പേജുകൾ ബാക്കി. സേവ് ചെയ്യുന്നതുവരെ ഒന്നും മാറില്ല.
-Saving…	സേവ് ചെയ്യുന്നു…
 You reorganised the pages of a PDF.	നിങ്ങൾ ഒരു PDF-ന്റെ പേജുകൾ പുനഃക്രമീകരിച്ചു.
 Passport photo	പാസ്‌പോർട്ട് ഫോട്ടോ
 a photo	ഒരു ഫോട്ടോ
@@ -292,10 +340,17 @@ Scan → Text	Scan → Text
 scans (images or PDFs)	സ്കാനുകൾ (ചിത്രങ്ങളോ PDF-കളോ)
 Scans	സ്കാനുകൾ
 Read text	വാചകം വായിക്കുക
-PDF password (only if it has one)	PDF പാസ്‌വേഡ് (ഉണ്ടെങ്കിൽ മാത്രം)
-Reads the text from scanned pages and photos of documents and saves it as a .txt file. Uses the text recognition built into Windows, in your Windows display languages.	സ്കാൻ ചെയ്ത പേജുകളിൽ നിന്നും രേഖകളുടെ ഫോട്ടോകളിൽ നിന്നും വാചകം വായിച്ച് .txt ഫയലായി സേവ് ചെയ്യുന്നു. Windows-ൽ ഉള്ള വാചക തിരിച്ചറിയൽ ഉപയോഗിക്കുന്നു, അതിനാൽ ഒന്നും അപ്‌ലോഡ് ചെയ്യുന്നില്ല.
+Also make a PDF you can search and copy text from	തിരയാനും എഴുത്ത് പകർത്താനും കഴിയുന്ന ഒരു PDF കൂടി ഉണ്ടാക്കുക
+Reads the text from scanned pages and photos of documents, shows it here to copy, and saves it as a .txt file. The searchable PDF looks the same as the scan, but you can select and copy its words in any PDF viewer. Uses the text recognition built into Windows, in your Windows display languages.	സ്കാൻ ചെയ്ത പേജുകളിലെയും രേഖകളുടെ ഫോട്ടോകളിലെയും എഴുത്ത് വായിച്ച്, പകർത്താൻ ഇവിടെ കാണിക്കുകയും .txt ഫയലായി സേവ് ചെയ്യുകയും ചെയ്യുന്നു. തിരയാവുന്ന PDF സ്കാൻ പോലെ തന്നെ കാണും, പക്ഷേ ഏത് PDF വ്യൂവറിലും അതിലെ വാക്കുകൾ തിരഞ്ഞെടുത്ത് പകർത്താം. Windows-ലെ എഴുത്ത് തിരിച്ചറിയൽ നിങ്ങളുടെ Windows ഭാഷകളിൽ ഉപയോഗിക്കുന്നു.
+Copy all	എല്ലാം പകർത്തുക
+The text is copied. Paste it anywhere with Ctrl+V.	എഴുത്ത് പകർത്തി. Ctrl+V ഉപയോഗിച്ച് എവിടെയും ഒട്ടിക്കാം.
+The clipboard is busy. Try again.	ക്ലിപ്പ്ബോർഡ് തിരക്കിലാണ്. വീണ്ടും ശ്രമിക്കുക.
+The text read	വായിച്ച എഴുത്ത്
 Reading {0} of {1}…	വായിക്കുന്നു, {1}-ൽ {0}…
+Saved {0} and {1}. The text is below to copy.	{0}, {1} എന്നിവ സേവ് ചെയ്തു. പകർത്താൻ എഴുത്ത് താഴെയുണ്ട്.
 text file	ടെക്സ്റ്റ് ഫയൽ
+searchable PDF	തിരയാവുന്ന PDF
+Saved {0}. The text is below to copy.	{0} സേവ് ചെയ്തു. പകർത്താൻ എഴുത്ത് താഴെയുണ്ട്.
 You read the text from {0}.	{0}-ൽ നിന്ന് നിങ്ങൾ വാചകം വായിച്ചു.
 Look	രൂപം
 Dark mode	ഡാർക്ക് മോഡ്
@@ -337,6 +392,7 @@ Passport	പാസ്‌പോർട്ട്
 Remove BG	പശ്ചാത്തലം നീക്കുക
 Pages	പേജുകൾ
 Lock / Unlock	പൂട്ടുക / തുറക്കുക
+Fill form	ഫോം പൂരിപ്പിക്കുക
 merge	merge
 pages	pages
 Kept on top (click to release)	മുകളിൽ നിർത്തിയിരിക്കുന്നു (വിടാൻ ക്ലിക്ക് ചെയ്യുക)
@@ -353,6 +409,8 @@ Keep on top	മുകളിൽ നിർത്തുക
 {0} Word files	{0} Word ഫയലുകൾ
 {0} text file	{0} ടെക്സ്റ്റ് ഫയൽ
 {0} text files	{0} ടെക്സ്റ്റ് ഫയലുകൾ
+{0} searchable PDF	{0} തിരയാവുന്ന PDF
+{0} searchable PDFs	{0} തിരയാവുന്ന PDF-കൾ
 {0} scan	{0} സ്കാൻ
 {0} scans	{0} സ്കാനുകൾ
 recommended	ശുപാർശ ചെയ്യുന്നത്

@@ -37,6 +37,8 @@ namespace Kuduck.Views
             new ToolInfo { Key = "pages", Label = "Pages", Icon = "IcoPages", Pdf = true, Create = () => new PagesPage() },
             new ToolInfo { Key = "lock", Label = "Lock / Unlock", Icon = "IcoLock", Pdf = true, Create = () => new LockPage() },
             new ToolInfo { Key = "ocr", Label = "Scan → Text", Icon = "IcoOcr", Pdf = true, Create = () => new OcrPage() },
+            new ToolInfo { Key = "fillform", Label = "Fill form", Icon = "IcoForm", Pdf = true, Create = () => new FillFormPage() },
+            new ToolInfo { Key = "sign", Label = "Sign", Icon = "IcoSign", Pdf = true, Create = () => new SignPage() },
         };
 
         public static ToolInfo Find(string key) =>

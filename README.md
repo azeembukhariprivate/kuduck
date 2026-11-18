@@ -37,7 +37,9 @@ again?”) so repeat jobs take one click.
 - **PDF → Word**, **PDF → Excel**, **Word → PDF**
 - **Pages** — rotate, reorder and delete pages with thumbnails
 - **Lock / Unlock** — add or remove a password (locked PDFs use AES-256 encryption)
-- **Scan → Text** — read text from scanned PDFs and photos (OCR)
+- **Scan → Text** — read the text from scanned PDFs and photos (OCR), shown in the window to copy, saved as a .txt file, and (if you like) as a PDF that looks like the scan but whose words you can search, select and copy in any PDF viewer
+- **Fill form** — fill in a PDF form's boxes, ticks and lists; the filled-in copy stays a form
+- **Sign** — put your signature on a PDF: draw it, type it in a handwriting font, or use a photo of it (KUDUCK remembers it), then click where it goes. This is a picture of your signature, like signing a printout, not a digital signature with a certificate
 
 **Also:** light and dark mode, keep-on-top, start with Windows, update notices.
 

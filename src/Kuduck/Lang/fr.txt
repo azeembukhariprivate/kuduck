@@ -70,10 +70,17 @@ images	images
 Adding image {0} of {1}…	Ajout de l'image {0} sur {1}…
 .png	.png
 .jpg	.jpg
+"{0}" has a password. Type it in the password box.	« {0} » a un mot de passe. Tapez-le dans la case du mot de passe.
+This PDF has no form to fill in.	Ce PDF n'a pas de formulaire à remplir.
+Yes	Yes
+Off	Off
+There's no page {0} in this PDF.	Il n'y a pas de page {0} dans ce PDF.
+Nirmala UI	Nirmala UI
+Arial	Arial
 {0}.png	{0}.png
 Text recognition needs a Windows language pack with OCR. Add English (or your language) in Windows Settings → Time & language → Language & region.	La reconnaissance de texte nécessite un module linguistique Windows avec OCR. Ajoutez l'anglais (ou votre langue) dans Paramètres Windows → Heure et langue → Langue et région.
-Reading page {0} of {1}…	Lecture de la page {0} sur {1}…
 ----- Page {0} -----	----- Page {0} -----
+Reading page {0} of {1}…	Lecture de la page {0} sur {1}…
 UPDATE	MISE À JOUR
 KUDUCK {0} is ready. It takes a few seconds and keeps your settings.	KUDUCK {0} est prêt. Cela prend quelques secondes et garde vos paramètres.
 Update	Mettre à jour
@@ -85,6 +92,52 @@ You used KUDUCK.	Vous avez utilisé KUDUCK.
 {0} Do it again?	{0} Recommencer ?
 Hi! Click me for image and PDF tools, or drop files on me.	Salut ! Cliquez sur moi pour les outils d'images et de PDF, ou déposez des fichiers sur moi.
 Hide the duck (KUDUCK stays by the clock)	Masquer le canard (KUDUCK reste près de l'horloge)
+Fill in a form	Remplir un formulaire
+a PDF form	un formulaire PDF
+Save the filled-in form	Enregistrer le formulaire rempli
+PDF password (only if it has one)	Mot de passe du PDF (seulement s'il en a un)
+Open	Ouvrir
+Add a PDF form to see its boxes here.	Ajoutez un formulaire PDF pour voir ses cases ici.
+The filled-in form is saved next to it as a new file; the original isn't changed. It stays a form, so it can still be changed later.	Le formulaire rempli est enregistré à côté comme nouveau fichier ; l'original ne change pas. Il reste un formulaire, donc modifiable plus tard.
+This PDF has no boxes to fill in. To put your signature on it, use Sign.	Ce PDF n'a pas de cases à remplir. Pour le signer, utilisez Signer.
+{0} to fill in:	{0} à remplir :
+{0} box	{0} case
+{0} boxes	{0} cases
+This PDF has no boxes to fill in.	Ce PDF n'a pas de cases à remplir.
+Saving…	Enregistrement…
+Saved {0}.	{0} enregistré.
+You filled in {0}.	Vous avez rempli {0}.
+Sign a PDF	Signer un PDF
+a PDF	un PDF
+Sign	Signer
+Your signature	Votre signature
+Saved	Enregistrée
+Draw	Dessiner
+Type	Taper
+Picture	Image
+Clear	Effacer
+Sign in the box with the mouse, a pen or your finger.	Signez dans le cadre avec la souris, un stylet ou le doigt.
+Segoe Script, Ink Free, Segoe Print	Segoe Script, Ink Free, Segoe Print
+Your name	Votre nom
+A photo or scan of your signature, best on white paper.	Une photo ou un scan de votre signature, de préférence sur papier blanc.
+Choose a picture…	Choisir une image…
+Remember my signature on this PC	Retenir ma signature sur ce PC
+This puts a picture of your signature on the page, like signing a printout. It isn't a digital signature with a certificate.	Ajoute une image de votre signature sur la page, comme signer une feuille imprimée. Ce n'est pas une signature numérique avec certificat.
+Where it goes	Où la mettre
+Page	Page
+Size	Taille
+Add a PDF, then click on the page where your signature goes.	Ajoutez un PDF, puis cliquez sur la page là où va votre signature.
+saved	saved
+draw	draw
+Pictures	Images
+Page {0} of {1}. Click where your signature goes.	Page {0} sur {1}. Cliquez là où va votre signature.
+This PDF has a password. Type it in the password box.	Ce PDF a un mot de passe. Tapez-le dans la case du mot de passe.
+Sign in the box first.	Signez d'abord dans le cadre.
+Type your name first.	Tapez d'abord votre nom.
+Choose a picture of your signature first.	Choisissez d'abord une image de votre signature.
+The PDF couldn't be opened.	Le PDF n'a pas pu être ouvert.
+Signing…	Signature…
+You signed {0}.	Vous avez signé {0}.
 Drop files here	Déposez des fichiers ici
 Images, PDFs or Word files — KUDUCK picks the tool	Images, PDF ou fichiers Word — KUDUCK choisit l'outil
 Image tools	Outils d'images
@@ -107,7 +160,6 @@ Light grey	Gris clair
 Works best on people, products and pets with a clear outline. Runs on your PC — nothing is uploaded.	Marche le mieux sur les personnes, les objets et les animaux aux contours nets. Fonctionne sur votre PC — rien n'est envoyé.
 none	aucun
 Cutting out {0} of {1}…	Détourage de {0} sur {1}…
-Saved {0}.	{0} enregistré.
 You removed the background from {0}.	Vous avez retiré l'arrière-plan de {0}.
 Images → PDF	Images → PDF
 Create PDF	Créer le PDF
@@ -121,7 +173,6 @@ PDF file name	Nom du fichier PDF
 One picture per page, in the order above. Use the arrows to reorder.	Une image par page, dans l'ordre ci-dessus. Utilisez les flèches pour changer l'ordre.
 Create PDF from {0}	Créer un PDF à partir de {0}
 You made a PDF from {0}.	Vous avez fait un PDF à partir de {0}.
-Size	Taille
 Keep size	Garder la taille
 Pixels	Pixels
 Percent	Pourcentage
@@ -157,9 +208,7 @@ Saving {0} of {1}…	Enregistrement de {0} sur {1}…
 Nothing was saved.	Rien n'a été enregistré.
 Saved {0}, {1} failed: {2}	{0} enregistrés, {1} en échec : {2}
 Organise pages	Organiser les pages
-a PDF	un PDF
 This PDF has a password — enter it to open	Ce PDF a un mot de passe — saisissez-le pour l'ouvrir
-Open	Ouvrir
 Rotate selected right	Faire pivoter la sélection à droite
 Move selected earlier	Avancer la sélection
 Move selected later	Reculer la sélection
@@ -177,7 +226,6 @@ Page {0}	Page {0}
 Bd	Bd
 A PDF needs at least one page.	Un PDF doit avoir au moins une page.
 {0} pages left. Nothing is changed until you save.	Il reste {0} pages. Rien ne change tant que vous n'enregistrez pas.
-Saving…	Enregistrement…
 You reorganised the pages of a PDF.	Vous avez réorganisé les pages d'un PDF.
 Passport photo	Photo d'identité
 a photo	une photo
@@ -292,10 +340,17 @@ Scan → Text	Numérisation → Texte
 scans (images or PDFs)	numérisations (images ou PDF)
 Scans	Numérisations
 Read text	Lire le texte
-PDF password (only if it has one)	Mot de passe du PDF (seulement s'il en a un)
-Reads the text from scanned pages and photos of documents and saves it as a .txt file. Uses the text recognition built into Windows, in your Windows display languages.	Lit le texte des pages numérisées et des photos de documents et l'enregistre dans un fichier .txt. Utilise la reconnaissance de texte intégrée à Windows, donc rien n'est envoyé.
+Also make a PDF you can search and copy text from	Faire aussi un PDF où l'on peut chercher et copier le texte
+Reads the text from scanned pages and photos of documents, shows it here to copy, and saves it as a .txt file. The searchable PDF looks the same as the scan, but you can select and copy its words in any PDF viewer. Uses the text recognition built into Windows, in your Windows display languages.	Lit le texte des pages scannées et des photos de documents, l'affiche ici pour le copier et l'enregistre en fichier .txt. Le PDF consultable ressemble au scan, mais on peut sélectionner et copier ses mots dans n'importe quel lecteur PDF. Utilise la reconnaissance de texte de Windows, dans vos langues de Windows.
+Copy all	Tout copier
+The text is copied. Paste it anywhere with Ctrl+V.	Le texte est copié. Collez-le où vous voulez avec Ctrl+V.
+The clipboard is busy. Try again.	Le presse-papiers est occupé. Réessayez.
+The text read	Le texte lu
 Reading {0} of {1}…	Lecture de {0} sur {1}…
+Saved {0} and {1}. The text is below to copy.	{0} et {1} enregistrés. Le texte est ci-dessous pour le copier.
 text file	fichier texte
+searchable PDF	PDF consultable
+Saved {0}. The text is below to copy.	{0} enregistré. Le texte est ci-dessous pour le copier.
 You read the text from {0}.	Vous avez lu le texte de {0}.
 Look	Apparence
 Dark mode	Mode sombre
@@ -337,6 +392,7 @@ Passport	Passeport
 Remove BG	Retirer l'arrière-plan
 Pages	Pages
 Lock / Unlock	Verrouiller / Déverrouiller
+Fill form	Remplir
 merge	merge
 pages	pages
 Kept on top (click to release)	Gardé au-dessus (cliquez pour libérer)
@@ -353,6 +409,8 @@ Keep on top	Garder au-dessus
 {0} Word files	{0} fichiers Word
 {0} text file	{0} fichier texte
 {0} text files	{0} fichiers texte
+{0} searchable PDF	{0} PDF consultable
+{0} searchable PDFs	{0} PDF consultables
 {0} scan	{0} numérisation
 {0} scans	{0} numérisations
 recommended	recommandée

@@ -30,6 +30,12 @@ Part of the KUDU family of free, open-source Windows apps by Azeem Bukhari.
   `Lang.T`, and tool results are whole sentences (`ToolPage.Count` for "3 images"). Texts are in
   `src/Kuduck/Lang/<code>.txt`, listed and checked with kudu-common's `tools/lang.py list|check ../kuduck` (texts only
   in XAML are added by hand); when adding or changing a text, add it to every language file.
+- Forms, signing and searchable scans (1.3): `Tools/PdfForms.cs` (`PdfForms` reads and fills form fields by their
+  dictionaries, with /NeedAppearances so viewers draw the values; `PdfStamp` puts a PNG on a page; `TextLayer` writes the
+  words Windows' OCR found (`WinRt.ReadPdfAsync`/`ReadImageAsync` give each word's box) as invisible text; `PdfFonts` uses
+  Windows' fonts). Pages: `Views/FormPages.cs` (Fill form, Sign: drawn, typed or a picture, kept as signature.png in
+  the data folder) and `OcrPage`. Texts only in XAML are kept by hand in the language files: after `tools/lang.py merge`,
+  check they're still there.
 - `tests/Kuduck.Tests` makes real images and PDFs and checks every tool; see "Build it yourself" in the README for the
   full installer steps.
 

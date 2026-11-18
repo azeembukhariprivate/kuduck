@@ -155,6 +155,12 @@ namespace Kuduck.Tests
 
         // ================================================================== PDFs
 
+        private static void TestFillingInAPdfForm() => FormTests.Forms(Folder("form"), Check);
+
+        private static void TestSigningAPdf() => FormTests.Signature(Folder("sign"), Check);
+
+        private static void TestSearchablePdfFromAScan() => FormTests.Searchable(Folder("searchable"), Check);
+
         private static void TestPageRanges()
         {
             var g = PdfEngine.ParseRanges("1, 3-5, 7-end", 10);

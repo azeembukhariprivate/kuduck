@@ -143,22 +143,59 @@ namespace Kuduck.Tools
             return sb.ToString();
         }
 
-        public static async Task<string> RecognizeImageAsync(string path)
+        /// <summary>What was read from one page or picture: its text, and each word with where it is.</summary>
+        public sealed class ReadPage
+        {
+            public string Text;
+            public List<WordBox> Words = new List<WordBox>();
+        }
+
+        private static ReadPage Read(OcrResult result, double width, double height)
+        {
+            ReadPage page = new ReadPage { Text = LinesOf(result) };
+            foreach (OcrLine line in result.Lines)
+                foreach (OcrWord word in line.Words)
+                    page.Words.Add(new WordBox
+                    {
+                        Text = word.Text,
+                        Left = word.BoundingRect.X / width,
+                        Top = word.BoundingRect.Y / height,
+                        Width = word.BoundingRect.Width / width,
+                        Height = word.BoundingRect.Height / height
+                    });
+            return page;
+        }
+
+        public static async Task<string> RecognizeImageAsync(string path) => (await ReadImageAsync(path)).Text;
+
+        public static async Task<ReadPage> ReadImageAsync(string path)
         {
             OcrEngine engine = CreateOcr();
             using (MagickImage img = ImageEngine.Load(path))
             {
                 SoftwareBitmap bmp = await FromMagickAsync(img, OcrEngine.MaxImageDimension);
                 OcrResult result = await engine.RecognizeAsync(bmp);
-                return LinesOf(result);
+                return Read(result, bmp.PixelWidth, bmp.PixelHeight);
             }
         }
 
         public static async Task<string> RecognizePdfAsync(string path, string password, IProgress<string> progress)
         {
+            List<ReadPage> pages = await ReadPdfAsync(path, password, progress);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < pages.Count; i++)
+            {
+                if (i > 0) sb.AppendLine().AppendLine(Lang.T("----- Page {0} -----", i + 1)).AppendLine();
+                sb.Append(pages[i].Text);
+            }
+            return sb.ToString();
+        }
+
+        public static async Task<List<ReadPage>> ReadPdfAsync(string path, string password, IProgress<string> progress)
+        {
             OcrEngine engine = CreateOcr();
             PdfDocument doc = await OpenPdfAsync(path, password);
-            StringBuilder sb = new StringBuilder();
+            List<ReadPage> pages = new List<ReadPage>();
             uint max = Math.Min(2400u, OcrEngine.MaxImageDimension);
             for (uint i = 0; i < doc.PageCount; i++)
             {
@@ -173,11 +210,10 @@ namespace Kuduck.Tools
                     stream.Seek(0);
                     SoftwareBitmap bmp = await DecodeAsync(stream);
                     OcrResult result = await engine.RecognizeAsync(bmp);
-                    if (i > 0) sb.AppendLine().AppendLine($"----- Page {i + 1} -----").AppendLine();
-                    sb.Append(LinesOf(result));
+                    pages.Add(Read(result, bmp.PixelWidth, bmp.PixelHeight));
                 }
             }
-            return sb.ToString();
+            return pages;
         }
     }
 }

@@ -70,10 +70,17 @@ images	चित्र
 Adding image {0} of {1}…	चित्र जोड़ा जा रहा है, {1} में से {0}…
 .png	.png
 .jpg	.jpg
+"{0}" has a password. Type it in the password box.	"{0}" पर पासवर्ड है। उसे पासवर्ड बॉक्स में लिखें।
+This PDF has no form to fill in.	इस PDF में भरने के लिए कोई फ़ॉर्म नहीं है।
+Yes	Yes
+Off	Off
+There's no page {0} in this PDF.	इस PDF में पेज {0} नहीं है।
+Nirmala UI	Nirmala UI
+Arial	Arial
 {0}.png	{0}.png
 Text recognition needs a Windows language pack with OCR. Add English (or your language) in Windows Settings → Time & language → Language & region.	टेक्स्ट पहचानने के लिए OCR वाला Windows भाषा पैक चाहिए। Windows सेटिंग्स → Time & language → Language & region में अंग्रेज़ी (या अपनी भाषा) जोड़ें।
-Reading page {0} of {1}…	पेज पढ़ा जा रहा है, {1} में से {0}…
 ----- Page {0} -----	----- Page {0} -----
+Reading page {0} of {1}…	पेज पढ़ा जा रहा है, {1} में से {0}…
 UPDATE	अपडेट
 KUDUCK {0} is ready. It takes a few seconds and keeps your settings.	KUDUCK {0} तैयार है। इसमें कुछ सेकंड लगते हैं और आपकी सेटिंग्स बनी रहती हैं।
 Update	अपडेट करें
@@ -85,6 +92,52 @@ You used KUDUCK.	आपने KUDUCK उपयोग किया।
 {0} Do it again?	{0} फिर से करें?
 Hi! Click me for image and PDF tools, or drop files on me.	नमस्ते! चित्र और PDF टूल के लिए मुझ पर क्लिक करें, या फ़ाइलें मुझ पर छोड़ें।
 Hide the duck (KUDUCK stays by the clock)	बत्तख छिपाएँ (KUDUCK घड़ी के पास रहता है)
+Fill in a form	फ़ॉर्म भरें
+a PDF form	एक PDF फ़ॉर्म
+Save the filled-in form	भरा हुआ फ़ॉर्म सहेजें
+PDF password (only if it has one)	PDF पासवर्ड (केवल अगर हो)
+Open	खोलें
+Add a PDF form to see its boxes here.	उसके खाने यहाँ देखने के लिए एक PDF फ़ॉर्म जोड़ें।
+The filled-in form is saved next to it as a new file; the original isn't changed. It stays a form, so it can still be changed later.	भरा हुआ फ़ॉर्म उसके पास नई फ़ाइल के रूप में सहेजा जाता है; मूल फ़ाइल नहीं बदलती। यह फ़ॉर्म ही रहता है, इसलिए बाद में भी बदला जा सकता है।
+This PDF has no boxes to fill in. To put your signature on it, use Sign.	इस PDF में भरने के लिए कोई खाना नहीं है। इस पर अपने हस्ताक्षर करने के लिए हस्ताक्षर करें इस्तेमाल करें।
+{0} to fill in:	भरने के लिए {0}:
+{0} box	{0} खाना
+{0} boxes	{0} खाने
+This PDF has no boxes to fill in.	इस PDF में भरने के लिए कोई खाना नहीं है।
+Saving…	सहेजा जा रहा है…
+Saved {0}.	{0} सहेजा गया।
+You filled in {0}.	आपने {0} भरा।
+Sign a PDF	PDF पर हस्ताक्षर करें
+a PDF	एक PDF
+Sign	हस्ताक्षर करें
+Your signature	आपके हस्ताक्षर
+Saved	सहेजा हुआ
+Draw	बनाएँ
+Type	लिखें
+Picture	तस्वीर
+Clear	मिटाएँ
+Sign in the box with the mouse, a pen or your finger.	माउस, पेन या उंगली से खाने में हस्ताक्षर करें।
+Segoe Script, Ink Free, Segoe Print	Segoe Script, Ink Free, Segoe Print
+Your name	आपका नाम
+A photo or scan of your signature, best on white paper.	आपके हस्ताक्षर की एक फ़ोटो या स्कैन, सफ़ेद काग़ज़ पर हो तो बेहतर।
+Choose a picture…	एक तस्वीर चुनें…
+Remember my signature on this PC	इस पीसी पर मेरे हस्ताक्षर याद रखें
+This puts a picture of your signature on the page, like signing a printout. It isn't a digital signature with a certificate.	यह पेज पर आपके हस्ताक्षर की एक तस्वीर लगाता है, जैसे प्रिंटआउट पर हस्ताक्षर करना। यह प्रमाणपत्र वाला डिजिटल हस्ताक्षर नहीं है।
+Where it goes	कहाँ लगें
+Page	पेज
+Size	आकार
+Add a PDF, then click on the page where your signature goes.	एक PDF जोड़ें, फिर पेज पर वहाँ क्लिक करें जहाँ हस्ताक्षर लगने हैं।
+saved	saved
+draw	draw
+Pictures	तस्वीरें
+Page {0} of {1}. Click where your signature goes.	{1} में से पेज {0}। जहाँ हस्ताक्षर लगने हैं वहाँ क्लिक करें।
+This PDF has a password. Type it in the password box.	इस PDF पर पासवर्ड है। उसे पासवर्ड बॉक्स में लिखें।
+Sign in the box first.	पहले खाने में हस्ताक्षर करें।
+Type your name first.	पहले अपना नाम लिखें।
+Choose a picture of your signature first.	पहले अपने हस्ताक्षर की एक तस्वीर चुनें।
+The PDF couldn't be opened.	PDF खुल नहीं सका।
+Signing…	हस्ताक्षर हो रहे हैं…
+You signed {0}.	आपने {0} पर हस्ताक्षर किए।
 Drop files here	फ़ाइलें यहाँ छोड़ें
 Images, PDFs or Word files — KUDUCK picks the tool	चित्र, PDF या Word फ़ाइलें — KUDUCK टूल चुन लेता है
 Image tools	चित्र टूल
@@ -107,7 +160,6 @@ Light grey	हल्का स्लेटी
 Works best on people, products and pets with a clear outline. Runs on your PC — nothing is uploaded.	साफ़ किनारे वाले लोगों, सामान और पालतू जानवरों पर सबसे अच्छा काम करता है। आपके पीसी पर चलता है — कुछ अपलोड नहीं होता।
 none	कोई नहीं
 Cutting out {0} of {1}…	काटा जा रहा है, {1} में से {0}…
-Saved {0}.	{0} सहेजा गया।
 You removed the background from {0}.	आपने {0} से बैकग्राउंड हटाया।
 Images → PDF	चित्र → PDF
 Create PDF	PDF बनाएँ
@@ -121,7 +173,6 @@ PDF file name	PDF फ़ाइल का नाम
 One picture per page, in the order above. Use the arrows to reorder.	हर पेज पर एक चित्र, ऊपर के क्रम में। क्रम बदलने के लिए तीरों का उपयोग करें।
 Create PDF from {0}	{0} से PDF बनाएँ
 You made a PDF from {0}.	आपने {0} से एक PDF बनाया।
-Size	आकार
 Keep size	आकार न बदलें
 Pixels	पिक्सेल
 Percent	प्रतिशत
@@ -157,9 +208,7 @@ Saving {0} of {1}…	सहेजा जा रहा है, {1} में स�
 Nothing was saved.	कुछ नहीं सहेजा गया।
 Saved {0}, {1} failed: {2}	{0} सहेजे, {1} विफल: {2}
 Organise pages	पेज व्यवस्थित करें
-a PDF	एक PDF
 This PDF has a password — enter it to open	इस PDF में पासवर्ड है — खोलने के लिए उसे लिखें
-Open	खोलें
 Rotate selected right	चुने हुए दाईं ओर घुमाएँ
 Move selected earlier	चुने हुए पहले ले जाएँ
 Move selected later	चुने हुए बाद में ले जाएँ
@@ -177,7 +226,6 @@ Page {0}	पेज {0}
 Bd	Bd
 A PDF needs at least one page.	PDF में कम से कम एक पेज होना चाहिए।
 {0} pages left. Nothing is changed until you save.	{0} पेज बचे। सहेजने तक कुछ नहीं बदलता।
-Saving…	सहेजा जा रहा है…
 You reorganised the pages of a PDF.	आपने एक PDF के पेज फिर से व्यवस्थित किए।
 Passport photo	पासपोर्ट फ़ोटो
 a photo	एक फ़ोटो
@@ -292,10 +340,17 @@ Scan → Text	Scan → Text
 scans (images or PDFs)	स्कैन (चित्र या PDF)
 Scans	स्कैन
 Read text	टेक्स्ट पढ़ें
-PDF password (only if it has one)	PDF पासवर्ड (केवल अगर हो)
-Reads the text from scanned pages and photos of documents and saves it as a .txt file. Uses the text recognition built into Windows, in your Windows display languages.	स्कैन किए पेजों और दस्तावेज़ों की फ़ोटो से टेक्स्ट पढ़ता है और उसे .txt फ़ाइल में सहेजता है। Windows में बनी टेक्स्ट पहचान उपयोग करता है, इसलिए कुछ अपलोड नहीं होता।
+Also make a PDF you can search and copy text from	एक ऐसा PDF भी बनाएँ जिसमें खोज सकें और लिखावट कॉपी कर सकें
+Reads the text from scanned pages and photos of documents, shows it here to copy, and saves it as a .txt file. The searchable PDF looks the same as the scan, but you can select and copy its words in any PDF viewer. Uses the text recognition built into Windows, in your Windows display languages.	स्कैन किए पेजों और दस्तावेज़ों की फ़ोटो से लिखावट पढ़ता है, कॉपी करने के लिए यहाँ दिखाता है और .txt फ़ाइल के रूप में सहेजता है। खोजने लायक PDF स्कैन जैसा ही दिखता है, पर किसी भी PDF व्यूअर में उसके शब्द चुनकर कॉपी किए जा सकते हैं। Windows में बनी लिखावट पहचान आपकी Windows भाषाओं में इस्तेमाल होती है।
+Copy all	सब कॉपी करें
+The text is copied. Paste it anywhere with Ctrl+V.	लिखावट कॉपी हो गई। Ctrl+V से कहीं भी चिपकाएँ।
+The clipboard is busy. Try again.	क्लिपबोर्ड व्यस्त है। फिर से कोशिश करें।
+The text read	पढ़ी गई लिखावट
 Reading {0} of {1}…	पढ़ा जा रहा है, {1} में से {0}…
+Saved {0} and {1}. The text is below to copy.	{0} और {1} सहेजे गए। कॉपी करने के लिए लिखावट नीचे है।
 text file	टेक्स्ट फ़ाइल
+searchable PDF	खोजने लायक PDF
+Saved {0}. The text is below to copy.	{0} सहेजी गई। कॉपी करने के लिए लिखावट नीचे है।
 You read the text from {0}.	आपने {0} से टेक्स्ट पढ़ा।
 Look	रूप
 Dark mode	डार्क मोड
@@ -337,6 +392,7 @@ Passport	पासपोर्ट
 Remove BG	बैकग्राउंड हटाएँ
 Pages	पेज
 Lock / Unlock	लॉक / अनलॉक
+Fill form	फ़ॉर्म भरें
 merge	merge
 pages	pages
 Kept on top (click to release)	ऊपर रखा गया (छोड़ने के लिए क्लिक करें)
@@ -353,6 +409,8 @@ Keep on top	ऊपर रखें
 {0} Word files	{0} Word फ़ाइलें
 {0} text file	{0} टेक्स्ट फ़ाइल
 {0} text files	{0} टेक्स्ट फ़ाइलें
+{0} searchable PDF	{0} खोजने लायक PDF
+{0} searchable PDFs	{0} खोजने लायक PDF
 {0} scan	{0} स्कैन
 {0} scans	{0} स्कैन
 recommended	सुझाया गया
