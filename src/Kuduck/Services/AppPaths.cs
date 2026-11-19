@@ -43,9 +43,11 @@ namespace Kuduck.Services
 
         public static string ReleasesUrl => $"https://github.com/{RepoOwner}/{RepoName}/releases";
 
+        /// <summary>Opens a web page in the default browser. Only http and https links are opened, never files or programs.</summary>
         public static void OpenUrl(string url)
         {
-            try { Process.Start(new ProcessStartInfo(url) { UseShellExecute = true }); } catch { }
+            if (!Uri.TryCreate(url, UriKind.Absolute, out Uri uri) || (uri.Scheme != Uri.UriSchemeHttps && uri.Scheme != Uri.UriSchemeHttp)) return;
+            try { Process.Start(new ProcessStartInfo(uri.AbsoluteUri) { UseShellExecute = true }); } catch { }
         }
 
         public static void ShowInExplorer(string path)

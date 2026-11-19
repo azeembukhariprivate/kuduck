@@ -96,7 +96,7 @@ dotnet run --project src/Kuduck            # run the app
 
 # full installer (same steps as .github/workflows/build.yml)
 dotnet publish src/Kuduck/Kuduck.csproj -c Release -r win-x64 --self-contained true -o publish
-pip install -r helper/requirements.txt pyinstaller
+pip install --require-hashes -r helper/requirements-build.txt
 pyinstaller helper/kuduck_helper.py --name kuduck_helper --onedir --console --distpath build/helper
 xcopy /e /i build\helper\kuduck_helper publish\helper
 mkdir publish\Assets\models

@@ -21,7 +21,9 @@ Part of the KUDU family of free, open-source Windows apps by Azeem Bukhari.
 
 - .NET 10 WPF app (`src/Kuduck`), published self-contained for win-x64. It doesn't use kudu-common.
 - Some image work (e.g. background removal) runs in a Python helper (`helper/kuduck_helper.py`, built with
-  PyInstaller in CI) using the `silueta.onnx` model downloaded during the build.
+  PyInstaller in CI) using the `silueta.onnx` model downloaded during the build. Everything the helper is built with
+  is in `helper/requirements-build.txt`, each at a fixed version with its checksum (installed with `--require-hashes`;
+  remade with `uv pip compile ... --python-platform windows --python-version 3.12 --generate-hashes`, see its first lines).
 - Results never overwrite the original files. PDF locking uses AES-256; passwords are never put on a command line.
 - Updates are checked by version and checksum only.
 - Other languages (1.2): `Services/Lang.cs` and `LangCommon.cs` are copies of kudu-common's (change both when one

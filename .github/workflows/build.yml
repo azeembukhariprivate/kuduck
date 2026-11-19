@@ -75,8 +75,9 @@ jobs:
         if: github.event_name == 'release' || github.event_name == 'workflow_dispatch' || steps.rel.outputs.new == 'true'
         shell: pwsh
         run: |
-          python -m pip install --upgrade pip
-          pip install -r helper/requirements.txt pyinstaller
+          # Every package and its own packages at a fixed version, checked against its checksum.
+          python -m pip install --require-hashes --only-binary=:all: -r helper/requirements-build.txt
+          if ($LASTEXITCODE -ne 0) { exit 1 }
           pyinstaller helper/kuduck_helper.py --name kuduck_helper --onedir --console --noconfirm --clean `
             --exclude-module tkinter --distpath build/helper --workpath build/work --specpath build
           New-Item -ItemType Directory -Force -Path publish/helper | Out-Null
@@ -97,7 +98,7 @@ jobs:
         if: github.event_name == 'release' || github.event_name == 'workflow_dispatch' || steps.rel.outputs.new == 'true'
         shell: pwsh
         run: |
-          choco install innosetup --no-progress -y
+          choco install innosetup --version 6.7.1 -y --no-progress
           & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" "/DMyAppVersion=$env:VERSION" installer\kuduck.iss
 
       - name: Keep the installer as a download on this run
